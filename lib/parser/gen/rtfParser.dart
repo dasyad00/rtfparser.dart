@@ -1,11 +1,11 @@
-// Generated from rtf.g4 by ANTLR 4.11.1
+// Generated from rtfParser.g4 by ANTLR 4.11.1
 // ignore_for_file: unused_import, unused_local_variable, prefer_single_quotes
 import 'package:antlr4/antlr4.dart';
 
-import 'rtfListener.dart';
-import 'rtfBaseListener.dart';
-import 'rtfVisitor.dart';
-import 'rtfBaseVisitor.dart';
+import 'rtfParserListener.dart';
+import 'rtfParserBaseListener.dart';
+import 'rtfParserVisitor.dart';
+import 'rtfParserBaseVisitor.dart';
 const int RULE_file = 0, RULE_header = 1, RULE_charset = 2, RULE_from = 3, 
           RULE_deffont = 4, RULE_deflang = 5, RULE_fonttbl = 6, RULE_fontinfo = 7, 
           RULE_fontfamily = 8, RULE_fontemb = 9, RULE_fonttype = 10, RULE_fontfname = 11, 
@@ -33,106 +33,107 @@ class rtfParser extends Parser {
   static final List<DFA> _decisionToDFA = List.generate(
       _ATN.numberOfDecisions, (i) => DFA(_ATN.getDecisionState(i), i));
   static final PredictionContextCache _sharedContextCache = PredictionContextCache();
-  static const int TOKEN_T__0 = 1, TOKEN_T__1 = 2, TOKEN_T__2 = 3, TOKEN_T__3 = 4, 
-                   TOKEN_T__4 = 5, TOKEN_RTFVERSION = 6, TOKEN_ANSI = 7, 
-                   TOKEN_MAC = 8, TOKEN_PC = 9, TOKEN_PCA = 10, TOKEN_ANSICPG = 11, 
-                   TOKEN_FROMTEXT = 12, TOKEN_FROMHTML = 13, TOKEN_DEFFN = 14, 
-                   TOKEN_ADEFFN = 15, TOKEN_STSHFDBCHN = 16, TOKEN_STSHFLOCHN = 17, 
-                   TOKEN_STSHFHICHN = 18, TOKEN_STSHFBIN = 19, TOKEN_FONTTBL = 20, 
-                   TOKEN_FNIL = 21, TOKEN_FROMAN = 22, TOKEN_FSWISS = 23, 
-                   TOKEN_FMODERN = 24, TOKEN_FSCRIPT = 25, TOKEN_FDECOR = 26, 
-                   TOKEN_FTECH = 27, TOKEN_FBIDI = 28, TOKEN_FCHARSETN = 29, 
-                   TOKEN_FPRQN = 30, TOKEN_NONTAGGEDNAME = 31, TOKEN_FONTEMB = 32, 
-                   TOKEN_FTNIL = 33, TOKEN_FTTRUETYPE = 34, TOKEN_FONTFILE = 35, 
-                   TOKEN_CODEPAGE = 36, TOKEN_FALT = 37, TOKEN_COLORTBL = 38, 
-                   TOKEN_REDN = 39, TOKEN_GREENN = 40, TOKEN_BLUEN = 41, 
-                   TOKEN_STYLESHEET = 42, TOKEN_S = 43, TOKEN_CS = 44, TOKEN_DS = 45, 
-                   TOKEN_KEYCODE = 46, TOKEN_SHIFT = 47, TOKEN_CTRL = 48, 
-                   TOKEN_ALT = 49, TOKEN_FNN = 50, TOKEN_ADDITIVE = 51, 
-                   TOKEN_SBASEDON = 52, TOKEN_SNEXTN = 53, TOKEN_SAUTOUPD = 54, 
-                   TOKEN_SHIDDEN = 55, TOKEN_SPERSONAL = 56, TOKEN_SCOMPOSE = 57, 
-                   TOKEN_SREPLY = 58, TOKEN_INFO = 59, TOKEN_VERSIONN = 60, 
-                   TOKEN_VERNN = 61, TOKEN_EDMINS = 62, TOKEN_NOFPAGESN = 63, 
-                   TOKEN_NOFWORDSN = 64, TOKEN_NOFCHARSN = 65, TOKEN_NOFCHARSWSN = 66, 
-                   TOKEN_IDN = 67, TOKEN_TITLE = 68, TOKEN_SUBJECT = 69, 
-                   TOKEN_AUTHOR = 70, TOKEN_MANAGER = 71, TOKEN_COMPANY = 72, 
-                   TOKEN_OPERATOR = 73, TOKEN_CATEGORY = 74, TOKEN_KEYWORDS = 75, 
-                   TOKEN_COMMENT = 76, TOKEN_DOCCOMM = 77, TOKEN_HLINKBASE = 78, 
-                   TOKEN_CREATIM = 79, TOKEN_REVTIM = 80, TOKEN_PRINTIM = 81, 
-                   TOKEN_BUPTIM = 82, TOKEN_YRN = 83, TOKEN_MON = 84, TOKEN_DYN = 85, 
-                   TOKEN_HRN = 86, TOKEN_MINN = 87, TOKEN_SECN = 88, TOKEN_DEFTABN = 89, 
-                   TOKEN_HYPHHOTZN = 90, TOKEN_HYPHCONSECN = 91, TOKEN_HYPHCAPS = 92, 
-                   TOKEN_HYPHAUTO = 93, TOKEN_DEFLANGN = 94, TOKEN_DEFLANGFEN = 95, 
-                   TOKEN_ADEFLANGN = 96, TOKEN_DOCTYPEN = 97, TOKEN_VIEWKINDN = 98, 
-                   TOKEN_VIEWSCALEN = 99, TOKEN_FETN = 100, TOKEN_FTNSEP = 101, 
-                   TOKEN_FTNSEPC = 102, TOKEN_FTNCN = 103, TOKEN_AFTNSEP = 104, 
-                   TOKEN_AFTNSEPC = 105, TOKEN_AFTNCN = 106, TOKEN_ENDNOTES = 107, 
-                   TOKEN_ENDDOC = 108, TOKEN_FTNTJ = 109, TOKEN_FTNBJ = 110, 
-                   TOKEN_AENDNOTES = 111, TOKEN_AENDDOC = 112, TOKEN_AFTNBJ = 113, 
-                   TOKEN_AFTNTJ = 114, TOKEN_FTNSTARTN = 115, TOKEN_AFTNSTARTN = 116, 
-                   TOKEN_FTNRSTPG = 117, TOKEN_FTNRESTART = 118, TOKEN_FTNRSTCONT = 119, 
-                   TOKEN_AFTNRESTART = 120, TOKEN_AFTNRSTCONT = 121, TOKEN_FTNNAR = 122, 
-                   TOKEN_FTNNALC = 123, TOKEN_FTNNAUC = 124, TOKEN_FTNNRLC = 125, 
-                   TOKEN_FTNNRUC = 126, TOKEN_FTNNCHI = 127, TOKEN_FTNNCHOSUNG = 128, 
-                   TOKEN_FTNNCNUM = 129, TOKEN_FTNNDBNUM = 130, TOKEN_FTNNDBNUMD = 131, 
-                   TOKEN_FTNNDBNUMT = 132, TOKEN_FTNNDBNUMK = 133, TOKEN_FTNNDBAR = 134, 
-                   TOKEN_FTNNGANADA = 135, TOKEN_FTNNGBNUM = 136, TOKEN_FTNNGBNUMD = 137, 
-                   TOKEN_FTNNGBNUML = 138, TOKEN_FTNNGBNUMK = 139, TOKEN_FTNNZODIAC = 140, 
-                   TOKEN_FTNNZODIACD = 141, TOKEN_FTNNZODIACL = 142, TOKEN_AFTNNAR = 143, 
-                   TOKEN_AFTNNALC = 144, TOKEN_AFTNNAUC = 145, TOKEN_AFTNNRLC = 146, 
-                   TOKEN_AFTNNRUC = 147, TOKEN_AFTNNCHI = 148, TOKEN_AFTNNCHOSUN = 149, 
-                   TOKEN_AFTNNCNUM = 150, TOKEN_PAPERWN = 151, TOKEN_PAPERHN = 152, 
-                   TOKEN_MARGLN = 153, TOKEN_MARGRN = 154, TOKEN_MARGTN = 155, 
-                   TOKEN_MARGBN = 156, TOKEN_HTMAUTSP = 157, TOKEN_NOUICOMPAT = 158, 
-                   TOKEN_FORMSHADE = 159, TOKEN_SECT = 160, TOKEN_SECTD = 161, 
-                   TOKEN_ENDNHERE = 162, TOKEN_BINFSXNN = 163, TOKEN_BINSXNN = 164, 
-                   TOKEN_PNSECLVLN = 165, TOKEN_SECTUNLOCKED = 166, TOKEN_SBKNONE = 167, 
-                   TOKEN_SBKCOL = 168, TOKEN_SBKPAGE = 169, TOKEN_SBKEVEN = 170, 
-                   TOKEN_SBKODD = 171, TOKEN_COLSN = 172, TOKEN_COLSXN = 173, 
-                   TOKEN_COLNON = 174, TOKEN_COLSRN = 175, TOKEN_COLWN = 176, 
-                   TOKEN_LINEBETCOL = 177, TOKEN_LINEMODN = 178, TOKEN_LINEXN = 179, 
-                   TOKEN_LINESTARTSN = 180, TOKEN_LINERESTART = 181, TOKEN_LINEPPAGE = 182, 
-                   TOKEN_LINECONT = 183, TOKEN_PGWSXNN = 184, TOKEN_PGHSXNN = 185, 
-                   TOKEN_MARGLSXNN = 186, TOKEN_MARGRSXNN = 187, TOKEN_MARGTSXNN = 188, 
-                   TOKEN_MARGBSXNN = 189, TOKEN_MARGMIRSXN = 190, TOKEN_LNDSCPSXN = 191, 
-                   TOKEN_PGNSTARTSN = 192, TOKEN_PGNCONT = 193, TOKEN_PGNRESTART = 194, 
-                   TOKEN_PGNXN = 195, TOKEN_PGNYN = 196, TOKEN_PGNDEC = 197, 
-                   TOKEN_PGNUCRM = 198, TOKEN_PGNLCRM = 199, TOKEN_PGNUCLTR = 200, 
-                   TOKEN_PGNLCLTR = 201, TOKEN_PGNBIDIA = 202, TOKEN_PGNBIDIB = 203, 
-                   TOKEN_SAFTNNALC = 204, TOKEN_SAFTNNAR = 205, TOKEN_SAFTNNAUC = 206, 
-                   TOKEN_SAFTNNRLC = 207, TOKEN_SFTNBJ = 208, TOKEN_SFTNNAR = 209, 
-                   TOKEN_SFTNNRLC = 210, TOKEN_PAR = 211, TOKEN_PARD = 212, 
-                   TOKEN_KEEP = 213, TOKEN_KEEPN = 214, TOKEN_NOLINE = 215, 
-                   TOKEN_HYPHPAR_TOGGLE = 216, TOKEN_ITAPN = 217, TOKEN_NOWIDCTLPAR = 218, 
-                   TOKEN_WIDCTLPAR = 219, TOKEN_SN = 220, TOKEN_QC = 221, 
-                   TOKEN_QJ = 222, TOKEN_QL = 223, TOKEN_QR = 224, TOKEN_QD = 225, 
-                   TOKEN_FIN = 226, TOKEN_CUFIN = 227, TOKEN_LIN = 228, 
-                   TOKEN_LINN = 229, TOKEN_RIN = 230, TOKEN_RINN = 231, 
-                   TOKEN_SAN = 232, TOKEN_SBN = 233, TOKEN_SAAUTON = 234, 
-                   TOKEN_SBAUTON = 235, TOKEN_SLN = 236, TOKEN_SLMULTN = 237, 
-                   TOKEN_SUBDOCUMENTN = 238, TOKEN_ROW = 239, TOKEN_CELL = 240, 
-                   TOKEN_TROWD = 241, TOKEN_TRGAPH = 242, TOKEN_NESTROW = 243, 
-                   TOKEN_NESTCELL = 244, TOKEN_NESTTABLEPROPS = 245, TOKEN_PLAIN = 246, 
-                   TOKEN_B0 = 247, TOKEN_CAPS0 = 248, TOKEN_CBN = 249, TOKEN_CFN = 250, 
-                   TOKEN_CSN = 251, TOKEN_FN = 252, TOKEN_FSN = 253, TOKEN_I0 = 254, 
-                   TOKEN_KERNINGN = 255, TOKEN_LANGFEN = 256, TOKEN_LANGFENPN = 257, 
-                   TOKEN_LANGN = 258, TOKEN_LANGNPN = 259, TOKEN_ALANGN = 260, 
-                   TOKEN_OUTL0 = 261, TOKEN_SHAD0 = 262, TOKEN_STRIKE0 = 263, 
-                   TOKEN_STRIKED10 = 264, TOKEN_SUB = 265, TOKEN_SUPER = 266, 
-                   TOKEN_UL0 = 267, TOKEN_HEADER = 268, TOKEN_FOOTER = 269, 
-                   TOKEN_HEADERL = 270, TOKEN_HEADERR = 271, TOKEN_HEADERF = 272, 
-                   TOKEN_FOOTERL = 273, TOKEN_FOOTERR = 274, TOKEN_FOOTERF = 275, 
-                   TOKEN_RTLCH = 276, TOKEN_LTRCH = 277, TOKEN_AFN = 278, 
-                   TOKEN_AFSN = 279, TOKEN_AI = 280, TOKEN_HICH = 281, TOKEN_LOCH = 282, 
-                   TOKEN_DBCH = 283, TOKEN_RTLPAR = 284, TOKEN_LTRPAR = 285, 
-                   TOKEN_FORMULA = 286, TOKEN_NBSP = 287, TOKEN_OPTIONAL_HYPHEN = 288, 
-                   TOKEN_NONBREAKING_HYPHEN = 289, TOKEN_SUBENTRY = 290, 
-                   TOKEN_IGNORABLE_CONTROL_PREFIX = 291, TOKEN_WS = 292, 
-                   TOKEN_SPACE = 293, TOKEN_HYPHEN = 294, TOKEN_SEMICOLON = 295, 
-                   TOKEN_UNICODE_CHAR = 296, TOKEN_UNICODE_CHAR_LEN = 297, 
-                   TOKEN_INTEGER = 298, TOKEN_HEX_NUMBER = 299, TOKEN_UNKNOWN_CONTROL_GROUP = 300, 
-                   TOKEN_UNKNOWN_CONTROL_WORD = 301, TOKEN_CONTROL_CODE = 302, 
-                   TOKEN_ANY = 303;
+  static const int TOKEN_RTFVERSION = 1, TOKEN_ANSI = 2, TOKEN_MAC = 3, 
+                   TOKEN_PC = 4, TOKEN_PCA = 5, TOKEN_ANSICPG = 6, TOKEN_FROMTEXT = 7, 
+                   TOKEN_FROMHTML = 8, TOKEN_DEFFN = 9, TOKEN_ADEFFN = 10, 
+                   TOKEN_STSHFDBCHN = 11, TOKEN_STSHFLOCHN = 12, TOKEN_STSHFHICHN = 13, 
+                   TOKEN_STSHFBIN = 14, TOKEN_FONTTBL = 15, TOKEN_FNIL = 16, 
+                   TOKEN_FROMAN = 17, TOKEN_FSWISS = 18, TOKEN_FMODERN = 19, 
+                   TOKEN_FSCRIPT = 20, TOKEN_FDECOR = 21, TOKEN_FTECH = 22, 
+                   TOKEN_FBIDI = 23, TOKEN_FCHARSETN = 24, TOKEN_FPRQN = 25, 
+                   TOKEN_NONTAGGEDNAME = 26, TOKEN_FONTEMB = 27, TOKEN_FTNIL = 28, 
+                   TOKEN_FTTRUETYPE = 29, TOKEN_FONTFILE = 30, TOKEN_CODEPAGE = 31, 
+                   TOKEN_FALT = 32, TOKEN_COLORTBL = 33, TOKEN_REDN = 34, 
+                   TOKEN_GREENN = 35, TOKEN_BLUEN = 36, TOKEN_STYLESHEET = 37, 
+                   TOKEN_S = 38, TOKEN_CS = 39, TOKEN_DS = 40, TOKEN_KEYCODE = 41, 
+                   TOKEN_SHIFT = 42, TOKEN_CTRL = 43, TOKEN_ALT = 44, TOKEN_FNN = 45, 
+                   TOKEN_ADDITIVE = 46, TOKEN_SBASEDON = 47, TOKEN_SNEXTN = 48, 
+                   TOKEN_SAUTOUPD = 49, TOKEN_SHIDDEN = 50, TOKEN_SPERSONAL = 51, 
+                   TOKEN_SCOMPOSE = 52, TOKEN_SREPLY = 53, TOKEN_INFO = 54, 
+                   TOKEN_VERSIONN = 55, TOKEN_VERNN = 56, TOKEN_EDMINS = 57, 
+                   TOKEN_NOFPAGESN = 58, TOKEN_NOFWORDSN = 59, TOKEN_NOFCHARSN = 60, 
+                   TOKEN_NOFCHARSWSN = 61, TOKEN_IDN = 62, TOKEN_TITLE = 63, 
+                   TOKEN_SUBJECT = 64, TOKEN_AUTHOR = 65, TOKEN_MANAGER = 66, 
+                   TOKEN_COMPANY = 67, TOKEN_OPERATOR = 68, TOKEN_CATEGORY = 69, 
+                   TOKEN_KEYWORDS = 70, TOKEN_COMMENT = 71, TOKEN_DOCCOMM = 72, 
+                   TOKEN_HLINKBASE = 73, TOKEN_CREATIM = 74, TOKEN_REVTIM = 75, 
+                   TOKEN_PRINTIM = 76, TOKEN_BUPTIM = 77, TOKEN_YRN = 78, 
+                   TOKEN_MON = 79, TOKEN_DYN = 80, TOKEN_HRN = 81, TOKEN_MINN = 82, 
+                   TOKEN_SECN = 83, TOKEN_DEFTABN = 84, TOKEN_HYPHHOTZN = 85, 
+                   TOKEN_HYPHCONSECN = 86, TOKEN_HYPHCAPS = 87, TOKEN_HYPHAUTO = 88, 
+                   TOKEN_DEFLANGN = 89, TOKEN_DEFLANGFEN = 90, TOKEN_ADEFLANGN = 91, 
+                   TOKEN_DOCTYPEN = 92, TOKEN_VIEWKINDN = 93, TOKEN_VIEWSCALEN = 94, 
+                   TOKEN_FETN = 95, TOKEN_FTNSEP = 96, TOKEN_FTNSEPC = 97, 
+                   TOKEN_FTNCN = 98, TOKEN_AFTNSEP = 99, TOKEN_AFTNSEPC = 100, 
+                   TOKEN_AFTNCN = 101, TOKEN_ENDNOTES = 102, TOKEN_ENDDOC = 103, 
+                   TOKEN_FTNTJ = 104, TOKEN_FTNBJ = 105, TOKEN_AENDNOTES = 106, 
+                   TOKEN_AENDDOC = 107, TOKEN_AFTNBJ = 108, TOKEN_AFTNTJ = 109, 
+                   TOKEN_FTNSTARTN = 110, TOKEN_AFTNSTARTN = 111, TOKEN_FTNRSTPG = 112, 
+                   TOKEN_FTNRESTART = 113, TOKEN_FTNRSTCONT = 114, TOKEN_AFTNRESTART = 115, 
+                   TOKEN_AFTNRSTCONT = 116, TOKEN_FTNNAR = 117, TOKEN_FTNNALC = 118, 
+                   TOKEN_FTNNAUC = 119, TOKEN_FTNNRLC = 120, TOKEN_FTNNRUC = 121, 
+                   TOKEN_FTNNCHI = 122, TOKEN_FTNNCHOSUNG = 123, TOKEN_FTNNCNUM = 124, 
+                   TOKEN_FTNNDBNUM = 125, TOKEN_FTNNDBNUMD = 126, TOKEN_FTNNDBNUMT = 127, 
+                   TOKEN_FTNNDBNUMK = 128, TOKEN_FTNNDBAR = 129, TOKEN_FTNNGANADA = 130, 
+                   TOKEN_FTNNGBNUM = 131, TOKEN_FTNNGBNUMD = 132, TOKEN_FTNNGBNUML = 133, 
+                   TOKEN_FTNNGBNUMK = 134, TOKEN_FTNNZODIAC = 135, TOKEN_FTNNZODIACD = 136, 
+                   TOKEN_FTNNZODIACL = 137, TOKEN_AFTNNAR = 138, TOKEN_AFTNNALC = 139, 
+                   TOKEN_AFTNNAUC = 140, TOKEN_AFTNNRLC = 141, TOKEN_AFTNNRUC = 142, 
+                   TOKEN_AFTNNCHI = 143, TOKEN_AFTNNCHOSUN = 144, TOKEN_AFTNNCNUM = 145, 
+                   TOKEN_PAPERWN = 146, TOKEN_PAPERHN = 147, TOKEN_MARGLN = 148, 
+                   TOKEN_MARGRN = 149, TOKEN_MARGTN = 150, TOKEN_MARGBN = 151, 
+                   TOKEN_HTMAUTSP = 152, TOKEN_NOUICOMPAT = 153, TOKEN_FORMSHADE = 154, 
+                   TOKEN_SECT = 155, TOKEN_SECTD = 156, TOKEN_ENDNHERE = 157, 
+                   TOKEN_BINFSXNN = 158, TOKEN_BINSXNN = 159, TOKEN_PNSECLVLN = 160, 
+                   TOKEN_SECTUNLOCKED = 161, TOKEN_SBKNONE = 162, TOKEN_SBKCOL = 163, 
+                   TOKEN_SBKPAGE = 164, TOKEN_SBKEVEN = 165, TOKEN_SBKODD = 166, 
+                   TOKEN_COLSN = 167, TOKEN_COLSXN = 168, TOKEN_COLNON = 169, 
+                   TOKEN_COLSRN = 170, TOKEN_COLWN = 171, TOKEN_LINEBETCOL = 172, 
+                   TOKEN_LINEMODN = 173, TOKEN_LINEXN = 174, TOKEN_LINESTARTSN = 175, 
+                   TOKEN_LINERESTART = 176, TOKEN_LINEPPAGE = 177, TOKEN_LINECONT = 178, 
+                   TOKEN_PGWSXNN = 179, TOKEN_PGHSXNN = 180, TOKEN_MARGLSXNN = 181, 
+                   TOKEN_MARGRSXNN = 182, TOKEN_MARGTSXNN = 183, TOKEN_MARGBSXNN = 184, 
+                   TOKEN_MARGMIRSXN = 185, TOKEN_LNDSCPSXN = 186, TOKEN_PGNSTARTSN = 187, 
+                   TOKEN_PGNCONT = 188, TOKEN_PGNRESTART = 189, TOKEN_PGNXN = 190, 
+                   TOKEN_PGNYN = 191, TOKEN_PGNDEC = 192, TOKEN_PGNUCRM = 193, 
+                   TOKEN_PGNLCRM = 194, TOKEN_PGNUCLTR = 195, TOKEN_PGNLCLTR = 196, 
+                   TOKEN_PGNBIDIA = 197, TOKEN_PGNBIDIB = 198, TOKEN_SAFTNNALC = 199, 
+                   TOKEN_SAFTNNAR = 200, TOKEN_SAFTNNAUC = 201, TOKEN_SAFTNNRLC = 202, 
+                   TOKEN_SFTNBJ = 203, TOKEN_SFTNNAR = 204, TOKEN_SFTNNRLC = 205, 
+                   TOKEN_HEADER = 206, TOKEN_FOOTER = 207, TOKEN_HEADERL = 208, 
+                   TOKEN_HEADERR = 209, TOKEN_HEADERF = 210, TOKEN_FOOTERL = 211, 
+                   TOKEN_FOOTERR = 212, TOKEN_FOOTERF = 213, TOKEN_PAR = 214, 
+                   TOKEN_PARD = 215, TOKEN_KEEP = 216, TOKEN_KEEPN = 217, 
+                   TOKEN_NOLINE = 218, TOKEN_HYPHPAR_TOGGLE = 219, TOKEN_ITAPN = 220, 
+                   TOKEN_NOWIDCTLPAR = 221, TOKEN_WIDCTLPAR = 222, TOKEN_SN = 223, 
+                   TOKEN_QC = 224, TOKEN_QJ = 225, TOKEN_QL = 226, TOKEN_QR = 227, 
+                   TOKEN_QD = 228, TOKEN_FIN = 229, TOKEN_CUFIN = 230, TOKEN_LIN = 231, 
+                   TOKEN_LINN = 232, TOKEN_RIN = 233, TOKEN_RINN = 234, 
+                   TOKEN_SAN = 235, TOKEN_SBN = 236, TOKEN_SAAUTON = 237, 
+                   TOKEN_SBAUTON = 238, TOKEN_SLN = 239, TOKEN_SLMULTN = 240, 
+                   TOKEN_SUBDOCUMENTN = 241, TOKEN_ROW = 242, TOKEN_CELL = 243, 
+                   TOKEN_TROWD = 244, TOKEN_TRGAPH = 245, TOKEN_NESTROW = 246, 
+                   TOKEN_NESTCELL = 247, TOKEN_NESTTABLEPROPS = 248, TOKEN_PLAIN = 249, 
+                   TOKEN_B0 = 250, TOKEN_CAPS0 = 251, TOKEN_CBN = 252, TOKEN_CFN = 253, 
+                   TOKEN_CSN = 254, TOKEN_FN = 255, TOKEN_FSN = 256, TOKEN_I0 = 257, 
+                   TOKEN_KERNINGN = 258, TOKEN_LANGFEN = 259, TOKEN_LANGFENPN = 260, 
+                   TOKEN_LANGN = 261, TOKEN_LANGNPN = 262, TOKEN_ALANGN = 263, 
+                   TOKEN_OUTL0 = 264, TOKEN_SHAD0 = 265, TOKEN_STRIKE0 = 266, 
+                   TOKEN_STRIKED10 = 267, TOKEN_SUB = 268, TOKEN_SUPER = 269, 
+                   TOKEN_UL0 = 270, TOKEN_RTLCH = 271, TOKEN_LTRCH = 272, 
+                   TOKEN_AFN = 273, TOKEN_AFSN = 274, TOKEN_AI = 275, TOKEN_HICH = 276, 
+                   TOKEN_LOCH = 277, TOKEN_DBCH = 278, TOKEN_RTLPAR = 279, 
+                   TOKEN_LTRPAR = 280, TOKEN_FORMULA = 281, TOKEN_NBSP = 282, 
+                   TOKEN_OPTIONAL_HYPHEN = 283, TOKEN_NONBREAKING_HYPHEN = 284, 
+                   TOKEN_SUBENTRY = 285, TOKEN_IGNORABLE_CONTROL_PREFIX = 286, 
+                   TOKEN_WS = 287, TOKEN_SPACE = 288, TOKEN_HYPHEN = 289, 
+                   TOKEN_SEMICOLON = 290, TOKEN_UNICODE_CHAR = 291, TOKEN_UNICODE_CHAR_LEN = 292, 
+                   TOKEN_INTEGER = 293, TOKEN_HEX_NUMBER = 294, TOKEN_ESCAPED_OPENING_BRACE = 295, 
+                   TOKEN_ESCAPED_CLOSING_BRACE = 296, TOKEN_ESCAPED_BACKSLASH = 297, 
+                   TOKEN_OPENING_BRACE = 298, TOKEN_CLOSING_BRACE = 299, 
+                   TOKEN_CONTROL_CODE = 300, TOKEN_UNKNOWN_CONTROL_GROUP = 301, 
+                   TOKEN_UNKNOWN_CONTROL_WORD = 302, TOKEN_ANY = 303, TOKEN_UNKNOWN_OPENING_BRACE = 304, 
+                   TOKEN_UNKNOWN_CLOSING_BRACE = 305, TOKEN_INNER_CONTENT = 306;
 
   @override
   final List<String> ruleNames = [
@@ -151,10 +152,8 @@ class rtfParser extends Parser {
   ];
 
   static final List<String?> _LITERAL_NAMES = [
-      null, "'{'", "'}'", "'\\}'", "'\\{'", "'\\\\'", null, null, null, 
       null, null, null, null, null, null, null, null, null, null, null, 
-      "'\\fonttbl'", null, null, null, null, null, null, null, null, null, 
-      null, null, null, null, null, null, null, null, null, null, null, 
+      null, null, null, null, "'\\fonttbl'", null, null, null, null, null, 
       null, null, null, null, null, null, null, null, null, null, null, 
       null, null, null, null, null, null, null, null, null, null, null, 
       null, null, null, null, null, null, null, null, null, null, null, 
@@ -177,57 +176,60 @@ class rtfParser extends Parser {
       null, null, null, null, null, null, null, null, null, null, null, 
       null, null, null, null, null, null, null, null, null, null, null, 
       null, null, null, null, null, null, null, null, null, null, null, 
-      null, null, null, null, null, null, null, null, "'\\*'", null, null, 
-      "'-'", "';'"
+      null, null, null, null, null, null, null, null, null, null, null, 
+      null, null, null, null, null, null, null, null, null, null, null, 
+      null, "'\\*'", null, null, "'-'", "';'", null, null, null, null, "'\\{'", 
+      "'\\}'", "'\\\\'", "'{'", "'}'"
   ];
   static final List<String?> _SYMBOLIC_NAMES = [
-      null, null, null, null, null, null, "RTFVERSION", "ANSI", "MAC", "PC", 
-      "PCA", "ANSICPG", "FROMTEXT", "FROMHTML", "DEFFN", "ADEFFN", "STSHFDBCHN", 
-      "STSHFLOCHN", "STSHFHICHN", "STSHFBIN", "FONTTBL", "FNIL", "FROMAN", 
-      "FSWISS", "FMODERN", "FSCRIPT", "FDECOR", "FTECH", "FBIDI", "FCHARSETN", 
-      "FPRQN", "NONTAGGEDNAME", "FONTEMB", "FTNIL", "FTTRUETYPE", "FONTFILE", 
-      "CODEPAGE", "FALT", "COLORTBL", "REDN", "GREENN", "BLUEN", "STYLESHEET", 
-      "S", "CS", "DS", "KEYCODE", "SHIFT", "CTRL", "ALT", "FNN", "ADDITIVE", 
-      "SBASEDON", "SNEXTN", "SAUTOUPD", "SHIDDEN", "SPERSONAL", "SCOMPOSE", 
-      "SREPLY", "INFO", "VERSIONN", "VERNN", "EDMINS", "NOFPAGESN", "NOFWORDSN", 
-      "NOFCHARSN", "NOFCHARSWSN", "IDN", "TITLE", "SUBJECT", "AUTHOR", "MANAGER", 
-      "COMPANY", "OPERATOR", "CATEGORY", "KEYWORDS", "COMMENT", "DOCCOMM", 
-      "HLINKBASE", "CREATIM", "REVTIM", "PRINTIM", "BUPTIM", "YRN", "MON", 
-      "DYN", "HRN", "MINN", "SECN", "DEFTABN", "HYPHHOTZN", "HYPHCONSECN", 
-      "HYPHCAPS", "HYPHAUTO", "DEFLANGN", "DEFLANGFEN", "ADEFLANGN", "DOCTYPEN", 
-      "VIEWKINDN", "VIEWSCALEN", "FETN", "FTNSEP", "FTNSEPC", "FTNCN", "AFTNSEP", 
-      "AFTNSEPC", "AFTNCN", "ENDNOTES", "ENDDOC", "FTNTJ", "FTNBJ", "AENDNOTES", 
-      "AENDDOC", "AFTNBJ", "AFTNTJ", "FTNSTARTN", "AFTNSTARTN", "FTNRSTPG", 
-      "FTNRESTART", "FTNRSTCONT", "AFTNRESTART", "AFTNRSTCONT", "FTNNAR", 
-      "FTNNALC", "FTNNAUC", "FTNNRLC", "FTNNRUC", "FTNNCHI", "FTNNCHOSUNG", 
-      "FTNNCNUM", "FTNNDBNUM", "FTNNDBNUMD", "FTNNDBNUMT", "FTNNDBNUMK", 
-      "FTNNDBAR", "FTNNGANADA", "FTNNGBNUM", "FTNNGBNUMD", "FTNNGBNUML", 
-      "FTNNGBNUMK", "FTNNZODIAC", "FTNNZODIACD", "FTNNZODIACL", "AFTNNAR", 
-      "AFTNNALC", "AFTNNAUC", "AFTNNRLC", "AFTNNRUC", "AFTNNCHI", "AFTNNCHOSUN", 
-      "AFTNNCNUM", "PAPERWN", "PAPERHN", "MARGLN", "MARGRN", "MARGTN", "MARGBN", 
-      "HTMAUTSP", "NOUICOMPAT", "FORMSHADE", "SECT", "SECTD", "ENDNHERE", 
-      "BINFSXNN", "BINSXNN", "PNSECLVLN", "SECTUNLOCKED", "SBKNONE", "SBKCOL", 
-      "SBKPAGE", "SBKEVEN", "SBKODD", "COLSN", "COLSXN", "COLNON", "COLSRN", 
-      "COLWN", "LINEBETCOL", "LINEMODN", "LINEXN", "LINESTARTSN", "LINERESTART", 
-      "LINEPPAGE", "LINECONT", "PGWSXNN", "PGHSXNN", "MARGLSXNN", "MARGRSXNN", 
-      "MARGTSXNN", "MARGBSXNN", "MARGMIRSXN", "LNDSCPSXN", "PGNSTARTSN", 
-      "PGNCONT", "PGNRESTART", "PGNXN", "PGNYN", "PGNDEC", "PGNUCRM", "PGNLCRM", 
-      "PGNUCLTR", "PGNLCLTR", "PGNBIDIA", "PGNBIDIB", "SAFTNNALC", "SAFTNNAR", 
-      "SAFTNNAUC", "SAFTNNRLC", "SFTNBJ", "SFTNNAR", "SFTNNRLC", "PAR", 
-      "PARD", "KEEP", "KEEPN", "NOLINE", "HYPHPAR_TOGGLE", "ITAPN", "NOWIDCTLPAR", 
-      "WIDCTLPAR", "SN", "QC", "QJ", "QL", "QR", "QD", "FIN", "CUFIN", "LIN", 
-      "LINN", "RIN", "RINN", "SAN", "SBN", "SAAUTON", "SBAUTON", "SLN", 
-      "SLMULTN", "SUBDOCUMENTN", "ROW", "CELL", "TROWD", "TRGAPH", "NESTROW", 
-      "NESTCELL", "NESTTABLEPROPS", "PLAIN", "B0", "CAPS0", "CBN", "CFN", 
-      "CSN", "FN", "FSN", "I0", "KERNINGN", "LANGFEN", "LANGFENPN", "LANGN", 
-      "LANGNPN", "ALANGN", "OUTL0", "SHAD0", "STRIKE0", "STRIKED10", "SUB", 
-      "SUPER", "UL0", "HEADER", "FOOTER", "HEADERL", "HEADERR", "HEADERF", 
-      "FOOTERL", "FOOTERR", "FOOTERF", "RTLCH", "LTRCH", "AFN", "AFSN", 
-      "AI", "HICH", "LOCH", "DBCH", "RTLPAR", "LTRPAR", "FORMULA", "NBSP", 
-      "OPTIONAL_HYPHEN", "NONBREAKING_HYPHEN", "SUBENTRY", "IGNORABLE_CONTROL_PREFIX", 
+      null, "RTFVERSION", "ANSI", "MAC", "PC", "PCA", "ANSICPG", "FROMTEXT", 
+      "FROMHTML", "DEFFN", "ADEFFN", "STSHFDBCHN", "STSHFLOCHN", "STSHFHICHN", 
+      "STSHFBIN", "FONTTBL", "FNIL", "FROMAN", "FSWISS", "FMODERN", "FSCRIPT", 
+      "FDECOR", "FTECH", "FBIDI", "FCHARSETN", "FPRQN", "NONTAGGEDNAME", 
+      "FONTEMB", "FTNIL", "FTTRUETYPE", "FONTFILE", "CODEPAGE", "FALT", 
+      "COLORTBL", "REDN", "GREENN", "BLUEN", "STYLESHEET", "S", "CS", "DS", 
+      "KEYCODE", "SHIFT", "CTRL", "ALT", "FNN", "ADDITIVE", "SBASEDON", 
+      "SNEXTN", "SAUTOUPD", "SHIDDEN", "SPERSONAL", "SCOMPOSE", "SREPLY", 
+      "INFO", "VERSIONN", "VERNN", "EDMINS", "NOFPAGESN", "NOFWORDSN", "NOFCHARSN", 
+      "NOFCHARSWSN", "IDN", "TITLE", "SUBJECT", "AUTHOR", "MANAGER", "COMPANY", 
+      "OPERATOR", "CATEGORY", "KEYWORDS", "COMMENT", "DOCCOMM", "HLINKBASE", 
+      "CREATIM", "REVTIM", "PRINTIM", "BUPTIM", "YRN", "MON", "DYN", "HRN", 
+      "MINN", "SECN", "DEFTABN", "HYPHHOTZN", "HYPHCONSECN", "HYPHCAPS", 
+      "HYPHAUTO", "DEFLANGN", "DEFLANGFEN", "ADEFLANGN", "DOCTYPEN", "VIEWKINDN", 
+      "VIEWSCALEN", "FETN", "FTNSEP", "FTNSEPC", "FTNCN", "AFTNSEP", "AFTNSEPC", 
+      "AFTNCN", "ENDNOTES", "ENDDOC", "FTNTJ", "FTNBJ", "AENDNOTES", "AENDDOC", 
+      "AFTNBJ", "AFTNTJ", "FTNSTARTN", "AFTNSTARTN", "FTNRSTPG", "FTNRESTART", 
+      "FTNRSTCONT", "AFTNRESTART", "AFTNRSTCONT", "FTNNAR", "FTNNALC", "FTNNAUC", 
+      "FTNNRLC", "FTNNRUC", "FTNNCHI", "FTNNCHOSUNG", "FTNNCNUM", "FTNNDBNUM", 
+      "FTNNDBNUMD", "FTNNDBNUMT", "FTNNDBNUMK", "FTNNDBAR", "FTNNGANADA", 
+      "FTNNGBNUM", "FTNNGBNUMD", "FTNNGBNUML", "FTNNGBNUMK", "FTNNZODIAC", 
+      "FTNNZODIACD", "FTNNZODIACL", "AFTNNAR", "AFTNNALC", "AFTNNAUC", "AFTNNRLC", 
+      "AFTNNRUC", "AFTNNCHI", "AFTNNCHOSUN", "AFTNNCNUM", "PAPERWN", "PAPERHN", 
+      "MARGLN", "MARGRN", "MARGTN", "MARGBN", "HTMAUTSP", "NOUICOMPAT", 
+      "FORMSHADE", "SECT", "SECTD", "ENDNHERE", "BINFSXNN", "BINSXNN", "PNSECLVLN", 
+      "SECTUNLOCKED", "SBKNONE", "SBKCOL", "SBKPAGE", "SBKEVEN", "SBKODD", 
+      "COLSN", "COLSXN", "COLNON", "COLSRN", "COLWN", "LINEBETCOL", "LINEMODN", 
+      "LINEXN", "LINESTARTSN", "LINERESTART", "LINEPPAGE", "LINECONT", "PGWSXNN", 
+      "PGHSXNN", "MARGLSXNN", "MARGRSXNN", "MARGTSXNN", "MARGBSXNN", "MARGMIRSXN", 
+      "LNDSCPSXN", "PGNSTARTSN", "PGNCONT", "PGNRESTART", "PGNXN", "PGNYN", 
+      "PGNDEC", "PGNUCRM", "PGNLCRM", "PGNUCLTR", "PGNLCLTR", "PGNBIDIA", 
+      "PGNBIDIB", "SAFTNNALC", "SAFTNNAR", "SAFTNNAUC", "SAFTNNRLC", "SFTNBJ", 
+      "SFTNNAR", "SFTNNRLC", "HEADER", "FOOTER", "HEADERL", "HEADERR", "HEADERF", 
+      "FOOTERL", "FOOTERR", "FOOTERF", "PAR", "PARD", "KEEP", "KEEPN", "NOLINE", 
+      "HYPHPAR_TOGGLE", "ITAPN", "NOWIDCTLPAR", "WIDCTLPAR", "SN", "QC", 
+      "QJ", "QL", "QR", "QD", "FIN", "CUFIN", "LIN", "LINN", "RIN", "RINN", 
+      "SAN", "SBN", "SAAUTON", "SBAUTON", "SLN", "SLMULTN", "SUBDOCUMENTN", 
+      "ROW", "CELL", "TROWD", "TRGAPH", "NESTROW", "NESTCELL", "NESTTABLEPROPS", 
+      "PLAIN", "B0", "CAPS0", "CBN", "CFN", "CSN", "FN", "FSN", "I0", "KERNINGN", 
+      "LANGFEN", "LANGFENPN", "LANGN", "LANGNPN", "ALANGN", "OUTL0", "SHAD0", 
+      "STRIKE0", "STRIKED10", "SUB", "SUPER", "UL0", "RTLCH", "LTRCH", "AFN", 
+      "AFSN", "AI", "HICH", "LOCH", "DBCH", "RTLPAR", "LTRPAR", "FORMULA", 
+      "NBSP", "OPTIONAL_HYPHEN", "NONBREAKING_HYPHEN", "SUBENTRY", "IGNORABLE_CONTROL_PREFIX", 
       "WS", "SPACE", "HYPHEN", "SEMICOLON", "UNICODE_CHAR", "UNICODE_CHAR_LEN", 
-      "INTEGER", "HEX_NUMBER", "UNKNOWN_CONTROL_GROUP", "UNKNOWN_CONTROL_WORD", 
-      "CONTROL_CODE", "ANY"
+      "INTEGER", "HEX_NUMBER", "ESCAPED_OPENING_BRACE", "ESCAPED_CLOSING_BRACE", 
+      "ESCAPED_BACKSLASH", "OPENING_BRACE", "CLOSING_BRACE", "CONTROL_CODE", 
+      "UNKNOWN_CONTROL_GROUP", "UNKNOWN_CONTROL_WORD", "ANY", "UNKNOWN_OPENING_BRACE", 
+      "UNKNOWN_CLOSING_BRACE", "INNER_CONTENT"
   ];
   static final Vocabulary VOCABULARY = VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -237,7 +239,7 @@ class rtfParser extends Parser {
   }
 
   @override
-  String get grammarFileName => 'rtf.g4';
+  String get grammarFileName => 'rtfParser.g4';
 
   @override
   List<int> get serializedATN => _serializedATN;
@@ -257,13 +259,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 152;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 153;
       header();
       state = 154;
       document();
       state = 155;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
       state = 156;
       match(TOKEN_EOF);
     } on RecognitionException catch (re) {
@@ -388,10 +390,10 @@ class rtfParser extends Parser {
       state = 189;
       errorHandler.sync(this);
       _la = tokenStream.LA(1)!;
-      if (((_la) & ~0x3f) == 0 && ((1 << _la) & 1920) != 0) {
+      if (((_la) & ~0x3f) == 0 && ((1 << _la) & 60) != 0) {
         state = 188;
         _la = tokenStream.LA(1)!;
-        if (!(((_la) & ~0x3f) == 0 && ((1 << _la) & 1920) != 0)) {
+        if (!(((_la) & ~0x3f) == 0 && ((1 << _la) & 60) != 0)) {
         errorHandler.recoverInline(this);
         } else {
           if ( tokenStream.LA(1)! == IntStream.EOF ) matchedEOF = true;
@@ -505,7 +507,7 @@ class rtfParser extends Parser {
         case 1:
           state = 207;
           _la = tokenStream.LA(1)!;
-          if (!((((_la - 94)) & ~0x3f) == 0 && ((1 << (_la - 94)) & 7) != 0)) {
+          if (!((((_la - 89)) & ~0x3f) == 0 && ((1 << (_la - 89)) & 7) != 0)) {
           errorHandler.recoverInline(this);
           } else {
             if ( tokenStream.LA(1)! == IntStream.EOF ) matchedEOF = true;
@@ -537,7 +539,7 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 212;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 213;
       match(TOKEN_FONTTBL);
       state = 219; 
@@ -551,13 +553,13 @@ class rtfParser extends Parser {
           state = 214;
           fontinfo();
           break;
-        case TOKEN_T__0:
+        case TOKEN_OPENING_BRACE:
           state = 215;
-          match(TOKEN_T__0);
+          match(TOKEN_OPENING_BRACE);
           state = 216;
           fontinfo();
           state = 217;
-          match(TOKEN_T__1);
+          match(TOKEN_CLOSING_BRACE);
           break;
         default:
           throw NoViableAltException(this);
@@ -565,9 +567,9 @@ class rtfParser extends Parser {
         state = 221; 
         errorHandler.sync(this);
         _la = tokenStream.LA(1)!;
-      } while (_la == TOKEN_T__0 || _la == TOKEN_FN);
+      } while (_la == TOKEN_FN || _la == TOKEN_OPENING_BRACE);
       state = 223;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -589,7 +591,7 @@ class rtfParser extends Parser {
       state = 227;
       errorHandler.sync(this);
       _la = tokenStream.LA(1)!;
-      if (((_la) & ~0x3f) == 0 && ((1 << _la) & 534773760) != 0) {
+      if (((_la) & ~0x3f) == 0 && ((1 << _la) & 16711680) != 0) {
         state = 226;
         fontfamily();
       }
@@ -628,7 +630,7 @@ class rtfParser extends Parser {
       state = 240;
       errorHandler.sync(this);
       _la = tokenStream.LA(1)!;
-      if (_la == TOKEN_T__0) {
+      if (_la == TOKEN_OPENING_BRACE) {
         state = 239;
         fontemb();
       }
@@ -646,7 +648,7 @@ class rtfParser extends Parser {
       state = 247;
       errorHandler.sync(this);
       _la = tokenStream.LA(1)!;
-      if (_la == TOKEN_T__0) {
+      if (_la == TOKEN_OPENING_BRACE) {
         state = 246;
         fontaltname();
       }
@@ -671,7 +673,7 @@ class rtfParser extends Parser {
       enterOuterAlt(_localctx, 1);
       state = 251;
       _la = tokenStream.LA(1)!;
-      if (!(((_la) & ~0x3f) == 0 && ((1 << _la) & 534773760) != 0)) {
+      if (!(((_la) & ~0x3f) == 0 && ((1 << _la) & 16711680) != 0)) {
       errorHandler.recoverInline(this);
       } else {
         if ( tokenStream.LA(1)! == IntStream.EOF ) matchedEOF = true;
@@ -694,7 +696,7 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 253;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 254;
       match(TOKEN_FONTEMB);
       state = 255;
@@ -718,7 +720,7 @@ class rtfParser extends Parser {
         break;
       }
       state = 263;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -761,7 +763,7 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 267;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 268;
       match(TOKEN_FONTFILE);
       state = 270;
@@ -775,7 +777,7 @@ class rtfParser extends Parser {
       state = 272;
       pcdata();
       state = 273;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -809,13 +811,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 277;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 278;
       match(TOKEN_FALT);
       state = 279;
       pcdata();
       state = 280;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -833,7 +835,7 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 282;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 283;
       match(TOKEN_COLORTBL);
       state = 285; 
@@ -845,9 +847,9 @@ class rtfParser extends Parser {
         state = 287; 
         errorHandler.sync(this);
         _la = tokenStream.LA(1)!;
-      } while (((_la) & ~0x3f) == 0 && ((1 << _la) & 3848290697216) != 0 || _la == TOKEN_SEMICOLON);
+      } while (((_la) & ~0x3f) == 0 && ((1 << _la) & 120259084288) != 0 || _la == TOKEN_SEMICOLON);
       state = 289;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -907,7 +909,7 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 302;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 303;
       match(TOKEN_STYLESHEET);
       state = 305; 
@@ -919,9 +921,9 @@ class rtfParser extends Parser {
         state = 307; 
         errorHandler.sync(this);
         _la = tokenStream.LA(1)!;
-      } while (_la == TOKEN_T__0);
+      } while (_la == TOKEN_OPENING_BRACE);
       state = 309;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -939,11 +941,11 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 311;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 313;
       errorHandler.sync(this);
       _la = tokenStream.LA(1)!;
-      if (((_la) & ~0x3f) == 0 && ((1 << _la) & 61572651155456) != 0) {
+      if (((_la) & ~0x3f) == 0 && ((1 << _la) & 1924145348608) != 0) {
         state = 312;
         styledef();
       }
@@ -951,7 +953,7 @@ class rtfParser extends Parser {
       state = 316;
       errorHandler.sync(this);
       _la = tokenStream.LA(1)!;
-      if (_la == TOKEN_T__0) {
+      if (_la == TOKEN_OPENING_BRACE) {
         state = 315;
         keycode();
       }
@@ -1041,7 +1043,7 @@ class rtfParser extends Parser {
       state = 349;
       match(TOKEN_SEMICOLON);
       state = 350;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1060,7 +1062,7 @@ class rtfParser extends Parser {
       enterOuterAlt(_localctx, 1);
       state = 352;
       _la = tokenStream.LA(1)!;
-      if (!(((_la) & ~0x3f) == 0 && ((1 << _la) & 61572651155456) != 0)) {
+      if (!(((_la) & ~0x3f) == 0 && ((1 << _la) & 1924145348608) != 0)) {
       errorHandler.recoverInline(this);
       } else {
         if ( tokenStream.LA(1)! == IntStream.EOF ) matchedEOF = true;
@@ -1083,13 +1085,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 354;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 355;
       match(TOKEN_KEYCODE);
       state = 356;
       keys();
       state = 357;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1112,7 +1114,7 @@ class rtfParser extends Parser {
       do {
         state = 359;
         _la = tokenStream.LA(1)!;
-        if (!(((_la) & ~0x3f) == 0 && ((1 << _la) & 985162418487296) != 0)) {
+        if (!(((_la) & ~0x3f) == 0 && ((1 << _la) & 30786325577728) != 0)) {
         errorHandler.recoverInline(this);
         } else {
           if ( tokenStream.LA(1)! == IntStream.EOF ) matchedEOF = true;
@@ -1122,7 +1124,7 @@ class rtfParser extends Parser {
         state = 362; 
         errorHandler.sync(this);
         _la = tokenStream.LA(1)!;
-      } while (((_la) & ~0x3f) == 0 && ((1 << _la) & 985162418487296) != 0);
+      } while (((_la) & ~0x3f) == 0 && ((1 << _la) & 30786325577728) != 0);
       state = 364;
       key();
     } on RecognitionException catch (re) {
@@ -1147,19 +1149,12 @@ class rtfParser extends Parser {
         state = 366;
         match(TOKEN_FNN);
         break;
-      case TOKEN_T__2:
-      case TOKEN_T__3:
-      case TOKEN_T__4:
       case TOKEN_FROMTEXT:
       case TOKEN_FROMHTML:
       case TOKEN_STSHFDBCHN:
       case TOKEN_STSHFLOCHN:
       case TOKEN_STSHFHICHN:
       case TOKEN_STSHFBIN:
-      case TOKEN_COLORTBL:
-      case TOKEN_REDN:
-      case TOKEN_GREENN:
-      case TOKEN_BLUEN:
       case TOKEN_VERSIONN:
       case TOKEN_VERNN:
       case TOKEN_EDMINS:
@@ -1189,6 +1184,12 @@ class rtfParser extends Parser {
       case TOKEN_HRN:
       case TOKEN_MINN:
       case TOKEN_SECN:
+      case TOKEN_KEEP:
+      case TOKEN_KEEPN:
+      case TOKEN_NOLINE:
+      case TOKEN_HYPHPAR_TOGGLE:
+      case TOKEN_NOWIDCTLPAR:
+      case TOKEN_WIDCTLPAR:
       case TOKEN_SAAUTON:
       case TOKEN_SBAUTON:
       case TOKEN_SLN:
@@ -1215,9 +1216,15 @@ class rtfParser extends Parser {
       case TOKEN_UNICODE_CHAR_LEN:
       case TOKEN_INTEGER:
       case TOKEN_HEX_NUMBER:
+      case TOKEN_ESCAPED_OPENING_BRACE:
+      case TOKEN_ESCAPED_CLOSING_BRACE:
+      case TOKEN_ESCAPED_BACKSLASH:
       case TOKEN_UNKNOWN_CONTROL_GROUP:
       case TOKEN_UNKNOWN_CONTROL_WORD:
       case TOKEN_ANY:
+      case TOKEN_UNKNOWN_OPENING_BRACE:
+      case TOKEN_UNKNOWN_CLOSING_BRACE:
+      case TOKEN_INNER_CONTENT:
         enterOuterAlt(_localctx, 2);
         state = 367;
         pcdata();
@@ -1435,6 +1442,7 @@ class rtfParser extends Parser {
     enterRule(_localctx, 64, RULE_document);
     int _la;
     try {
+      int _alt;
       enterOuterAlt(_localctx, 1);
       state = 395;
       errorHandler.sync(this);
@@ -1446,13 +1454,15 @@ class rtfParser extends Parser {
       }
       state = 400;
       errorHandler.sync(this);
-      _la = tokenStream.LA(1)!;
-      while ((((_la - 89)) & ~0x3f) == 0 && ((1 << (_la - 89)) & -1) != 0 || (((_la - 153)) & ~0x3f) == 0 && ((1 << (_la - 153)) & 127) != 0) {
-        state = 397;
-        docfmt();
+      _alt = interpreter!.adaptivePredict(tokenStream, 47, context);
+      while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER) {
+        if (_alt == 1) {
+          state = 397;
+          docfmt(); 
+        }
         state = 402;
         errorHandler.sync(this);
-        _la = tokenStream.LA(1)!;
+        _alt = interpreter!.adaptivePredict(tokenStream, 47, context);
       }
       state = 404; 
       errorHandler.sync(this);
@@ -1463,7 +1473,7 @@ class rtfParser extends Parser {
         state = 406; 
         errorHandler.sync(this);
         _la = tokenStream.LA(1)!;
-      } while (((_la) & ~0x3f) == 0 && ((1 << _la) & -1152882197065158598) != 0 || (((_la - 64)) & ~0x3f) == 0 && ((1 << (_la - 64)) & 33554431) != 0 || (((_la - 160)) & ~0x3f) == 0 && ((1 << (_la - 160)) & -1) != 0 || (((_la - 224)) & ~0x3f) == 0 && ((1 << (_la - 224)) & -4486007441326081) != 0 || (((_la - 288)) & ~0x3f) == 0 && ((1 << (_la - 288)) & 49151) != 0);
+      } while (((_la) & ~0x3f) == 0 && ((1 << _la) & -36027697507305088) != 0 || (((_la - 64)) & ~0x3f) == 0 && ((1 << (_la - 64)) & -1) != 0 || (((_la - 128)) & ~0x3f) == 0 && ((1 << (_la - 128)) & -1) != 0 || (((_la - 192)) & ~0x3f) == 0 && ((1 << (_la - 192)) & -4177921) != 0 || (((_la - 256)) & ~0x3f) == 0 && ((1 << (_la - 256)) & 2225411534618623) != 0);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1481,13 +1491,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 408;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 409;
       match(TOKEN_INFO);
       state = 434;
       errorHandler.sync(this);
       _la = tokenStream.LA(1)!;
-      while (((_la) & ~0x3f) == 0 && ((1 << _la) & -1152921504606846974) != 0 || (((_la - 64)) & ~0x3f) == 0 && ((1 << (_la - 64)) & 15) != 0) {
+      while (((_la) & ~0x3f) == 0 && ((1 << _la) & 9187343239835811840) != 0 || _la == TOKEN_OPENING_BRACE) {
         state = 432;
         errorHandler.sync(this);
         switch (interpreter!.adaptivePredict(tokenStream, 49, context)) {
@@ -1585,7 +1595,7 @@ class rtfParser extends Parser {
         _la = tokenStream.LA(1)!;
       }
       state = 437;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1602,13 +1612,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 439;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 440;
       match(TOKEN_TITLE);
       state = 441;
       pcdata();
       state = 442;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1625,13 +1635,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 444;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 445;
       match(TOKEN_SUBJECT);
       state = 446;
       pcdata();
       state = 447;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1648,13 +1658,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 449;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 450;
       match(TOKEN_AUTHOR);
       state = 451;
       pcdata();
       state = 452;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1671,13 +1681,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 454;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 455;
       match(TOKEN_MANAGER);
       state = 456;
       pcdata();
       state = 457;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1694,13 +1704,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 459;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 460;
       match(TOKEN_COMPANY);
       state = 461;
       pcdata();
       state = 462;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1717,13 +1727,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 464;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 465;
       match(TOKEN_OPERATOR);
       state = 466;
       pcdata();
       state = 467;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1740,13 +1750,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 469;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 470;
       match(TOKEN_CATEGORY);
       state = 471;
       pcdata();
       state = 472;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1763,13 +1773,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 474;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 475;
       match(TOKEN_KEYWORDS);
       state = 476;
       pcdata();
       state = 477;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1786,13 +1796,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 479;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 480;
       match(TOKEN_COMMENT);
       state = 481;
       pcdata();
       state = 482;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1809,13 +1819,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 484;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 485;
       match(TOKEN_DOCCOMM);
       state = 486;
       pcdata();
       state = 487;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1832,13 +1842,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 489;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 490;
       match(TOKEN_HLINKBASE);
       state = 491;
       pcdata();
       state = 492;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1855,13 +1865,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 494;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 495;
       match(TOKEN_CREATIM);
       state = 496;
       time();
       state = 497;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1878,13 +1888,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 499;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 500;
       match(TOKEN_REVTIM);
       state = 501;
       time();
       state = 502;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1901,13 +1911,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 504;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 505;
       match(TOKEN_PRINTIM);
       state = 506;
       time();
       state = 507;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -1924,13 +1934,13 @@ class rtfParser extends Parser {
     try {
       enterOuterAlt(_localctx, 1);
       state = 509;
-      match(TOKEN_T__0);
+      match(TOKEN_OPENING_BRACE);
       state = 510;
       match(TOKEN_BUPTIM);
       state = 511;
       time();
       state = 512;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -2013,7 +2023,7 @@ class rtfParser extends Parser {
       enterOuterAlt(_localctx, 1);
       state = 532;
       _la = tokenStream.LA(1)!;
-      if (!((((_la - 89)) & ~0x3f) == 0 && ((1 << (_la - 89)) & -1) != 0 || (((_la - 153)) & ~0x3f) == 0 && ((1 << (_la - 153)) & 127) != 0)) {
+      if (!((((_la - 84)) & ~0x3f) == 0 && ((1 << (_la - 84)) & -1) != 0 || (((_la - 148)) & ~0x3f) == 0 && ((1 << (_la - 148)) & 127) != 0)) {
       errorHandler.recoverInline(this);
       } else {
         if ( tokenStream.LA(1)! == IntStream.EOF ) matchedEOF = true;
@@ -2036,49 +2046,182 @@ class rtfParser extends Parser {
     try {
       int _alt;
       enterOuterAlt(_localctx, 1);
-      state = 537;
+      state = 538;
       errorHandler.sync(this);
-      _alt = interpreter!.adaptivePredict(tokenStream, 57, context);
+      _alt = interpreter!.adaptivePredict(tokenStream, 58, context);
       while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER) {
         if (_alt == 1) {
-          state = 534;
-          secfmt(); 
+          state = 536;
+          errorHandler.sync(this);
+          switch (tokenStream.LA(1)!) {
+          case TOKEN_DS:
+          case TOKEN_SECT:
+          case TOKEN_SECTD:
+          case TOKEN_ENDNHERE:
+          case TOKEN_BINFSXNN:
+          case TOKEN_BINSXNN:
+          case TOKEN_PNSECLVLN:
+          case TOKEN_SECTUNLOCKED:
+          case TOKEN_SBKNONE:
+          case TOKEN_SBKCOL:
+          case TOKEN_SBKPAGE:
+          case TOKEN_SBKEVEN:
+          case TOKEN_SBKODD:
+          case TOKEN_COLSN:
+          case TOKEN_COLSXN:
+          case TOKEN_COLNON:
+          case TOKEN_COLSRN:
+          case TOKEN_COLWN:
+          case TOKEN_LINEBETCOL:
+          case TOKEN_LINEMODN:
+          case TOKEN_LINEXN:
+          case TOKEN_LINESTARTSN:
+          case TOKEN_LINERESTART:
+          case TOKEN_LINEPPAGE:
+          case TOKEN_LINECONT:
+          case TOKEN_PGWSXNN:
+          case TOKEN_PGHSXNN:
+          case TOKEN_MARGLSXNN:
+          case TOKEN_MARGRSXNN:
+          case TOKEN_MARGTSXNN:
+          case TOKEN_MARGBSXNN:
+          case TOKEN_MARGMIRSXN:
+          case TOKEN_LNDSCPSXN:
+          case TOKEN_PGNSTARTSN:
+          case TOKEN_PGNCONT:
+          case TOKEN_PGNRESTART:
+          case TOKEN_PGNXN:
+          case TOKEN_PGNYN:
+          case TOKEN_PGNDEC:
+          case TOKEN_PGNUCRM:
+          case TOKEN_PGNLCRM:
+          case TOKEN_PGNUCLTR:
+          case TOKEN_PGNLCLTR:
+          case TOKEN_PGNBIDIA:
+          case TOKEN_PGNBIDIB:
+          case TOKEN_SAFTNNALC:
+          case TOKEN_SAFTNNAR:
+          case TOKEN_SAFTNNAUC:
+          case TOKEN_SAFTNNRLC:
+          case TOKEN_SFTNBJ:
+          case TOKEN_SFTNNAR:
+          case TOKEN_SFTNNRLC:
+            state = 534;
+            secfmt();
+            break;
+          case TOKEN_DEFTABN:
+          case TOKEN_HYPHHOTZN:
+          case TOKEN_HYPHCONSECN:
+          case TOKEN_HYPHCAPS:
+          case TOKEN_HYPHAUTO:
+          case TOKEN_DEFLANGN:
+          case TOKEN_DEFLANGFEN:
+          case TOKEN_ADEFLANGN:
+          case TOKEN_DOCTYPEN:
+          case TOKEN_VIEWKINDN:
+          case TOKEN_VIEWSCALEN:
+          case TOKEN_FETN:
+          case TOKEN_FTNSEP:
+          case TOKEN_FTNSEPC:
+          case TOKEN_FTNCN:
+          case TOKEN_AFTNSEP:
+          case TOKEN_AFTNSEPC:
+          case TOKEN_AFTNCN:
+          case TOKEN_ENDNOTES:
+          case TOKEN_ENDDOC:
+          case TOKEN_FTNTJ:
+          case TOKEN_FTNBJ:
+          case TOKEN_AENDNOTES:
+          case TOKEN_AENDDOC:
+          case TOKEN_AFTNBJ:
+          case TOKEN_AFTNTJ:
+          case TOKEN_FTNSTARTN:
+          case TOKEN_AFTNSTARTN:
+          case TOKEN_FTNRSTPG:
+          case TOKEN_FTNRESTART:
+          case TOKEN_FTNRSTCONT:
+          case TOKEN_AFTNRESTART:
+          case TOKEN_AFTNRSTCONT:
+          case TOKEN_FTNNAR:
+          case TOKEN_FTNNALC:
+          case TOKEN_FTNNAUC:
+          case TOKEN_FTNNRLC:
+          case TOKEN_FTNNRUC:
+          case TOKEN_FTNNCHI:
+          case TOKEN_FTNNCHOSUNG:
+          case TOKEN_FTNNCNUM:
+          case TOKEN_FTNNDBNUM:
+          case TOKEN_FTNNDBNUMD:
+          case TOKEN_FTNNDBNUMT:
+          case TOKEN_FTNNDBNUMK:
+          case TOKEN_FTNNDBAR:
+          case TOKEN_FTNNGANADA:
+          case TOKEN_FTNNGBNUM:
+          case TOKEN_FTNNGBNUMD:
+          case TOKEN_FTNNGBNUML:
+          case TOKEN_FTNNGBNUMK:
+          case TOKEN_FTNNZODIAC:
+          case TOKEN_FTNNZODIACD:
+          case TOKEN_FTNNZODIACL:
+          case TOKEN_AFTNNAR:
+          case TOKEN_AFTNNALC:
+          case TOKEN_AFTNNAUC:
+          case TOKEN_AFTNNRLC:
+          case TOKEN_AFTNNRUC:
+          case TOKEN_AFTNNCHI:
+          case TOKEN_AFTNNCHOSUN:
+          case TOKEN_AFTNNCNUM:
+          case TOKEN_PAPERWN:
+          case TOKEN_PAPERHN:
+          case TOKEN_MARGLN:
+          case TOKEN_MARGRN:
+          case TOKEN_MARGTN:
+          case TOKEN_MARGBN:
+          case TOKEN_HTMAUTSP:
+          case TOKEN_NOUICOMPAT:
+          case TOKEN_FORMSHADE:
+            state = 535;
+            docfmt();
+            break;
+          default:
+            throw NoViableAltException(this);
+          } 
         }
-        state = 539;
-        errorHandler.sync(this);
-        _alt = interpreter!.adaptivePredict(tokenStream, 57, context);
-      }
-      state = 541;
-      errorHandler.sync(this);
-      switch (interpreter!.adaptivePredict(tokenStream, 58, context)) {
-      case 1:
         state = 540;
+        errorHandler.sync(this);
+        _alt = interpreter!.adaptivePredict(tokenStream, 58, context);
+      }
+      state = 542;
+      errorHandler.sync(this);
+      switch (interpreter!.adaptivePredict(tokenStream, 59, context)) {
+      case 1:
+        state = 541;
         hdrftr();
         break;
       }
-      state = 544; 
+      state = 545; 
       errorHandler.sync(this);
       _alt = 1;
       do {
         switch (_alt) {
         case 1:
-          state = 543;
+          state = 544;
           para();
           break;
         default:
           throw NoViableAltException(this);
         }
-        state = 546; 
+        state = 547; 
         errorHandler.sync(this);
-        _alt = interpreter!.adaptivePredict(tokenStream, 59, context);
+        _alt = interpreter!.adaptivePredict(tokenStream, 60, context);
       } while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER);
-      state = 550;
+      state = 551;
       errorHandler.sync(this);
-      switch (interpreter!.adaptivePredict(tokenStream, 60, context)) {
+      switch (interpreter!.adaptivePredict(tokenStream, 61, context)) {
       case 1:
-        state = 548;
-        match(TOKEN_SECT);
         state = 549;
+        match(TOKEN_SECT);
+        state = 550;
         section();
         break;
       }
@@ -2098,9 +2241,9 @@ class rtfParser extends Parser {
     int _la;
     try {
       enterOuterAlt(_localctx, 1);
-      state = 552;
+      state = 553;
       _la = tokenStream.LA(1)!;
-      if (!(_la == TOKEN_DS || (((_la - 160)) & ~0x3f) == 0 && ((1 << (_la - 160)) & 2251799813685247) != 0)) {
+      if (!(_la == TOKEN_DS || (((_la - 155)) & ~0x3f) == 0 && ((1 << (_la - 155)) & 2251799813685247) != 0)) {
       errorHandler.recoverInline(this);
       } else {
         if ( tokenStream.LA(1)! == IntStream.EOF ) matchedEOF = true;
@@ -2123,27 +2266,27 @@ class rtfParser extends Parser {
     int _la;
     try {
       enterOuterAlt(_localctx, 1);
-      state = 554;
-      match(TOKEN_T__0);
       state = 555;
+      match(TOKEN_OPENING_BRACE);
+      state = 556;
       hdrctl();
-      state = 557; 
+      state = 558; 
       errorHandler.sync(this);
       _la = tokenStream.LA(1)!;
       do {
-        state = 556;
+        state = 557;
         para();
-        state = 559; 
+        state = 560; 
         errorHandler.sync(this);
         _la = tokenStream.LA(1)!;
-      } while (((_la) & ~0x3f) == 0 && ((1 << _la) & -1152882197065158598) != 0 || (((_la - 64)) & ~0x3f) == 0 && ((1 << (_la - 64)) & 33554431) != 0 || (((_la - 160)) & ~0x3f) == 0 && ((1 << (_la - 160)) & -1) != 0 || (((_la - 224)) & ~0x3f) == 0 && ((1 << (_la - 224)) & -4486007441326081) != 0 || (((_la - 288)) & ~0x3f) == 0 && ((1 << (_la - 288)) & 49151) != 0);
-      state = 561;
-      match(TOKEN_T__1);
-      state = 563;
+      } while (((_la) & ~0x3f) == 0 && ((1 << _la) & -36027697507305088) != 0 || (((_la - 64)) & ~0x3f) == 0 && ((1 << (_la - 64)) & 1048575) != 0 || (((_la - 155)) & ~0x3f) == 0 && ((1 << (_la - 155)) & -574208952489738241) != 0 || (((_la - 219)) & ~0x3f) == 0 && ((1 << (_la - 219)) & -1) != 0 || (((_la - 283)) & ~0x3f) == 0 && ((1 << (_la - 283)) & 16580607) != 0);
+      state = 562;
+      match(TOKEN_CLOSING_BRACE);
+      state = 564;
       errorHandler.sync(this);
-      switch (interpreter!.adaptivePredict(tokenStream, 62, context)) {
+      switch (interpreter!.adaptivePredict(tokenStream, 63, context)) {
       case 1:
-        state = 562;
+        state = 563;
         hdrftr();
         break;
       }
@@ -2163,9 +2306,9 @@ class rtfParser extends Parser {
     int _la;
     try {
       enterOuterAlt(_localctx, 1);
-      state = 565;
+      state = 566;
       _la = tokenStream.LA(1)!;
-      if (!((((_la - 268)) & ~0x3f) == 0 && ((1 << (_la - 268)) & 255) != 0)) {
+      if (!((((_la - 206)) & ~0x3f) == 0 && ((1 << (_la - 206)) & 255) != 0)) {
       errorHandler.recoverInline(this);
       } else {
         if ( tokenStream.LA(1)! == IntStream.EOF ) matchedEOF = true;
@@ -2186,26 +2329,26 @@ class rtfParser extends Parser {
     dynamic _localctx = ParaContext(context, state);
     enterRule(_localctx, 110, RULE_para);
     try {
-      state = 573;
+      state = 574;
       errorHandler.sync(this);
-      switch (interpreter!.adaptivePredict(tokenStream, 63, context)) {
+      switch (interpreter!.adaptivePredict(tokenStream, 64, context)) {
       case 1:
         enterOuterAlt(_localctx, 1);
-        state = 567;
-        match(TOKEN_T__0);
         state = 568;
-        para();
+        match(TOKEN_OPENING_BRACE);
         state = 569;
-        match(TOKEN_T__1);
+        para();
+        state = 570;
+        match(TOKEN_CLOSING_BRACE);
         break;
       case 2:
         enterOuterAlt(_localctx, 2);
-        state = 571;
+        state = 572;
         textpar();
         break;
       case 3:
         enterOuterAlt(_localctx, 3);
-        state = 572;
+        state = 573;
         row();
         break;
       }
@@ -2225,12 +2368,12 @@ class rtfParser extends Parser {
     try {
       int _alt;
       enterOuterAlt(_localctx, 1);
-      state = 579;
+      state = 580;
       errorHandler.sync(this);
-      _alt = interpreter!.adaptivePredict(tokenStream, 65, context);
+      _alt = interpreter!.adaptivePredict(tokenStream, 66, context);
       while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER) {
         if (_alt == 1) {
-          state = 577;
+          state = 578;
           errorHandler.sync(this);
           switch (tokenStream.LA(1)!) {
           case TOKEN_PAR:
@@ -2262,7 +2405,7 @@ class rtfParser extends Parser {
           case TOKEN_SLMULTN:
           case TOKEN_RTLPAR:
           case TOKEN_LTRPAR:
-            state = 575;
+            state = 576;
             parfmt();
             break;
           case TOKEN_DS:
@@ -2317,50 +2460,50 @@ class rtfParser extends Parser {
           case TOKEN_SFTNBJ:
           case TOKEN_SFTNNAR:
           case TOKEN_SFTNNRLC:
-            state = 576;
+            state = 577;
             secfmt();
             break;
           default:
             throw NoViableAltException(this);
           } 
         }
-        state = 581;
-        errorHandler.sync(this);
-        _alt = interpreter!.adaptivePredict(tokenStream, 65, context);
-      }
-      state = 588;
-      errorHandler.sync(this);
-      switch (interpreter!.adaptivePredict(tokenStream, 67, context)) {
-      case 1:
         state = 582;
+        errorHandler.sync(this);
+        _alt = interpreter!.adaptivePredict(tokenStream, 66, context);
+      }
+      state = 589;
+      errorHandler.sync(this);
+      switch (interpreter!.adaptivePredict(tokenStream, 68, context)) {
+      case 1:
+        state = 583;
         match(TOKEN_SUBDOCUMENTN);
         break;
       case 2:
-        state = 584; 
+        state = 585; 
         errorHandler.sync(this);
         _alt = 1;
         do {
           switch (_alt) {
           case 1:
-            state = 583;
+            state = 584;
             charText();
             break;
           default:
             throw NoViableAltException(this);
           }
-          state = 586; 
+          state = 587; 
           errorHandler.sync(this);
-          _alt = interpreter!.adaptivePredict(tokenStream, 66, context);
+          _alt = interpreter!.adaptivePredict(tokenStream, 67, context);
         } while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER);
         break;
       }
-      state = 592;
+      state = 593;
       errorHandler.sync(this);
-      switch (interpreter!.adaptivePredict(tokenStream, 68, context)) {
+      switch (interpreter!.adaptivePredict(tokenStream, 69, context)) {
       case 1:
-        state = 590;
-        match(TOKEN_PAR);
         state = 591;
+        match(TOKEN_PAR);
+        state = 592;
         para();
         break;
       }
@@ -2380,9 +2523,9 @@ class rtfParser extends Parser {
     int _la;
     try {
       enterOuterAlt(_localctx, 1);
-      state = 594;
+      state = 595;
       _la = tokenStream.LA(1)!;
-      if (!((((_la - 211)) & ~0x3f) == 0 && ((1 << (_la - 211)) & 134217727) != 0 || _la == TOKEN_RTLPAR || _la == TOKEN_LTRPAR)) {
+      if (!((((_la - 214)) & ~0x3f) == 0 && ((1 << (_la - 214)) & 134217727) != 0 || _la == TOKEN_RTLPAR || _la == TOKEN_LTRPAR)) {
       errorHandler.recoverInline(this);
       } else {
         if ( tokenStream.LA(1)! == IntStream.EOF ) matchedEOF = true;
@@ -2404,78 +2547,78 @@ class rtfParser extends Parser {
     enterRule(_localctx, 116, RULE_row);
     try {
       int _alt;
-      state = 621;
+      state = 622;
       errorHandler.sync(this);
-      switch (interpreter!.adaptivePredict(tokenStream, 72, context)) {
+      switch (interpreter!.adaptivePredict(tokenStream, 73, context)) {
       case 1:
         enterOuterAlt(_localctx, 1);
-        state = 596;
+        state = 597;
         tbldef();
-        state = 598; 
+        state = 599; 
         errorHandler.sync(this);
         _alt = 1;
         do {
           switch (_alt) {
           case 1:
-            state = 597;
+            state = 598;
             cell();
             break;
           default:
             throw NoViableAltException(this);
           }
-          state = 600; 
+          state = 601; 
           errorHandler.sync(this);
-          _alt = interpreter!.adaptivePredict(tokenStream, 69, context);
+          _alt = interpreter!.adaptivePredict(tokenStream, 70, context);
         } while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER);
-        state = 602;
-        tbldef();
         state = 603;
+        tbldef();
+        state = 604;
         match(TOKEN_ROW);
         break;
       case 2:
         enterOuterAlt(_localctx, 2);
-        state = 605;
+        state = 606;
         tbldef();
-        state = 607; 
+        state = 608; 
         errorHandler.sync(this);
         _alt = 1;
         do {
           switch (_alt) {
           case 1:
-            state = 606;
+            state = 607;
             cell();
             break;
           default:
             throw NoViableAltException(this);
           }
-          state = 609; 
+          state = 610; 
           errorHandler.sync(this);
-          _alt = interpreter!.adaptivePredict(tokenStream, 70, context);
+          _alt = interpreter!.adaptivePredict(tokenStream, 71, context);
         } while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER);
-        state = 611;
+        state = 612;
         match(TOKEN_ROW);
         break;
       case 3:
         enterOuterAlt(_localctx, 3);
-        state = 614; 
+        state = 615; 
         errorHandler.sync(this);
         _alt = 1;
         do {
           switch (_alt) {
           case 1:
-            state = 613;
+            state = 614;
             cell();
             break;
           default:
             throw NoViableAltException(this);
           }
-          state = 616; 
+          state = 617; 
           errorHandler.sync(this);
-          _alt = interpreter!.adaptivePredict(tokenStream, 71, context);
+          _alt = interpreter!.adaptivePredict(tokenStream, 72, context);
         } while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER);
-        state = 618;
-        tbldef();
         state = 619;
+        tbldef();
+        state = 620;
         match(TOKEN_ROW);
         break;
       }
@@ -2494,9 +2637,9 @@ class rtfParser extends Parser {
     enterRule(_localctx, 118, RULE_tbldef);
     try {
       enterOuterAlt(_localctx, 1);
-      state = 623;
-      match(TOKEN_TROWD);
       state = 624;
+      match(TOKEN_TROWD);
+      state = 625;
       match(TOKEN_TRGAPH);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
@@ -2514,39 +2657,39 @@ class rtfParser extends Parser {
     try {
       int _alt;
       enterOuterAlt(_localctx, 1);
-      state = 627;
-      errorHandler.sync(this);
-      switch (interpreter!.adaptivePredict(tokenStream, 73, context)) {
-      case 1:
-        state = 626;
-        nestrow();
-        break;
-      }
-      state = 630;
+      state = 628;
       errorHandler.sync(this);
       switch (interpreter!.adaptivePredict(tokenStream, 74, context)) {
       case 1:
-        state = 629;
+        state = 627;
+        nestrow();
+        break;
+      }
+      state = 631;
+      errorHandler.sync(this);
+      switch (interpreter!.adaptivePredict(tokenStream, 75, context)) {
+      case 1:
+        state = 630;
         tbldef();
         break;
       }
-      state = 633; 
+      state = 634; 
       errorHandler.sync(this);
       _alt = 1;
       do {
         switch (_alt) {
         case 1:
-          state = 632;
+          state = 633;
           textpar();
           break;
         default:
           throw NoViableAltException(this);
         }
-        state = 635; 
+        state = 636; 
         errorHandler.sync(this);
-        _alt = interpreter!.adaptivePredict(tokenStream, 75, context);
+        _alt = interpreter!.adaptivePredict(tokenStream, 76, context);
       } while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER);
-      state = 637;
+      state = 638;
       match(TOKEN_CELL);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
@@ -2564,26 +2707,24 @@ class rtfParser extends Parser {
     try {
       int _alt;
       enterOuterAlt(_localctx, 1);
-      state = 640; 
+      state = 641; 
       errorHandler.sync(this);
       _alt = 1;
       do {
         switch (_alt) {
         case 1:
-          state = 639;
+          state = 640;
           nestcell();
           break;
         default:
           throw NoViableAltException(this);
         }
-        state = 642; 
+        state = 643; 
         errorHandler.sync(this);
-        _alt = interpreter!.adaptivePredict(tokenStream, 76, context);
+        _alt = interpreter!.adaptivePredict(tokenStream, 77, context);
       } while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER);
-      state = 644;
-      match(TOKEN_T__0);
       state = 645;
-      match(TOKEN_IGNORABLE_CONTROL_PREFIX);
+      match(TOKEN_OPENING_BRACE);
       state = 646;
       match(TOKEN_NESTTABLEPROPS);
       state = 647;
@@ -2591,7 +2732,7 @@ class rtfParser extends Parser {
       state = 648;
       match(TOKEN_NESTROW);
       state = 649;
-      match(TOKEN_T__1);
+      match(TOKEN_CLOSING_BRACE);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
       errorHandler.reportError(this, re);
@@ -2622,7 +2763,7 @@ class rtfParser extends Parser {
         }
         state = 654; 
         errorHandler.sync(this);
-        _alt = interpreter!.adaptivePredict(tokenStream, 77, context);
+        _alt = interpreter!.adaptivePredict(tokenStream, 78, context);
       } while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER);
       state = 656;
       match(TOKEN_NESTCELL);
@@ -2642,15 +2783,15 @@ class rtfParser extends Parser {
     try {
       state = 664;
       errorHandler.sync(this);
-      switch (interpreter!.adaptivePredict(tokenStream, 78, context)) {
+      switch (interpreter!.adaptivePredict(tokenStream, 79, context)) {
       case 1:
         enterOuterAlt(_localctx, 1);
         state = 658;
-        match(TOKEN_T__0);
+        match(TOKEN_OPENING_BRACE);
         state = 659;
         charText();
         state = 660;
-        match(TOKEN_T__1);
+        match(TOKEN_CLOSING_BRACE);
         break;
       case 2:
         enterOuterAlt(_localctx, 2);
@@ -2687,16 +2828,16 @@ class rtfParser extends Parser {
         case 1:
           state = 684;
           errorHandler.sync(this);
-          switch (interpreter!.adaptivePredict(tokenStream, 83, context)) {
+          switch (interpreter!.adaptivePredict(tokenStream, 84, context)) {
           case 1:
             state = 671;
             errorHandler.sync(this);
-            _alt = interpreter!.adaptivePredict(tokenStream, 80, context);
+            _alt = interpreter!.adaptivePredict(tokenStream, 81, context);
             while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER) {
               if (_alt == 1) {
                 state = 669;
                 errorHandler.sync(this);
-                switch (interpreter!.adaptivePredict(tokenStream, 79, context)) {
+                switch (interpreter!.adaptivePredict(tokenStream, 80, context)) {
                 case 1:
                   state = 666;
                   chrfmt();
@@ -2713,7 +2854,7 @@ class rtfParser extends Parser {
               }
               state = 673;
               errorHandler.sync(this);
-              _alt = interpreter!.adaptivePredict(tokenStream, 80, context);
+              _alt = interpreter!.adaptivePredict(tokenStream, 81, context);
             }
             state = 674;
             data();
@@ -2727,7 +2868,7 @@ class rtfParser extends Parser {
               case 1:
                 state = 678;
                 errorHandler.sync(this);
-                switch (interpreter!.adaptivePredict(tokenStream, 81, context)) {
+                switch (interpreter!.adaptivePredict(tokenStream, 82, context)) {
                 case 1:
                   state = 675;
                   chrfmt();
@@ -2747,7 +2888,7 @@ class rtfParser extends Parser {
               }
               state = 680; 
               errorHandler.sync(this);
-              _alt = interpreter!.adaptivePredict(tokenStream, 82, context);
+              _alt = interpreter!.adaptivePredict(tokenStream, 83, context);
             } while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER);
             state = 682;
             charText();
@@ -2759,7 +2900,7 @@ class rtfParser extends Parser {
         }
         state = 686; 
         errorHandler.sync(this);
-        _alt = interpreter!.adaptivePredict(tokenStream, 84, context);
+        _alt = interpreter!.adaptivePredict(tokenStream, 85, context);
       } while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
@@ -2777,7 +2918,7 @@ class rtfParser extends Parser {
     try {
       state = 713;
       errorHandler.sync(this);
-      switch (interpreter!.adaptivePredict(tokenStream, 85, context)) {
+      switch (interpreter!.adaptivePredict(tokenStream, 86, context)) {
       case 1:
         enterOuterAlt(_localctx, 1);
         state = 688;
@@ -2920,7 +3061,7 @@ class rtfParser extends Parser {
     try {
       state = 720;
       errorHandler.sync(this);
-      switch (interpreter!.adaptivePredict(tokenStream, 86, context)) {
+      switch (interpreter!.adaptivePredict(tokenStream, 87, context)) {
       case 1:
         enterOuterAlt(_localctx, 1);
         state = 715;
@@ -2967,7 +3108,7 @@ class rtfParser extends Parser {
       match(TOKEN_RTLCH);
       state = 726;
       errorHandler.sync(this);
-      _alt = interpreter!.adaptivePredict(tokenStream, 87, context);
+      _alt = interpreter!.adaptivePredict(tokenStream, 88, context);
       while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER) {
         if (_alt == 1) {
           state = 723;
@@ -2975,7 +3116,7 @@ class rtfParser extends Parser {
         }
         state = 728;
         errorHandler.sync(this);
-        _alt = interpreter!.adaptivePredict(tokenStream, 87, context);
+        _alt = interpreter!.adaptivePredict(tokenStream, 88, context);
       }
       state = 729;
       match(TOKEN_LTRCH);
@@ -3001,7 +3142,7 @@ class rtfParser extends Parser {
       match(TOKEN_LTRCH);
       state = 736;
       errorHandler.sync(this);
-      _alt = interpreter!.adaptivePredict(tokenStream, 88, context);
+      _alt = interpreter!.adaptivePredict(tokenStream, 89, context);
       while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER) {
         if (_alt == 1) {
           state = 733;
@@ -3009,7 +3150,7 @@ class rtfParser extends Parser {
         }
         state = 738;
         errorHandler.sync(this);
-        _alt = interpreter!.adaptivePredict(tokenStream, 88, context);
+        _alt = interpreter!.adaptivePredict(tokenStream, 89, context);
       }
       state = 739;
       match(TOKEN_RTLCH);
@@ -3102,7 +3243,7 @@ class rtfParser extends Parser {
       enterOuterAlt(_localctx, 1);
       state = 757;
       _la = tokenStream.LA(1)!;
-      if (!((((_la - 276)) & ~0x3f) == 0 && ((1 << (_la - 276)) & 1023) != 0)) {
+      if (!((((_la - 271)) & ~0x3f) == 0 && ((1 << (_la - 271)) & 1023) != 0)) {
       errorHandler.recoverInline(this);
       } else {
         if ( tokenStream.LA(1)! == IntStream.EOF ) matchedEOF = true;
@@ -3127,7 +3268,7 @@ class rtfParser extends Parser {
       enterOuterAlt(_localctx, 1);
       state = 759;
       _la = tokenStream.LA(1)!;
-      if (!(_la == TOKEN_SECT || _la == TOKEN_PAR || (((_la - 286)) & ~0x3f) == 0 && ((1 << (_la - 286)) & 15) != 0)) {
+      if (!(_la == TOKEN_SECT || _la == TOKEN_PAR || (((_la - 281)) & ~0x3f) == 0 && ((1 << (_la - 281)) & 15) != 0)) {
       errorHandler.recoverInline(this);
       } else {
         if ( tokenStream.LA(1)! == IntStream.EOF ) matchedEOF = true;
@@ -3150,15 +3291,15 @@ class rtfParser extends Parser {
     try {
       state = 767;
       errorHandler.sync(this);
-      switch (interpreter!.adaptivePredict(tokenStream, 89, context)) {
+      switch (interpreter!.adaptivePredict(tokenStream, 90, context)) {
       case 1:
         enterOuterAlt(_localctx, 1);
         state = 761;
-        match(TOKEN_T__0);
+        match(TOKEN_OPENING_BRACE);
         state = 762;
         data();
         state = 763;
-        match(TOKEN_T__1);
+        match(TOKEN_CLOSING_BRACE);
         break;
       case 2:
         enterOuterAlt(_localctx, 2);
@@ -3196,11 +3337,11 @@ class rtfParser extends Parser {
         case 1:
           state = 773;
           errorHandler.sync(this);
-          switch (interpreter!.adaptivePredict(tokenStream, 90, context)) {
+          switch (interpreter!.adaptivePredict(tokenStream, 91, context)) {
           case 1:
             state = 769;
             _la = tokenStream.LA(1)!;
-            if (_la <= 0 || (((_la) & ~0x3f) == 0 && ((1 << _la) & 1152917381437247430) != 0 || (((_la - 89)) & ~0x3f) == 0 && ((1 << (_la - 89)) & -1) != 0 || (((_la - 153)) & ~0x3f) == 0 && ((1 << (_la - 153)) & -1) != 0 || (((_la - 217)) & ~0x3f) == 0 && ((1 << (_la - 217)) & -536739841) != 0 || (((_la - 281)) & ~0x3f) == 0 && ((1 << (_la - 281)) & 2097183) != 0)) {
+            if (_la <= 0 || (((_la) & ~0x3f) == 0 && ((1 << _la) & 36028797018932862) != 0 || (((_la - 84)) & ~0x3f) == 0 && ((1 << (_la - 84)) & -1) != 0 || (((_la - 148)) & ~0x3f) == 0 && ((1 << (_la - 148)) & -1) != 0 || (((_la - 212)) & ~0x3f) == 0 && ((1 << (_la - 212)) & -137405400817) != 0 || (((_la - 276)) & ~0x3f) == 0 && ((1 << (_la - 276)) & 29360159) != 0)) {
             errorHandler.recoverInline(this);
             } else {
               if ( tokenStream.LA(1)! == IntStream.EOF ) matchedEOF = true;
@@ -3210,15 +3351,15 @@ class rtfParser extends Parser {
             break;
           case 2:
             state = 770;
-            match(TOKEN_T__2);
+            match(TOKEN_ESCAPED_OPENING_BRACE);
             break;
           case 3:
             state = 771;
-            match(TOKEN_T__3);
+            match(TOKEN_ESCAPED_CLOSING_BRACE);
             break;
           case 4:
             state = 772;
-            match(TOKEN_T__4);
+            match(TOKEN_ESCAPED_BACKSLASH);
             break;
           }
           break;
@@ -3227,7 +3368,7 @@ class rtfParser extends Parser {
         }
         state = 775; 
         errorHandler.sync(this);
-        _alt = interpreter!.adaptivePredict(tokenStream, 91, context);
+        _alt = interpreter!.adaptivePredict(tokenStream, 92, context);
       } while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER);
     } on RecognitionException catch (re) {
       _localctx.exception = re;
@@ -3240,7 +3381,7 @@ class rtfParser extends Parser {
   }
 
   static const List<int> _serializedATN = [
-      4,1,303,778,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+      4,1,306,778,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
       6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
       2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,7,
       20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,26,2,27,
@@ -3282,39 +3423,39 @@ class rtfParser extends Parser {
       1,45,1,45,1,45,1,45,1,46,1,46,1,46,1,46,1,46,1,47,1,47,1,47,1,47,1,
       47,1,48,1,48,1,48,1,48,1,48,1,49,3,49,516,8,49,1,49,3,49,519,8,49,
       1,49,3,49,522,8,49,1,49,3,49,525,8,49,1,49,3,49,528,8,49,1,49,3,49,
-      531,8,49,1,50,1,50,1,51,5,51,536,8,51,10,51,12,51,539,9,51,1,51,3,
-      51,542,8,51,1,51,4,51,545,8,51,11,51,12,51,546,1,51,1,51,3,51,551,
-      8,51,1,52,1,52,1,53,1,53,1,53,4,53,558,8,53,11,53,12,53,559,1,53,1,
-      53,3,53,564,8,53,1,54,1,54,1,55,1,55,1,55,1,55,1,55,1,55,3,55,574,
-      8,55,1,56,1,56,5,56,578,8,56,10,56,12,56,581,9,56,1,56,1,56,4,56,585,
-      8,56,11,56,12,56,586,3,56,589,8,56,1,56,1,56,3,56,593,8,56,1,57,1,
-      57,1,58,1,58,4,58,599,8,58,11,58,12,58,600,1,58,1,58,1,58,1,58,1,58,
-      4,58,608,8,58,11,58,12,58,609,1,58,1,58,1,58,4,58,615,8,58,11,58,12,
-      58,616,1,58,1,58,1,58,3,58,622,8,58,1,59,1,59,1,59,1,60,3,60,628,8,
-      60,1,60,3,60,631,8,60,1,60,4,60,634,8,60,11,60,12,60,635,1,60,1,60,
-      1,61,4,61,641,8,61,11,61,12,61,642,1,61,1,61,1,61,1,61,1,61,1,61,1,
-      61,1,62,4,62,653,8,62,11,62,12,62,654,1,62,1,62,1,63,1,63,1,63,1,63,
-      1,63,1,63,3,63,665,8,63,1,64,1,64,1,64,5,64,670,8,64,10,64,12,64,673,
-      9,64,1,64,1,64,1,64,1,64,4,64,679,8,64,11,64,12,64,680,1,64,1,64,4,
-      64,685,8,64,11,64,12,64,686,1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,
-      1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,
-      65,1,65,1,65,1,65,3,65,714,8,65,1,66,1,66,1,66,1,66,1,66,3,66,721,
-      8,66,1,67,1,67,5,67,725,8,67,10,67,12,67,728,9,67,1,67,1,67,1,67,1,
-      68,1,68,5,68,735,8,68,10,68,12,68,738,9,68,1,68,1,68,1,68,1,69,1,69,
-      1,69,1,69,1,69,1,70,1,70,1,70,1,70,1,70,1,71,1,71,1,71,1,71,1,71,1,
-      72,1,72,1,73,1,73,1,74,1,74,1,74,1,74,1,74,1,74,3,74,768,8,74,1,75,
-      1,75,1,75,1,75,4,75,774,8,75,11,75,12,75,775,1,75,0,0,76,0,2,4,6,8,
-      10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,
-      54,56,58,60,62,64,66,68,70,72,74,76,78,80,82,84,86,88,90,92,94,96,
-      98,100,102,104,106,108,110,112,114,116,118,120,122,124,126,128,130,
-      132,134,136,138,140,142,144,146,148,150,0,16,1,0,7,10,1,0,12,13,1,
-      0,14,15,1,0,94,96,1,0,29,30,1,0,21,28,1,0,33,34,1,0,43,45,1,0,47,49,
-      1,0,89,159,2,0,45,45,160,210,1,0,268,275,2,0,211,237,284,285,1,0,276,
-      285,3,0,160,160,211,211,286,289,8,0,1,2,6,11,14,15,20,37,42,59,89,
-      233,246,285,302,302,848,0,152,1,0,0,0,2,158,1,0,0,0,4,189,1,0,0,0,
-      6,194,1,0,0,0,8,197,1,0,0,0,10,208,1,0,0,0,12,212,1,0,0,0,14,225,1,
-      0,0,0,16,251,1,0,0,0,18,253,1,0,0,0,20,265,1,0,0,0,22,267,1,0,0,0,
-      24,275,1,0,0,0,26,277,1,0,0,0,28,282,1,0,0,0,30,292,1,0,0,0,32,302,
+      531,8,49,1,50,1,50,1,51,1,51,5,51,537,8,51,10,51,12,51,540,9,51,1,
+      51,3,51,543,8,51,1,51,4,51,546,8,51,11,51,12,51,547,1,51,1,51,3,51,
+      552,8,51,1,52,1,52,1,53,1,53,1,53,4,53,559,8,53,11,53,12,53,560,1,
+      53,1,53,3,53,565,8,53,1,54,1,54,1,55,1,55,1,55,1,55,1,55,1,55,3,55,
+      575,8,55,1,56,1,56,5,56,579,8,56,10,56,12,56,582,9,56,1,56,1,56,4,
+      56,586,8,56,11,56,12,56,587,3,56,590,8,56,1,56,1,56,3,56,594,8,56,
+      1,57,1,57,1,58,1,58,4,58,600,8,58,11,58,12,58,601,1,58,1,58,1,58,1,
+      58,1,58,4,58,609,8,58,11,58,12,58,610,1,58,1,58,1,58,4,58,616,8,58,
+      11,58,12,58,617,1,58,1,58,1,58,3,58,623,8,58,1,59,1,59,1,59,1,60,3,
+      60,629,8,60,1,60,3,60,632,8,60,1,60,4,60,635,8,60,11,60,12,60,636,
+      1,60,1,60,1,61,4,61,642,8,61,11,61,12,61,643,1,61,1,61,1,61,1,61,1,
+      61,1,61,1,62,4,62,653,8,62,11,62,12,62,654,1,62,1,62,1,63,1,63,1,63,
+      1,63,1,63,1,63,3,63,665,8,63,1,64,1,64,1,64,5,64,670,8,64,10,64,12,
+      64,673,9,64,1,64,1,64,1,64,1,64,4,64,679,8,64,11,64,12,64,680,1,64,
+      1,64,4,64,685,8,64,11,64,12,64,686,1,65,1,65,1,65,1,65,1,65,1,65,1,
+      65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,1,65,
+      1,65,1,65,1,65,1,65,1,65,3,65,714,8,65,1,66,1,66,1,66,1,66,1,66,3,
+      66,721,8,66,1,67,1,67,5,67,725,8,67,10,67,12,67,728,9,67,1,67,1,67,
+      1,67,1,68,1,68,5,68,735,8,68,10,68,12,68,738,9,68,1,68,1,68,1,68,1,
+      69,1,69,1,69,1,69,1,69,1,70,1,70,1,70,1,70,1,70,1,71,1,71,1,71,1,71,
+      1,71,1,72,1,72,1,73,1,73,1,74,1,74,1,74,1,74,1,74,1,74,3,74,768,8,
+      74,1,75,1,75,1,75,1,75,4,75,774,8,75,11,75,12,75,775,1,75,0,0,76,0,
+      2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,
+      50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,80,82,84,86,88,90,92,
+      94,96,98,100,102,104,106,108,110,112,114,116,118,120,122,124,126,128,
+      130,132,134,136,138,140,142,144,146,148,150,0,16,1,0,2,5,1,0,7,8,1,
+      0,9,10,1,0,89,91,1,0,24,25,1,0,16,23,1,0,28,29,1,0,38,40,1,0,42,44,
+      1,0,84,154,2,0,40,40,155,205,1,0,206,213,2,0,214,240,279,280,1,0,271,
+      280,3,0,155,155,214,214,281,284,8,0,1,6,9,10,15,54,84,215,220,220,
+      223,236,249,280,298,300,849,0,152,1,0,0,0,2,158,1,0,0,0,4,189,1,0,
+      0,0,6,194,1,0,0,0,8,197,1,0,0,0,10,208,1,0,0,0,12,212,1,0,0,0,14,225,
+      1,0,0,0,16,251,1,0,0,0,18,253,1,0,0,0,20,265,1,0,0,0,22,267,1,0,0,
+      0,24,275,1,0,0,0,26,277,1,0,0,0,28,282,1,0,0,0,30,292,1,0,0,0,32,302,
       1,0,0,0,34,311,1,0,0,0,36,352,1,0,0,0,38,354,1,0,0,0,40,360,1,0,0,
       0,42,368,1,0,0,0,44,370,1,0,0,0,46,372,1,0,0,0,48,374,1,0,0,0,50,376,
       1,0,0,0,52,378,1,0,0,0,54,380,1,0,0,0,56,382,1,0,0,0,58,384,1,0,0,
@@ -3322,179 +3463,181 @@ class rtfParser extends Parser {
       1,0,0,0,70,444,1,0,0,0,72,449,1,0,0,0,74,454,1,0,0,0,76,459,1,0,0,
       0,78,464,1,0,0,0,80,469,1,0,0,0,82,474,1,0,0,0,84,479,1,0,0,0,86,484,
       1,0,0,0,88,489,1,0,0,0,90,494,1,0,0,0,92,499,1,0,0,0,94,504,1,0,0,
-      0,96,509,1,0,0,0,98,515,1,0,0,0,100,532,1,0,0,0,102,537,1,0,0,0,104,
-      552,1,0,0,0,106,554,1,0,0,0,108,565,1,0,0,0,110,573,1,0,0,0,112,579,
-      1,0,0,0,114,594,1,0,0,0,116,621,1,0,0,0,118,623,1,0,0,0,120,627,1,
-      0,0,0,122,640,1,0,0,0,124,652,1,0,0,0,126,664,1,0,0,0,128,684,1,0,
+      0,96,509,1,0,0,0,98,515,1,0,0,0,100,532,1,0,0,0,102,538,1,0,0,0,104,
+      553,1,0,0,0,106,555,1,0,0,0,108,566,1,0,0,0,110,574,1,0,0,0,112,580,
+      1,0,0,0,114,595,1,0,0,0,116,622,1,0,0,0,118,624,1,0,0,0,120,628,1,
+      0,0,0,122,641,1,0,0,0,124,652,1,0,0,0,126,664,1,0,0,0,128,684,1,0,
       0,0,130,713,1,0,0,0,132,720,1,0,0,0,134,722,1,0,0,0,136,732,1,0,0,
       0,138,742,1,0,0,0,140,747,1,0,0,0,142,752,1,0,0,0,144,757,1,0,0,0,
-      146,759,1,0,0,0,148,767,1,0,0,0,150,773,1,0,0,0,152,153,5,1,0,0,153,
-      154,3,2,1,0,154,155,3,64,32,0,155,156,5,2,0,0,156,157,5,0,0,1,157,
-      1,1,0,0,0,158,159,5,6,0,0,159,161,3,4,2,0,160,162,5,297,0,0,161,160,
-      1,0,0,0,161,162,1,0,0,0,162,164,1,0,0,0,163,165,5,157,0,0,164,163,
-      1,0,0,0,164,165,1,0,0,0,165,167,1,0,0,0,166,168,3,6,3,0,167,166,1,
-      0,0,0,167,168,1,0,0,0,168,170,1,0,0,0,169,171,3,8,4,0,170,169,1,0,
-      0,0,170,171,1,0,0,0,171,176,1,0,0,0,172,175,3,10,5,0,173,175,5,158,
-      0,0,174,172,1,0,0,0,174,173,1,0,0,0,175,178,1,0,0,0,176,174,1,0,0,
-      0,176,177,1,0,0,0,177,180,1,0,0,0,178,176,1,0,0,0,179,181,3,12,6,0,
-      180,179,1,0,0,0,180,181,1,0,0,0,181,183,1,0,0,0,182,184,3,28,14,0,
-      183,182,1,0,0,0,183,184,1,0,0,0,184,186,1,0,0,0,185,187,3,32,16,0,
-      186,185,1,0,0,0,186,187,1,0,0,0,187,3,1,0,0,0,188,190,7,0,0,0,189,
-      188,1,0,0,0,189,190,1,0,0,0,190,192,1,0,0,0,191,193,5,11,0,0,192,191,
+      146,759,1,0,0,0,148,767,1,0,0,0,150,773,1,0,0,0,152,153,5,298,0,0,
+      153,154,3,2,1,0,154,155,3,64,32,0,155,156,5,299,0,0,156,157,5,0,0,
+      1,157,1,1,0,0,0,158,159,5,1,0,0,159,161,3,4,2,0,160,162,5,292,0,0,
+      161,160,1,0,0,0,161,162,1,0,0,0,162,164,1,0,0,0,163,165,5,152,0,0,
+      164,163,1,0,0,0,164,165,1,0,0,0,165,167,1,0,0,0,166,168,3,6,3,0,167,
+      166,1,0,0,0,167,168,1,0,0,0,168,170,1,0,0,0,169,171,3,8,4,0,170,169,
+      1,0,0,0,170,171,1,0,0,0,171,176,1,0,0,0,172,175,3,10,5,0,173,175,5,
+      153,0,0,174,172,1,0,0,0,174,173,1,0,0,0,175,178,1,0,0,0,176,174,1,
+      0,0,0,176,177,1,0,0,0,177,180,1,0,0,0,178,176,1,0,0,0,179,181,3,12,
+      6,0,180,179,1,0,0,0,180,181,1,0,0,0,181,183,1,0,0,0,182,184,3,28,14,
+      0,183,182,1,0,0,0,183,184,1,0,0,0,184,186,1,0,0,0,185,187,3,32,16,
+      0,186,185,1,0,0,0,186,187,1,0,0,0,187,3,1,0,0,0,188,190,7,0,0,0,189,
+      188,1,0,0,0,189,190,1,0,0,0,190,192,1,0,0,0,191,193,5,6,0,0,192,191,
       1,0,0,0,192,193,1,0,0,0,193,5,1,0,0,0,194,195,7,1,0,0,195,7,1,0,0,
       0,196,198,7,2,0,0,197,196,1,0,0,0,198,199,1,0,0,0,199,197,1,0,0,0,
-      199,200,1,0,0,0,200,205,1,0,0,0,201,202,5,16,0,0,202,203,5,17,0,0,
-      203,204,5,18,0,0,204,206,5,19,0,0,205,201,1,0,0,0,205,206,1,0,0,0,
+      199,200,1,0,0,0,200,205,1,0,0,0,201,202,5,11,0,0,202,203,5,12,0,0,
+      203,204,5,13,0,0,204,206,5,14,0,0,205,201,1,0,0,0,205,206,1,0,0,0,
       206,9,1,0,0,0,207,209,7,3,0,0,208,207,1,0,0,0,209,210,1,0,0,0,210,
-      208,1,0,0,0,210,211,1,0,0,0,211,11,1,0,0,0,212,213,5,1,0,0,213,219,
-      5,20,0,0,214,220,3,14,7,0,215,216,5,1,0,0,216,217,3,14,7,0,217,218,
-      5,2,0,0,218,220,1,0,0,0,219,214,1,0,0,0,219,215,1,0,0,0,220,221,1,
-      0,0,0,221,219,1,0,0,0,221,222,1,0,0,0,222,223,1,0,0,0,223,224,5,2,
-      0,0,224,13,1,0,0,0,225,227,5,252,0,0,226,228,3,16,8,0,227,226,1,0,
-      0,0,227,228,1,0,0,0,228,234,1,0,0,0,229,231,7,4,0,0,230,229,1,0,0,
-      0,231,232,1,0,0,0,232,230,1,0,0,0,232,233,1,0,0,0,233,235,1,0,0,0,
-      234,230,1,0,0,0,234,235,1,0,0,0,235,237,1,0,0,0,236,238,5,31,0,0,237,
-      236,1,0,0,0,237,238,1,0,0,0,238,240,1,0,0,0,239,241,3,18,9,0,240,239,
-      1,0,0,0,240,241,1,0,0,0,241,243,1,0,0,0,242,244,5,36,0,0,243,242,1,
-      0,0,0,243,244,1,0,0,0,244,245,1,0,0,0,245,247,3,24,12,0,246,248,3,
-      26,13,0,247,246,1,0,0,0,247,248,1,0,0,0,248,249,1,0,0,0,249,250,5,
-      295,0,0,250,15,1,0,0,0,251,252,7,5,0,0,252,17,1,0,0,0,253,254,5,1,
-      0,0,254,255,5,32,0,0,255,261,3,20,10,0,256,262,3,22,11,0,257,262,3,
-      148,74,0,258,259,3,22,11,0,259,260,3,148,74,0,260,262,1,0,0,0,261,
-      256,1,0,0,0,261,257,1,0,0,0,261,258,1,0,0,0,262,263,1,0,0,0,263,264,
-      5,2,0,0,264,19,1,0,0,0,265,266,7,6,0,0,266,21,1,0,0,0,267,268,5,1,
-      0,0,268,270,5,35,0,0,269,271,5,36,0,0,270,269,1,0,0,0,270,271,1,0,
-      0,0,271,272,1,0,0,0,272,273,3,150,75,0,273,274,5,2,0,0,274,23,1,0,
-      0,0,275,276,3,150,75,0,276,25,1,0,0,0,277,278,5,1,0,0,278,279,5,37,
-      0,0,279,280,3,150,75,0,280,281,5,2,0,0,281,27,1,0,0,0,282,283,5,1,
-      0,0,283,285,5,38,0,0,284,286,3,30,15,0,285,284,1,0,0,0,286,287,1,0,
-      0,0,287,285,1,0,0,0,287,288,1,0,0,0,288,289,1,0,0,0,289,290,5,2,0,
-      0,290,29,1,0,0,0,291,293,5,39,0,0,292,291,1,0,0,0,292,293,1,0,0,0,
-      293,295,1,0,0,0,294,296,5,40,0,0,295,294,1,0,0,0,295,296,1,0,0,0,296,
-      298,1,0,0,0,297,299,5,41,0,0,298,297,1,0,0,0,298,299,1,0,0,0,299,300,
-      1,0,0,0,300,301,5,295,0,0,301,31,1,0,0,0,302,303,5,1,0,0,303,305,5,
-      42,0,0,304,306,3,34,17,0,305,304,1,0,0,0,306,307,1,0,0,0,307,305,1,
-      0,0,0,307,308,1,0,0,0,308,309,1,0,0,0,309,310,5,2,0,0,310,33,1,0,0,
-      0,311,313,5,1,0,0,312,314,3,36,18,0,313,312,1,0,0,0,313,314,1,0,0,
-      0,314,316,1,0,0,0,315,317,3,38,19,0,316,315,1,0,0,0,316,317,1,0,0,
-      0,317,318,1,0,0,0,318,320,3,60,30,0,319,321,3,44,22,0,320,319,1,0,
-      0,0,320,321,1,0,0,0,321,323,1,0,0,0,322,324,3,46,23,0,323,322,1,0,
-      0,0,323,324,1,0,0,0,324,326,1,0,0,0,325,327,3,48,24,0,326,325,1,0,
-      0,0,326,327,1,0,0,0,327,329,1,0,0,0,328,330,3,60,30,0,329,328,1,0,
-      0,0,329,330,1,0,0,0,330,332,1,0,0,0,331,333,3,50,25,0,332,331,1,0,
-      0,0,332,333,1,0,0,0,333,335,1,0,0,0,334,336,3,52,26,0,335,334,1,0,
-      0,0,335,336,1,0,0,0,336,338,1,0,0,0,337,339,3,54,27,0,338,337,1,0,
-      0,0,338,339,1,0,0,0,339,341,1,0,0,0,340,342,3,56,28,0,341,340,1,0,
-      0,0,341,342,1,0,0,0,342,344,1,0,0,0,343,345,3,58,29,0,344,343,1,0,
-      0,0,344,345,1,0,0,0,345,347,1,0,0,0,346,348,3,62,31,0,347,346,1,0,
-      0,0,347,348,1,0,0,0,348,349,1,0,0,0,349,350,5,295,0,0,350,351,5,2,
-      0,0,351,35,1,0,0,0,352,353,7,7,0,0,353,37,1,0,0,0,354,355,5,1,0,0,
-      355,356,5,46,0,0,356,357,3,40,20,0,357,358,5,2,0,0,358,39,1,0,0,0,
-      359,361,7,8,0,0,360,359,1,0,0,0,361,362,1,0,0,0,362,360,1,0,0,0,362,
-      363,1,0,0,0,363,364,1,0,0,0,364,365,3,42,21,0,365,41,1,0,0,0,366,369,
-      5,50,0,0,367,369,3,150,75,0,368,366,1,0,0,0,368,367,1,0,0,0,369,43,
-      1,0,0,0,370,371,5,51,0,0,371,45,1,0,0,0,372,373,5,52,0,0,373,47,1,
-      0,0,0,374,375,5,53,0,0,375,49,1,0,0,0,376,377,5,54,0,0,377,51,1,0,
-      0,0,378,379,5,55,0,0,379,53,1,0,0,0,380,381,5,56,0,0,381,55,1,0,0,
-      0,382,383,5,57,0,0,383,57,1,0,0,0,384,385,5,58,0,0,385,59,1,0,0,0,
-      386,389,3,114,57,0,387,389,3,130,65,0,388,386,1,0,0,0,388,387,1,0,
-      0,0,389,390,1,0,0,0,390,388,1,0,0,0,390,391,1,0,0,0,391,61,1,0,0,0,
-      392,393,3,150,75,0,393,63,1,0,0,0,394,396,3,66,33,0,395,394,1,0,0,
-      0,395,396,1,0,0,0,396,400,1,0,0,0,397,399,3,100,50,0,398,397,1,0,0,
-      0,399,402,1,0,0,0,400,398,1,0,0,0,400,401,1,0,0,0,401,404,1,0,0,0,
-      402,400,1,0,0,0,403,405,3,102,51,0,404,403,1,0,0,0,405,406,1,0,0,0,
-      406,404,1,0,0,0,406,407,1,0,0,0,407,65,1,0,0,0,408,409,5,1,0,0,409,
-      434,5,59,0,0,410,433,3,68,34,0,411,433,3,70,35,0,412,433,3,72,36,0,
-      413,433,3,74,37,0,414,433,3,76,38,0,415,433,3,78,39,0,416,433,3,80,
-      40,0,417,433,3,82,41,0,418,433,3,84,42,0,419,433,5,60,0,0,420,433,
-      3,86,43,0,421,433,5,61,0,0,422,433,3,90,45,0,423,433,3,92,46,0,424,
-      433,3,94,47,0,425,433,3,96,48,0,426,433,5,62,0,0,427,433,5,63,0,0,
-      428,433,5,64,0,0,429,433,5,65,0,0,430,433,5,66,0,0,431,433,5,67,0,
-      0,432,410,1,0,0,0,432,411,1,0,0,0,432,412,1,0,0,0,432,413,1,0,0,0,
-      432,414,1,0,0,0,432,415,1,0,0,0,432,416,1,0,0,0,432,417,1,0,0,0,432,
-      418,1,0,0,0,432,419,1,0,0,0,432,420,1,0,0,0,432,421,1,0,0,0,432,422,
-      1,0,0,0,432,423,1,0,0,0,432,424,1,0,0,0,432,425,1,0,0,0,432,426,1,
-      0,0,0,432,427,1,0,0,0,432,428,1,0,0,0,432,429,1,0,0,0,432,430,1,0,
-      0,0,432,431,1,0,0,0,433,436,1,0,0,0,434,432,1,0,0,0,434,435,1,0,0,
-      0,435,437,1,0,0,0,436,434,1,0,0,0,437,438,5,2,0,0,438,67,1,0,0,0,439,
-      440,5,1,0,0,440,441,5,68,0,0,441,442,3,150,75,0,442,443,5,2,0,0,443,
-      69,1,0,0,0,444,445,5,1,0,0,445,446,5,69,0,0,446,447,3,150,75,0,447,
-      448,5,2,0,0,448,71,1,0,0,0,449,450,5,1,0,0,450,451,5,70,0,0,451,452,
-      3,150,75,0,452,453,5,2,0,0,453,73,1,0,0,0,454,455,5,1,0,0,455,456,
-      5,71,0,0,456,457,3,150,75,0,457,458,5,2,0,0,458,75,1,0,0,0,459,460,
-      5,1,0,0,460,461,5,72,0,0,461,462,3,150,75,0,462,463,5,2,0,0,463,77,
-      1,0,0,0,464,465,5,1,0,0,465,466,5,73,0,0,466,467,3,150,75,0,467,468,
-      5,2,0,0,468,79,1,0,0,0,469,470,5,1,0,0,470,471,5,74,0,0,471,472,3,
-      150,75,0,472,473,5,2,0,0,473,81,1,0,0,0,474,475,5,1,0,0,475,476,5,
-      75,0,0,476,477,3,150,75,0,477,478,5,2,0,0,478,83,1,0,0,0,479,480,5,
-      1,0,0,480,481,5,76,0,0,481,482,3,150,75,0,482,483,5,2,0,0,483,85,1,
-      0,0,0,484,485,5,1,0,0,485,486,5,77,0,0,486,487,3,150,75,0,487,488,
-      5,2,0,0,488,87,1,0,0,0,489,490,5,1,0,0,490,491,5,78,0,0,491,492,3,
-      150,75,0,492,493,5,2,0,0,493,89,1,0,0,0,494,495,5,1,0,0,495,496,5,
-      79,0,0,496,497,3,98,49,0,497,498,5,2,0,0,498,91,1,0,0,0,499,500,5,
-      1,0,0,500,501,5,80,0,0,501,502,3,98,49,0,502,503,5,2,0,0,503,93,1,
-      0,0,0,504,505,5,1,0,0,505,506,5,81,0,0,506,507,3,98,49,0,507,508,5,
-      2,0,0,508,95,1,0,0,0,509,510,5,1,0,0,510,511,5,82,0,0,511,512,3,98,
-      49,0,512,513,5,2,0,0,513,97,1,0,0,0,514,516,5,83,0,0,515,514,1,0,0,
-      0,515,516,1,0,0,0,516,518,1,0,0,0,517,519,5,84,0,0,518,517,1,0,0,0,
-      518,519,1,0,0,0,519,521,1,0,0,0,520,522,5,85,0,0,521,520,1,0,0,0,521,
-      522,1,0,0,0,522,524,1,0,0,0,523,525,5,86,0,0,524,523,1,0,0,0,524,525,
-      1,0,0,0,525,527,1,0,0,0,526,528,5,87,0,0,527,526,1,0,0,0,527,528,1,
-      0,0,0,528,530,1,0,0,0,529,531,5,88,0,0,530,529,1,0,0,0,530,531,1,0,
-      0,0,531,99,1,0,0,0,532,533,7,9,0,0,533,101,1,0,0,0,534,536,3,104,52,
-      0,535,534,1,0,0,0,536,539,1,0,0,0,537,535,1,0,0,0,537,538,1,0,0,0,
-      538,541,1,0,0,0,539,537,1,0,0,0,540,542,3,106,53,0,541,540,1,0,0,0,
-      541,542,1,0,0,0,542,544,1,0,0,0,543,545,3,110,55,0,544,543,1,0,0,0,
-      545,546,1,0,0,0,546,544,1,0,0,0,546,547,1,0,0,0,547,550,1,0,0,0,548,
-      549,5,160,0,0,549,551,3,102,51,0,550,548,1,0,0,0,550,551,1,0,0,0,551,
-      103,1,0,0,0,552,553,7,10,0,0,553,105,1,0,0,0,554,555,5,1,0,0,555,557,
-      3,108,54,0,556,558,3,110,55,0,557,556,1,0,0,0,558,559,1,0,0,0,559,
-      557,1,0,0,0,559,560,1,0,0,0,560,561,1,0,0,0,561,563,5,2,0,0,562,564,
-      3,106,53,0,563,562,1,0,0,0,563,564,1,0,0,0,564,107,1,0,0,0,565,566,
-      7,11,0,0,566,109,1,0,0,0,567,568,5,1,0,0,568,569,3,110,55,0,569,570,
-      5,2,0,0,570,574,1,0,0,0,571,574,3,112,56,0,572,574,3,116,58,0,573,
-      567,1,0,0,0,573,571,1,0,0,0,573,572,1,0,0,0,574,111,1,0,0,0,575,578,
-      3,114,57,0,576,578,3,104,52,0,577,575,1,0,0,0,577,576,1,0,0,0,578,
-      581,1,0,0,0,579,577,1,0,0,0,579,580,1,0,0,0,580,588,1,0,0,0,581,579,
-      1,0,0,0,582,589,5,238,0,0,583,585,3,126,63,0,584,583,1,0,0,0,585,586,
-      1,0,0,0,586,584,1,0,0,0,586,587,1,0,0,0,587,589,1,0,0,0,588,582,1,
-      0,0,0,588,584,1,0,0,0,589,592,1,0,0,0,590,591,5,211,0,0,591,593,3,
-      110,55,0,592,590,1,0,0,0,592,593,1,0,0,0,593,113,1,0,0,0,594,595,7,
-      12,0,0,595,115,1,0,0,0,596,598,3,118,59,0,597,599,3,120,60,0,598,597,
-      1,0,0,0,599,600,1,0,0,0,600,598,1,0,0,0,600,601,1,0,0,0,601,602,1,
-      0,0,0,602,603,3,118,59,0,603,604,5,239,0,0,604,622,1,0,0,0,605,607,
-      3,118,59,0,606,608,3,120,60,0,607,606,1,0,0,0,608,609,1,0,0,0,609,
-      607,1,0,0,0,609,610,1,0,0,0,610,611,1,0,0,0,611,612,5,239,0,0,612,
-      622,1,0,0,0,613,615,3,120,60,0,614,613,1,0,0,0,615,616,1,0,0,0,616,
-      614,1,0,0,0,616,617,1,0,0,0,617,618,1,0,0,0,618,619,3,118,59,0,619,
-      620,5,239,0,0,620,622,1,0,0,0,621,596,1,0,0,0,621,605,1,0,0,0,621,
-      614,1,0,0,0,622,117,1,0,0,0,623,624,5,241,0,0,624,625,5,242,0,0,625,
-      119,1,0,0,0,626,628,3,122,61,0,627,626,1,0,0,0,627,628,1,0,0,0,628,
-      630,1,0,0,0,629,631,3,118,59,0,630,629,1,0,0,0,630,631,1,0,0,0,631,
-      633,1,0,0,0,632,634,3,112,56,0,633,632,1,0,0,0,634,635,1,0,0,0,635,
-      633,1,0,0,0,635,636,1,0,0,0,636,637,1,0,0,0,637,638,5,240,0,0,638,
-      121,1,0,0,0,639,641,3,124,62,0,640,639,1,0,0,0,641,642,1,0,0,0,642,
-      640,1,0,0,0,642,643,1,0,0,0,643,644,1,0,0,0,644,645,5,1,0,0,645,646,
-      5,291,0,0,646,647,5,245,0,0,647,648,3,118,59,0,648,649,5,243,0,0,649,
-      650,5,2,0,0,650,123,1,0,0,0,651,653,3,112,56,0,652,651,1,0,0,0,653,
-      654,1,0,0,0,654,652,1,0,0,0,654,655,1,0,0,0,655,656,1,0,0,0,656,657,
-      5,244,0,0,657,125,1,0,0,0,658,659,5,1,0,0,659,660,3,126,63,0,660,661,
-      5,2,0,0,661,665,1,0,0,0,662,665,3,128,64,0,663,665,3,132,66,0,664,
-      658,1,0,0,0,664,662,1,0,0,0,664,663,1,0,0,0,665,127,1,0,0,0,666,670,
-      3,130,65,0,667,670,3,114,57,0,668,670,3,104,52,0,669,666,1,0,0,0,669,
+      208,1,0,0,0,210,211,1,0,0,0,211,11,1,0,0,0,212,213,5,298,0,0,213,219,
+      5,15,0,0,214,220,3,14,7,0,215,216,5,298,0,0,216,217,3,14,7,0,217,218,
+      5,299,0,0,218,220,1,0,0,0,219,214,1,0,0,0,219,215,1,0,0,0,220,221,
+      1,0,0,0,221,219,1,0,0,0,221,222,1,0,0,0,222,223,1,0,0,0,223,224,5,
+      299,0,0,224,13,1,0,0,0,225,227,5,255,0,0,226,228,3,16,8,0,227,226,
+      1,0,0,0,227,228,1,0,0,0,228,234,1,0,0,0,229,231,7,4,0,0,230,229,1,
+      0,0,0,231,232,1,0,0,0,232,230,1,0,0,0,232,233,1,0,0,0,233,235,1,0,
+      0,0,234,230,1,0,0,0,234,235,1,0,0,0,235,237,1,0,0,0,236,238,5,26,0,
+      0,237,236,1,0,0,0,237,238,1,0,0,0,238,240,1,0,0,0,239,241,3,18,9,0,
+      240,239,1,0,0,0,240,241,1,0,0,0,241,243,1,0,0,0,242,244,5,31,0,0,243,
+      242,1,0,0,0,243,244,1,0,0,0,244,245,1,0,0,0,245,247,3,24,12,0,246,
+      248,3,26,13,0,247,246,1,0,0,0,247,248,1,0,0,0,248,249,1,0,0,0,249,
+      250,5,290,0,0,250,15,1,0,0,0,251,252,7,5,0,0,252,17,1,0,0,0,253,254,
+      5,298,0,0,254,255,5,27,0,0,255,261,3,20,10,0,256,262,3,22,11,0,257,
+      262,3,148,74,0,258,259,3,22,11,0,259,260,3,148,74,0,260,262,1,0,0,
+      0,261,256,1,0,0,0,261,257,1,0,0,0,261,258,1,0,0,0,262,263,1,0,0,0,
+      263,264,5,299,0,0,264,19,1,0,0,0,265,266,7,6,0,0,266,21,1,0,0,0,267,
+      268,5,298,0,0,268,270,5,30,0,0,269,271,5,31,0,0,270,269,1,0,0,0,270,
+      271,1,0,0,0,271,272,1,0,0,0,272,273,3,150,75,0,273,274,5,299,0,0,274,
+      23,1,0,0,0,275,276,3,150,75,0,276,25,1,0,0,0,277,278,5,298,0,0,278,
+      279,5,32,0,0,279,280,3,150,75,0,280,281,5,299,0,0,281,27,1,0,0,0,282,
+      283,5,298,0,0,283,285,5,33,0,0,284,286,3,30,15,0,285,284,1,0,0,0,286,
+      287,1,0,0,0,287,285,1,0,0,0,287,288,1,0,0,0,288,289,1,0,0,0,289,290,
+      5,299,0,0,290,29,1,0,0,0,291,293,5,34,0,0,292,291,1,0,0,0,292,293,
+      1,0,0,0,293,295,1,0,0,0,294,296,5,35,0,0,295,294,1,0,0,0,295,296,1,
+      0,0,0,296,298,1,0,0,0,297,299,5,36,0,0,298,297,1,0,0,0,298,299,1,0,
+      0,0,299,300,1,0,0,0,300,301,5,290,0,0,301,31,1,0,0,0,302,303,5,298,
+      0,0,303,305,5,37,0,0,304,306,3,34,17,0,305,304,1,0,0,0,306,307,1,0,
+      0,0,307,305,1,0,0,0,307,308,1,0,0,0,308,309,1,0,0,0,309,310,5,299,
+      0,0,310,33,1,0,0,0,311,313,5,298,0,0,312,314,3,36,18,0,313,312,1,0,
+      0,0,313,314,1,0,0,0,314,316,1,0,0,0,315,317,3,38,19,0,316,315,1,0,
+      0,0,316,317,1,0,0,0,317,318,1,0,0,0,318,320,3,60,30,0,319,321,3,44,
+      22,0,320,319,1,0,0,0,320,321,1,0,0,0,321,323,1,0,0,0,322,324,3,46,
+      23,0,323,322,1,0,0,0,323,324,1,0,0,0,324,326,1,0,0,0,325,327,3,48,
+      24,0,326,325,1,0,0,0,326,327,1,0,0,0,327,329,1,0,0,0,328,330,3,60,
+      30,0,329,328,1,0,0,0,329,330,1,0,0,0,330,332,1,0,0,0,331,333,3,50,
+      25,0,332,331,1,0,0,0,332,333,1,0,0,0,333,335,1,0,0,0,334,336,3,52,
+      26,0,335,334,1,0,0,0,335,336,1,0,0,0,336,338,1,0,0,0,337,339,3,54,
+      27,0,338,337,1,0,0,0,338,339,1,0,0,0,339,341,1,0,0,0,340,342,3,56,
+      28,0,341,340,1,0,0,0,341,342,1,0,0,0,342,344,1,0,0,0,343,345,3,58,
+      29,0,344,343,1,0,0,0,344,345,1,0,0,0,345,347,1,0,0,0,346,348,3,62,
+      31,0,347,346,1,0,0,0,347,348,1,0,0,0,348,349,1,0,0,0,349,350,5,290,
+      0,0,350,351,5,299,0,0,351,35,1,0,0,0,352,353,7,7,0,0,353,37,1,0,0,
+      0,354,355,5,298,0,0,355,356,5,41,0,0,356,357,3,40,20,0,357,358,5,299,
+      0,0,358,39,1,0,0,0,359,361,7,8,0,0,360,359,1,0,0,0,361,362,1,0,0,0,
+      362,360,1,0,0,0,362,363,1,0,0,0,363,364,1,0,0,0,364,365,3,42,21,0,
+      365,41,1,0,0,0,366,369,5,45,0,0,367,369,3,150,75,0,368,366,1,0,0,0,
+      368,367,1,0,0,0,369,43,1,0,0,0,370,371,5,46,0,0,371,45,1,0,0,0,372,
+      373,5,47,0,0,373,47,1,0,0,0,374,375,5,48,0,0,375,49,1,0,0,0,376,377,
+      5,49,0,0,377,51,1,0,0,0,378,379,5,50,0,0,379,53,1,0,0,0,380,381,5,
+      51,0,0,381,55,1,0,0,0,382,383,5,52,0,0,383,57,1,0,0,0,384,385,5,53,
+      0,0,385,59,1,0,0,0,386,389,3,114,57,0,387,389,3,130,65,0,388,386,1,
+      0,0,0,388,387,1,0,0,0,389,390,1,0,0,0,390,388,1,0,0,0,390,391,1,0,
+      0,0,391,61,1,0,0,0,392,393,3,150,75,0,393,63,1,0,0,0,394,396,3,66,
+      33,0,395,394,1,0,0,0,395,396,1,0,0,0,396,400,1,0,0,0,397,399,3,100,
+      50,0,398,397,1,0,0,0,399,402,1,0,0,0,400,398,1,0,0,0,400,401,1,0,0,
+      0,401,404,1,0,0,0,402,400,1,0,0,0,403,405,3,102,51,0,404,403,1,0,0,
+      0,405,406,1,0,0,0,406,404,1,0,0,0,406,407,1,0,0,0,407,65,1,0,0,0,408,
+      409,5,298,0,0,409,434,5,54,0,0,410,433,3,68,34,0,411,433,3,70,35,0,
+      412,433,3,72,36,0,413,433,3,74,37,0,414,433,3,76,38,0,415,433,3,78,
+      39,0,416,433,3,80,40,0,417,433,3,82,41,0,418,433,3,84,42,0,419,433,
+      5,55,0,0,420,433,3,86,43,0,421,433,5,56,0,0,422,433,3,90,45,0,423,
+      433,3,92,46,0,424,433,3,94,47,0,425,433,3,96,48,0,426,433,5,57,0,0,
+      427,433,5,58,0,0,428,433,5,59,0,0,429,433,5,60,0,0,430,433,5,61,0,
+      0,431,433,5,62,0,0,432,410,1,0,0,0,432,411,1,0,0,0,432,412,1,0,0,0,
+      432,413,1,0,0,0,432,414,1,0,0,0,432,415,1,0,0,0,432,416,1,0,0,0,432,
+      417,1,0,0,0,432,418,1,0,0,0,432,419,1,0,0,0,432,420,1,0,0,0,432,421,
+      1,0,0,0,432,422,1,0,0,0,432,423,1,0,0,0,432,424,1,0,0,0,432,425,1,
+      0,0,0,432,426,1,0,0,0,432,427,1,0,0,0,432,428,1,0,0,0,432,429,1,0,
+      0,0,432,430,1,0,0,0,432,431,1,0,0,0,433,436,1,0,0,0,434,432,1,0,0,
+      0,434,435,1,0,0,0,435,437,1,0,0,0,436,434,1,0,0,0,437,438,5,299,0,
+      0,438,67,1,0,0,0,439,440,5,298,0,0,440,441,5,63,0,0,441,442,3,150,
+      75,0,442,443,5,299,0,0,443,69,1,0,0,0,444,445,5,298,0,0,445,446,5,
+      64,0,0,446,447,3,150,75,0,447,448,5,299,0,0,448,71,1,0,0,0,449,450,
+      5,298,0,0,450,451,5,65,0,0,451,452,3,150,75,0,452,453,5,299,0,0,453,
+      73,1,0,0,0,454,455,5,298,0,0,455,456,5,66,0,0,456,457,3,150,75,0,457,
+      458,5,299,0,0,458,75,1,0,0,0,459,460,5,298,0,0,460,461,5,67,0,0,461,
+      462,3,150,75,0,462,463,5,299,0,0,463,77,1,0,0,0,464,465,5,298,0,0,
+      465,466,5,68,0,0,466,467,3,150,75,0,467,468,5,299,0,0,468,79,1,0,0,
+      0,469,470,5,298,0,0,470,471,5,69,0,0,471,472,3,150,75,0,472,473,5,
+      299,0,0,473,81,1,0,0,0,474,475,5,298,0,0,475,476,5,70,0,0,476,477,
+      3,150,75,0,477,478,5,299,0,0,478,83,1,0,0,0,479,480,5,298,0,0,480,
+      481,5,71,0,0,481,482,3,150,75,0,482,483,5,299,0,0,483,85,1,0,0,0,484,
+      485,5,298,0,0,485,486,5,72,0,0,486,487,3,150,75,0,487,488,5,299,0,
+      0,488,87,1,0,0,0,489,490,5,298,0,0,490,491,5,73,0,0,491,492,3,150,
+      75,0,492,493,5,299,0,0,493,89,1,0,0,0,494,495,5,298,0,0,495,496,5,
+      74,0,0,496,497,3,98,49,0,497,498,5,299,0,0,498,91,1,0,0,0,499,500,
+      5,298,0,0,500,501,5,75,0,0,501,502,3,98,49,0,502,503,5,299,0,0,503,
+      93,1,0,0,0,504,505,5,298,0,0,505,506,5,76,0,0,506,507,3,98,49,0,507,
+      508,5,299,0,0,508,95,1,0,0,0,509,510,5,298,0,0,510,511,5,77,0,0,511,
+      512,3,98,49,0,512,513,5,299,0,0,513,97,1,0,0,0,514,516,5,78,0,0,515,
+      514,1,0,0,0,515,516,1,0,0,0,516,518,1,0,0,0,517,519,5,79,0,0,518,517,
+      1,0,0,0,518,519,1,0,0,0,519,521,1,0,0,0,520,522,5,80,0,0,521,520,1,
+      0,0,0,521,522,1,0,0,0,522,524,1,0,0,0,523,525,5,81,0,0,524,523,1,0,
+      0,0,524,525,1,0,0,0,525,527,1,0,0,0,526,528,5,82,0,0,527,526,1,0,0,
+      0,527,528,1,0,0,0,528,530,1,0,0,0,529,531,5,83,0,0,530,529,1,0,0,0,
+      530,531,1,0,0,0,531,99,1,0,0,0,532,533,7,9,0,0,533,101,1,0,0,0,534,
+      537,3,104,52,0,535,537,3,100,50,0,536,534,1,0,0,0,536,535,1,0,0,0,
+      537,540,1,0,0,0,538,536,1,0,0,0,538,539,1,0,0,0,539,542,1,0,0,0,540,
+      538,1,0,0,0,541,543,3,106,53,0,542,541,1,0,0,0,542,543,1,0,0,0,543,
+      545,1,0,0,0,544,546,3,110,55,0,545,544,1,0,0,0,546,547,1,0,0,0,547,
+      545,1,0,0,0,547,548,1,0,0,0,548,551,1,0,0,0,549,550,5,155,0,0,550,
+      552,3,102,51,0,551,549,1,0,0,0,551,552,1,0,0,0,552,103,1,0,0,0,553,
+      554,7,10,0,0,554,105,1,0,0,0,555,556,5,298,0,0,556,558,3,108,54,0,
+      557,559,3,110,55,0,558,557,1,0,0,0,559,560,1,0,0,0,560,558,1,0,0,0,
+      560,561,1,0,0,0,561,562,1,0,0,0,562,564,5,299,0,0,563,565,3,106,53,
+      0,564,563,1,0,0,0,564,565,1,0,0,0,565,107,1,0,0,0,566,567,7,11,0,0,
+      567,109,1,0,0,0,568,569,5,298,0,0,569,570,3,110,55,0,570,571,5,299,
+      0,0,571,575,1,0,0,0,572,575,3,112,56,0,573,575,3,116,58,0,574,568,
+      1,0,0,0,574,572,1,0,0,0,574,573,1,0,0,0,575,111,1,0,0,0,576,579,3,
+      114,57,0,577,579,3,104,52,0,578,576,1,0,0,0,578,577,1,0,0,0,579,582,
+      1,0,0,0,580,578,1,0,0,0,580,581,1,0,0,0,581,589,1,0,0,0,582,580,1,
+      0,0,0,583,590,5,241,0,0,584,586,3,126,63,0,585,584,1,0,0,0,586,587,
+      1,0,0,0,587,585,1,0,0,0,587,588,1,0,0,0,588,590,1,0,0,0,589,583,1,
+      0,0,0,589,585,1,0,0,0,590,593,1,0,0,0,591,592,5,214,0,0,592,594,3,
+      110,55,0,593,591,1,0,0,0,593,594,1,0,0,0,594,113,1,0,0,0,595,596,7,
+      12,0,0,596,115,1,0,0,0,597,599,3,118,59,0,598,600,3,120,60,0,599,598,
+      1,0,0,0,600,601,1,0,0,0,601,599,1,0,0,0,601,602,1,0,0,0,602,603,1,
+      0,0,0,603,604,3,118,59,0,604,605,5,242,0,0,605,623,1,0,0,0,606,608,
+      3,118,59,0,607,609,3,120,60,0,608,607,1,0,0,0,609,610,1,0,0,0,610,
+      608,1,0,0,0,610,611,1,0,0,0,611,612,1,0,0,0,612,613,5,242,0,0,613,
+      623,1,0,0,0,614,616,3,120,60,0,615,614,1,0,0,0,616,617,1,0,0,0,617,
+      615,1,0,0,0,617,618,1,0,0,0,618,619,1,0,0,0,619,620,3,118,59,0,620,
+      621,5,242,0,0,621,623,1,0,0,0,622,597,1,0,0,0,622,606,1,0,0,0,622,
+      615,1,0,0,0,623,117,1,0,0,0,624,625,5,244,0,0,625,626,5,245,0,0,626,
+      119,1,0,0,0,627,629,3,122,61,0,628,627,1,0,0,0,628,629,1,0,0,0,629,
+      631,1,0,0,0,630,632,3,118,59,0,631,630,1,0,0,0,631,632,1,0,0,0,632,
+      634,1,0,0,0,633,635,3,112,56,0,634,633,1,0,0,0,635,636,1,0,0,0,636,
+      634,1,0,0,0,636,637,1,0,0,0,637,638,1,0,0,0,638,639,5,243,0,0,639,
+      121,1,0,0,0,640,642,3,124,62,0,641,640,1,0,0,0,642,643,1,0,0,0,643,
+      641,1,0,0,0,643,644,1,0,0,0,644,645,1,0,0,0,645,646,5,298,0,0,646,
+      647,5,248,0,0,647,648,3,118,59,0,648,649,5,246,0,0,649,650,5,299,0,
+      0,650,123,1,0,0,0,651,653,3,112,56,0,652,651,1,0,0,0,653,654,1,0,0,
+      0,654,652,1,0,0,0,654,655,1,0,0,0,655,656,1,0,0,0,656,657,5,247,0,
+      0,657,125,1,0,0,0,658,659,5,298,0,0,659,660,3,126,63,0,660,661,5,299,
+      0,0,661,665,1,0,0,0,662,665,3,128,64,0,663,665,3,132,66,0,664,658,
+      1,0,0,0,664,662,1,0,0,0,664,663,1,0,0,0,665,127,1,0,0,0,666,670,3,
+      130,65,0,667,670,3,114,57,0,668,670,3,104,52,0,669,666,1,0,0,0,669,
       667,1,0,0,0,669,668,1,0,0,0,670,673,1,0,0,0,671,669,1,0,0,0,671,672,
       1,0,0,0,672,674,1,0,0,0,673,671,1,0,0,0,674,685,3,148,74,0,675,679,
       3,130,65,0,676,679,3,114,57,0,677,679,3,104,52,0,678,675,1,0,0,0,678,
       676,1,0,0,0,678,677,1,0,0,0,679,680,1,0,0,0,680,678,1,0,0,0,680,681,
       1,0,0,0,681,682,1,0,0,0,682,683,3,126,63,0,683,685,1,0,0,0,684,671,
       1,0,0,0,684,678,1,0,0,0,685,686,1,0,0,0,686,684,1,0,0,0,686,687,1,
-      0,0,0,687,129,1,0,0,0,688,714,5,246,0,0,689,714,5,247,0,0,690,714,
-      5,248,0,0,691,714,5,249,0,0,692,714,5,250,0,0,693,714,5,251,0,0,694,
-      714,5,252,0,0,695,714,5,253,0,0,696,714,5,254,0,0,697,714,5,255,0,
-      0,698,714,5,256,0,0,699,714,5,257,0,0,700,714,5,258,0,0,701,714,5,
-      259,0,0,702,714,5,260,0,0,703,714,5,277,0,0,704,714,5,276,0,0,705,
-      714,5,261,0,0,706,714,5,262,0,0,707,714,5,263,0,0,708,714,5,264,0,
-      0,709,714,5,265,0,0,710,714,5,266,0,0,711,714,5,267,0,0,712,714,3,
+      0,0,0,687,129,1,0,0,0,688,714,5,249,0,0,689,714,5,250,0,0,690,714,
+      5,251,0,0,691,714,5,252,0,0,692,714,5,253,0,0,693,714,5,254,0,0,694,
+      714,5,255,0,0,695,714,5,256,0,0,696,714,5,257,0,0,697,714,5,258,0,
+      0,698,714,5,259,0,0,699,714,5,260,0,0,700,714,5,261,0,0,701,714,5,
+      262,0,0,702,714,5,263,0,0,703,714,5,272,0,0,704,714,5,271,0,0,705,
+      714,5,264,0,0,706,714,5,265,0,0,707,714,5,266,0,0,708,714,5,267,0,
+      0,709,714,5,268,0,0,710,714,5,269,0,0,711,714,5,270,0,0,712,714,3,
       144,72,0,713,688,1,0,0,0,713,689,1,0,0,0,713,690,1,0,0,0,713,691,1,
       0,0,0,713,692,1,0,0,0,713,693,1,0,0,0,713,694,1,0,0,0,713,695,1,0,
       0,0,713,696,1,0,0,0,713,697,1,0,0,0,713,698,1,0,0,0,713,699,1,0,0,
@@ -3504,51 +3647,53 @@ class rtfParser extends Parser {
       1,0,0,0,714,131,1,0,0,0,715,721,3,134,67,0,716,721,3,136,68,0,717,
       721,3,138,69,0,718,721,3,140,70,0,719,721,3,142,71,0,720,715,1,0,0,
       0,720,716,1,0,0,0,720,717,1,0,0,0,720,718,1,0,0,0,720,719,1,0,0,0,
-      721,133,1,0,0,0,722,726,5,276,0,0,723,725,3,144,72,0,724,723,1,0,0,
+      721,133,1,0,0,0,722,726,5,271,0,0,723,725,3,144,72,0,724,723,1,0,0,
       0,725,728,1,0,0,0,726,724,1,0,0,0,726,727,1,0,0,0,727,729,1,0,0,0,
-      728,726,1,0,0,0,729,730,5,277,0,0,730,731,3,128,64,0,731,135,1,0,0,
-      0,732,736,5,277,0,0,733,735,3,144,72,0,734,733,1,0,0,0,735,738,1,0,
+      728,726,1,0,0,0,729,730,5,272,0,0,730,731,3,128,64,0,731,135,1,0,0,
+      0,732,736,5,272,0,0,733,735,3,144,72,0,734,733,1,0,0,0,735,738,1,0,
       0,0,736,734,1,0,0,0,736,737,1,0,0,0,737,739,1,0,0,0,738,736,1,0,0,
-      0,739,740,5,276,0,0,740,741,3,128,64,0,741,137,1,0,0,0,742,743,5,281,
-      0,0,743,744,5,283,0,0,744,745,5,282,0,0,745,746,3,128,64,0,746,139,
-      1,0,0,0,747,748,5,282,0,0,748,749,5,283,0,0,749,750,5,281,0,0,750,
-      751,3,128,64,0,751,141,1,0,0,0,752,753,5,282,0,0,753,754,5,281,0,0,
-      754,755,5,283,0,0,755,756,3,128,64,0,756,143,1,0,0,0,757,758,7,13,
-      0,0,758,145,1,0,0,0,759,760,7,14,0,0,760,147,1,0,0,0,761,762,5,1,0,
-      0,762,763,3,148,74,0,763,764,5,2,0,0,764,768,1,0,0,0,765,768,3,150,
-      75,0,766,768,3,146,73,0,767,761,1,0,0,0,767,765,1,0,0,0,767,766,1,
-      0,0,0,768,149,1,0,0,0,769,774,8,15,0,0,770,774,5,3,0,0,771,774,5,4,
-      0,0,772,774,5,5,0,0,773,769,1,0,0,0,773,770,1,0,0,0,773,771,1,0,0,
-      0,773,772,1,0,0,0,774,775,1,0,0,0,775,773,1,0,0,0,775,776,1,0,0,0,
-      776,151,1,0,0,0,92,161,164,167,170,174,176,180,183,186,189,192,199,
-      205,210,219,221,227,232,234,237,240,243,247,261,270,287,292,295,298,
-      307,313,316,320,323,326,329,332,335,338,341,344,347,362,368,388,390,
-      395,400,406,432,434,515,518,521,524,527,530,537,541,546,550,559,563,
-      573,577,579,586,588,592,600,609,616,621,627,630,635,642,654,664,669,
-      671,678,680,684,686,713,720,726,736,767,773,775
+      0,739,740,5,271,0,0,740,741,3,128,64,0,741,137,1,0,0,0,742,743,5,276,
+      0,0,743,744,5,278,0,0,744,745,5,277,0,0,745,746,3,128,64,0,746,139,
+      1,0,0,0,747,748,5,277,0,0,748,749,5,278,0,0,749,750,5,276,0,0,750,
+      751,3,128,64,0,751,141,1,0,0,0,752,753,5,277,0,0,753,754,5,276,0,0,
+      754,755,5,278,0,0,755,756,3,128,64,0,756,143,1,0,0,0,757,758,7,13,
+      0,0,758,145,1,0,0,0,759,760,7,14,0,0,760,147,1,0,0,0,761,762,5,298,
+      0,0,762,763,3,148,74,0,763,764,5,299,0,0,764,768,1,0,0,0,765,768,3,
+      150,75,0,766,768,3,146,73,0,767,761,1,0,0,0,767,765,1,0,0,0,767,766,
+      1,0,0,0,768,149,1,0,0,0,769,774,8,15,0,0,770,774,5,295,0,0,771,774,
+      5,296,0,0,772,774,5,297,0,0,773,769,1,0,0,0,773,770,1,0,0,0,773,771,
+      1,0,0,0,773,772,1,0,0,0,774,775,1,0,0,0,775,773,1,0,0,0,775,776,1,
+      0,0,0,776,151,1,0,0,0,93,161,164,167,170,174,176,180,183,186,189,192,
+      199,205,210,219,221,227,232,234,237,240,243,247,261,270,287,292,295,
+      298,307,313,316,320,323,326,329,332,335,338,341,344,347,362,368,388,
+      390,395,400,406,432,434,515,518,521,524,527,530,536,538,542,547,551,
+      560,564,574,578,580,587,589,593,601,610,617,622,628,631,636,643,654,
+      664,669,671,678,680,684,686,713,720,726,736,767,773,775
   ];
 
   static final ATN _ATN =
       ATNDeserializer().deserialize(_serializedATN);
 }
 class FileContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   HeaderContext? header() => getRuleContext<HeaderContext>(0);
   DocumentContext? document() => getRuleContext<DocumentContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   TerminalNode? EOF() => getToken(rtfParser.TOKEN_EOF, 0);
   FileContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_file;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterFile(this);
+    if (listener is rtfParserListener) listener.enterFile(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitFile(this);
+    if (listener is rtfParserListener) listener.exitFile(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitFile(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3575,15 +3720,15 @@ class HeaderContext extends ParserRuleContext {
   int get ruleIndex => RULE_header;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterHeader(this);
+    if (listener is rtfParserListener) listener.enterHeader(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitHeader(this);
+    if (listener is rtfParserListener) listener.exitHeader(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitHeader(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3602,15 +3747,15 @@ class CharsetContext extends ParserRuleContext {
   int get ruleIndex => RULE_charset;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterCharset(this);
+    if (listener is rtfParserListener) listener.enterCharset(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitCharset(this);
+    if (listener is rtfParserListener) listener.exitCharset(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitCharset(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3626,15 +3771,15 @@ class FromContext extends ParserRuleContext {
   int get ruleIndex => RULE_from;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterFrom(this);
+    if (listener is rtfParserListener) listener.enterFrom(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitFrom(this);
+    if (listener is rtfParserListener) listener.exitFrom(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitFrom(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3656,15 +3801,15 @@ class DeffontContext extends ParserRuleContext {
   int get ruleIndex => RULE_deffont;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterDeffont(this);
+    if (listener is rtfParserListener) listener.enterDeffont(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitDeffont(this);
+    if (listener is rtfParserListener) listener.exitDeffont(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitDeffont(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3684,15 +3829,15 @@ class DeflangContext extends ParserRuleContext {
   int get ruleIndex => RULE_deflang;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterDeflang(this);
+    if (listener is rtfParserListener) listener.enterDeflang(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitDeflang(this);
+    if (listener is rtfParserListener) listener.exitDeflang(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitDeflang(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3701,7 +3846,11 @@ class DeflangContext extends ParserRuleContext {
 }
 
 class FonttblContext extends ParserRuleContext {
+  List<TerminalNode> OPENING_BRACEs() => getTokens(rtfParser.TOKEN_OPENING_BRACE);
+  TerminalNode? OPENING_BRACE(int i) => getToken(rtfParser.TOKEN_OPENING_BRACE, i);
   TerminalNode? FONTTBL() => getToken(rtfParser.TOKEN_FONTTBL, 0);
+  List<TerminalNode> CLOSING_BRACEs() => getTokens(rtfParser.TOKEN_CLOSING_BRACE);
+  TerminalNode? CLOSING_BRACE(int i) => getToken(rtfParser.TOKEN_CLOSING_BRACE, i);
   List<FontinfoContext> fontinfos() => getRuleContexts<FontinfoContext>();
   FontinfoContext? fontinfo(int i) => getRuleContext<FontinfoContext>(i);
   FonttblContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
@@ -3709,15 +3858,15 @@ class FonttblContext extends ParserRuleContext {
   int get ruleIndex => RULE_fonttbl;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterFonttbl(this);
+    if (listener is rtfParserListener) listener.enterFonttbl(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitFonttbl(this);
+    if (listener is rtfParserListener) listener.exitFonttbl(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitFonttbl(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3743,15 +3892,15 @@ class FontinfoContext extends ParserRuleContext {
   int get ruleIndex => RULE_fontinfo;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterFontinfo(this);
+    if (listener is rtfParserListener) listener.enterFontinfo(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitFontinfo(this);
+    if (listener is rtfParserListener) listener.exitFontinfo(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitFontinfo(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3773,15 +3922,15 @@ class FontfamilyContext extends ParserRuleContext {
   int get ruleIndex => RULE_fontfamily;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterFontfamily(this);
+    if (listener is rtfParserListener) listener.enterFontfamily(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitFontfamily(this);
+    if (listener is rtfParserListener) listener.exitFontfamily(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitFontfamily(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3790,8 +3939,10 @@ class FontfamilyContext extends ParserRuleContext {
 }
 
 class FontembContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? FONTEMB() => getToken(rtfParser.TOKEN_FONTEMB, 0);
   FonttypeContext? fonttype() => getRuleContext<FonttypeContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   FontfnameContext? fontfname() => getRuleContext<FontfnameContext>(0);
   DataContext? data() => getRuleContext<DataContext>(0);
   FontembContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
@@ -3799,15 +3950,15 @@ class FontembContext extends ParserRuleContext {
   int get ruleIndex => RULE_fontemb;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterFontemb(this);
+    if (listener is rtfParserListener) listener.enterFontemb(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitFontemb(this);
+    if (listener is rtfParserListener) listener.exitFontemb(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitFontemb(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3823,15 +3974,15 @@ class FonttypeContext extends ParserRuleContext {
   int get ruleIndex => RULE_fonttype;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterFonttype(this);
+    if (listener is rtfParserListener) listener.enterFonttype(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitFonttype(this);
+    if (listener is rtfParserListener) listener.exitFonttype(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitFonttype(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3840,23 +3991,25 @@ class FonttypeContext extends ParserRuleContext {
 }
 
 class FontfnameContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? FONTFILE() => getToken(rtfParser.TOKEN_FONTFILE, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   TerminalNode? CODEPAGE() => getToken(rtfParser.TOKEN_CODEPAGE, 0);
   FontfnameContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_fontfname;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterFontfname(this);
+    if (listener is rtfParserListener) listener.enterFontfname(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitFontfname(this);
+    if (listener is rtfParserListener) listener.exitFontfname(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitFontfname(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3871,15 +4024,15 @@ class FontnameContext extends ParserRuleContext {
   int get ruleIndex => RULE_fontname;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterFontname(this);
+    if (listener is rtfParserListener) listener.enterFontname(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitFontname(this);
+    if (listener is rtfParserListener) listener.exitFontname(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitFontname(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3888,22 +4041,24 @@ class FontnameContext extends ParserRuleContext {
 }
 
 class FontaltnameContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? FALT() => getToken(rtfParser.TOKEN_FALT, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   FontaltnameContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_fontaltname;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterFontaltname(this);
+    if (listener is rtfParserListener) listener.enterFontaltname(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitFontaltname(this);
+    if (listener is rtfParserListener) listener.exitFontaltname(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitFontaltname(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3912,7 +4067,9 @@ class FontaltnameContext extends ParserRuleContext {
 }
 
 class ColortblContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? COLORTBL() => getToken(rtfParser.TOKEN_COLORTBL, 0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   List<ColordefContext> colordefs() => getRuleContexts<ColordefContext>();
   ColordefContext? colordef(int i) => getRuleContext<ColordefContext>(i);
   ColortblContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
@@ -3920,15 +4077,15 @@ class ColortblContext extends ParserRuleContext {
   int get ruleIndex => RULE_colortbl;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterColortbl(this);
+    if (listener is rtfParserListener) listener.enterColortbl(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitColortbl(this);
+    if (listener is rtfParserListener) listener.exitColortbl(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitColortbl(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3946,15 +4103,15 @@ class ColordefContext extends ParserRuleContext {
   int get ruleIndex => RULE_colordef;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterColordef(this);
+    if (listener is rtfParserListener) listener.enterColordef(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitColordef(this);
+    if (listener is rtfParserListener) listener.exitColordef(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitColordef(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3963,7 +4120,9 @@ class ColordefContext extends ParserRuleContext {
 }
 
 class StylesheetContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? STYLESHEET() => getToken(rtfParser.TOKEN_STYLESHEET, 0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   List<StyleContext> styles() => getRuleContexts<StyleContext>();
   StyleContext? style(int i) => getRuleContext<StyleContext>(i);
   StylesheetContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
@@ -3971,15 +4130,15 @@ class StylesheetContext extends ParserRuleContext {
   int get ruleIndex => RULE_stylesheet;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterStylesheet(this);
+    if (listener is rtfParserListener) listener.enterStylesheet(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitStylesheet(this);
+    if (listener is rtfParserListener) listener.exitStylesheet(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitStylesheet(this);
     } else {
     	return visitor.visitChildren(this);
@@ -3988,9 +4147,11 @@ class StylesheetContext extends ParserRuleContext {
 }
 
 class StyleContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   List<FormattingContext> formattings() => getRuleContexts<FormattingContext>();
   FormattingContext? formatting(int i) => getRuleContext<FormattingContext>(i);
   TerminalNode? SEMICOLON() => getToken(rtfParser.TOKEN_SEMICOLON, 0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   StyledefContext? styledef() => getRuleContext<StyledefContext>(0);
   KeycodeContext? keycode() => getRuleContext<KeycodeContext>(0);
   AdditiveContext? additive() => getRuleContext<AdditiveContext>(0);
@@ -4007,15 +4168,15 @@ class StyleContext extends ParserRuleContext {
   int get ruleIndex => RULE_style;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterStyle(this);
+    if (listener is rtfParserListener) listener.enterStyle(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitStyle(this);
+    if (listener is rtfParserListener) listener.exitStyle(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitStyle(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4032,15 +4193,15 @@ class StyledefContext extends ParserRuleContext {
   int get ruleIndex => RULE_styledef;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterStyledef(this);
+    if (listener is rtfParserListener) listener.enterStyledef(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitStyledef(this);
+    if (listener is rtfParserListener) listener.exitStyledef(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitStyledef(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4049,22 +4210,24 @@ class StyledefContext extends ParserRuleContext {
 }
 
 class KeycodeContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? KEYCODE() => getToken(rtfParser.TOKEN_KEYCODE, 0);
   KeysContext? keys() => getRuleContext<KeysContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   KeycodeContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_keycode;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterKeycode(this);
+    if (listener is rtfParserListener) listener.enterKeycode(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitKeycode(this);
+    if (listener is rtfParserListener) listener.exitKeycode(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitKeycode(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4085,15 +4248,15 @@ class KeysContext extends ParserRuleContext {
   int get ruleIndex => RULE_keys;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterKeys(this);
+    if (listener is rtfParserListener) listener.enterKeys(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitKeys(this);
+    if (listener is rtfParserListener) listener.exitKeys(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitKeys(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4109,15 +4272,15 @@ class KeyContext extends ParserRuleContext {
   int get ruleIndex => RULE_key;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterKey(this);
+    if (listener is rtfParserListener) listener.enterKey(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitKey(this);
+    if (listener is rtfParserListener) listener.exitKey(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitKey(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4132,15 +4295,15 @@ class AdditiveContext extends ParserRuleContext {
   int get ruleIndex => RULE_additive;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterAdditive(this);
+    if (listener is rtfParserListener) listener.enterAdditive(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitAdditive(this);
+    if (listener is rtfParserListener) listener.exitAdditive(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitAdditive(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4155,15 +4318,15 @@ class BasedContext extends ParserRuleContext {
   int get ruleIndex => RULE_based;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterBased(this);
+    if (listener is rtfParserListener) listener.enterBased(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitBased(this);
+    if (listener is rtfParserListener) listener.exitBased(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitBased(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4178,15 +4341,15 @@ class NextContext extends ParserRuleContext {
   int get ruleIndex => RULE_next;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterNext(this);
+    if (listener is rtfParserListener) listener.enterNext(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitNext(this);
+    if (listener is rtfParserListener) listener.exitNext(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitNext(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4201,15 +4364,15 @@ class AutoupdContext extends ParserRuleContext {
   int get ruleIndex => RULE_autoupd;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterAutoupd(this);
+    if (listener is rtfParserListener) listener.enterAutoupd(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitAutoupd(this);
+    if (listener is rtfParserListener) listener.exitAutoupd(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitAutoupd(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4224,15 +4387,15 @@ class HiddenContext extends ParserRuleContext {
   int get ruleIndex => RULE_hidden;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterHidden(this);
+    if (listener is rtfParserListener) listener.enterHidden(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitHidden(this);
+    if (listener is rtfParserListener) listener.exitHidden(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitHidden(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4247,15 +4410,15 @@ class PersonalContext extends ParserRuleContext {
   int get ruleIndex => RULE_personal;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterPersonal(this);
+    if (listener is rtfParserListener) listener.enterPersonal(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitPersonal(this);
+    if (listener is rtfParserListener) listener.exitPersonal(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitPersonal(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4270,15 +4433,15 @@ class ComposeContext extends ParserRuleContext {
   int get ruleIndex => RULE_compose;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterCompose(this);
+    if (listener is rtfParserListener) listener.enterCompose(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitCompose(this);
+    if (listener is rtfParserListener) listener.exitCompose(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitCompose(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4293,15 +4456,15 @@ class ReplyContext extends ParserRuleContext {
   int get ruleIndex => RULE_reply;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterReply(this);
+    if (listener is rtfParserListener) listener.enterReply(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitReply(this);
+    if (listener is rtfParserListener) listener.exitReply(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitReply(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4319,15 +4482,15 @@ class FormattingContext extends ParserRuleContext {
   int get ruleIndex => RULE_formatting;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterFormatting(this);
+    if (listener is rtfParserListener) listener.enterFormatting(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitFormatting(this);
+    if (listener is rtfParserListener) listener.exitFormatting(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitFormatting(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4342,15 +4505,15 @@ class StylenameContext extends ParserRuleContext {
   int get ruleIndex => RULE_stylename;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterStylename(this);
+    if (listener is rtfParserListener) listener.enterStylename(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitStylename(this);
+    if (listener is rtfParserListener) listener.exitStylename(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitStylename(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4369,15 +4532,15 @@ class DocumentContext extends ParserRuleContext {
   int get ruleIndex => RULE_document;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterDocument(this);
+    if (listener is rtfParserListener) listener.enterDocument(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitDocument(this);
+    if (listener is rtfParserListener) listener.exitDocument(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitDocument(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4386,7 +4549,9 @@ class DocumentContext extends ParserRuleContext {
 }
 
 class DocumentInfoContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? INFO() => getToken(rtfParser.TOKEN_INFO, 0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   List<TitleContext> titles() => getRuleContexts<TitleContext>();
   TitleContext? title(int i) => getRuleContext<TitleContext>(i);
   List<SubjectContext> subjects() => getRuleContexts<SubjectContext>();
@@ -4436,15 +4601,15 @@ class DocumentInfoContext extends ParserRuleContext {
   int get ruleIndex => RULE_documentInfo;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterDocumentInfo(this);
+    if (listener is rtfParserListener) listener.enterDocumentInfo(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitDocumentInfo(this);
+    if (listener is rtfParserListener) listener.exitDocumentInfo(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitDocumentInfo(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4453,22 +4618,24 @@ class DocumentInfoContext extends ParserRuleContext {
 }
 
 class TitleContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? TITLE() => getToken(rtfParser.TOKEN_TITLE, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   TitleContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_title;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterTitle(this);
+    if (listener is rtfParserListener) listener.enterTitle(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitTitle(this);
+    if (listener is rtfParserListener) listener.exitTitle(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitTitle(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4477,22 +4644,24 @@ class TitleContext extends ParserRuleContext {
 }
 
 class SubjectContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? SUBJECT() => getToken(rtfParser.TOKEN_SUBJECT, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   SubjectContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_subject;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterSubject(this);
+    if (listener is rtfParserListener) listener.enterSubject(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitSubject(this);
+    if (listener is rtfParserListener) listener.exitSubject(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitSubject(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4501,22 +4670,24 @@ class SubjectContext extends ParserRuleContext {
 }
 
 class AuthorContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? AUTHOR() => getToken(rtfParser.TOKEN_AUTHOR, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   AuthorContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_author;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterAuthor(this);
+    if (listener is rtfParserListener) listener.enterAuthor(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitAuthor(this);
+    if (listener is rtfParserListener) listener.exitAuthor(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitAuthor(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4525,22 +4696,24 @@ class AuthorContext extends ParserRuleContext {
 }
 
 class ManagerContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? MANAGER() => getToken(rtfParser.TOKEN_MANAGER, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   ManagerContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_manager;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterManager(this);
+    if (listener is rtfParserListener) listener.enterManager(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitManager(this);
+    if (listener is rtfParserListener) listener.exitManager(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitManager(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4549,22 +4722,24 @@ class ManagerContext extends ParserRuleContext {
 }
 
 class CompanyContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? COMPANY() => getToken(rtfParser.TOKEN_COMPANY, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   CompanyContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_company;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterCompany(this);
+    if (listener is rtfParserListener) listener.enterCompany(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitCompany(this);
+    if (listener is rtfParserListener) listener.exitCompany(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitCompany(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4573,22 +4748,24 @@ class CompanyContext extends ParserRuleContext {
 }
 
 class OperatorContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? OPERATOR() => getToken(rtfParser.TOKEN_OPERATOR, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   OperatorContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_operator;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterOperator(this);
+    if (listener is rtfParserListener) listener.enterOperator(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitOperator(this);
+    if (listener is rtfParserListener) listener.exitOperator(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitOperator(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4597,22 +4774,24 @@ class OperatorContext extends ParserRuleContext {
 }
 
 class CategoryContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? CATEGORY() => getToken(rtfParser.TOKEN_CATEGORY, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   CategoryContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_category;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterCategory(this);
+    if (listener is rtfParserListener) listener.enterCategory(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitCategory(this);
+    if (listener is rtfParserListener) listener.exitCategory(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitCategory(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4621,22 +4800,24 @@ class CategoryContext extends ParserRuleContext {
 }
 
 class KeywordsContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? KEYWORDS() => getToken(rtfParser.TOKEN_KEYWORDS, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   KeywordsContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_keywords;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterKeywords(this);
+    if (listener is rtfParserListener) listener.enterKeywords(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitKeywords(this);
+    if (listener is rtfParserListener) listener.exitKeywords(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitKeywords(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4645,22 +4826,24 @@ class KeywordsContext extends ParserRuleContext {
 }
 
 class CommentContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? COMMENT() => getToken(rtfParser.TOKEN_COMMENT, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   CommentContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_comment;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterComment(this);
+    if (listener is rtfParserListener) listener.enterComment(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitComment(this);
+    if (listener is rtfParserListener) listener.exitComment(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitComment(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4669,22 +4852,24 @@ class CommentContext extends ParserRuleContext {
 }
 
 class DoccommContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? DOCCOMM() => getToken(rtfParser.TOKEN_DOCCOMM, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   DoccommContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_doccomm;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterDoccomm(this);
+    if (listener is rtfParserListener) listener.enterDoccomm(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitDoccomm(this);
+    if (listener is rtfParserListener) listener.exitDoccomm(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitDoccomm(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4693,22 +4878,24 @@ class DoccommContext extends ParserRuleContext {
 }
 
 class HlinkbaseContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? HLINKBASE() => getToken(rtfParser.TOKEN_HLINKBASE, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   HlinkbaseContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_hlinkbase;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterHlinkbase(this);
+    if (listener is rtfParserListener) listener.enterHlinkbase(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitHlinkbase(this);
+    if (listener is rtfParserListener) listener.exitHlinkbase(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitHlinkbase(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4717,22 +4904,24 @@ class HlinkbaseContext extends ParserRuleContext {
 }
 
 class CreatimContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? CREATIM() => getToken(rtfParser.TOKEN_CREATIM, 0);
   TimeContext? time() => getRuleContext<TimeContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   CreatimContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_creatim;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterCreatim(this);
+    if (listener is rtfParserListener) listener.enterCreatim(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitCreatim(this);
+    if (listener is rtfParserListener) listener.exitCreatim(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitCreatim(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4741,22 +4930,24 @@ class CreatimContext extends ParserRuleContext {
 }
 
 class RevtimContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? REVTIM() => getToken(rtfParser.TOKEN_REVTIM, 0);
   TimeContext? time() => getRuleContext<TimeContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   RevtimContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_revtim;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterRevtim(this);
+    if (listener is rtfParserListener) listener.enterRevtim(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitRevtim(this);
+    if (listener is rtfParserListener) listener.exitRevtim(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitRevtim(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4765,22 +4956,24 @@ class RevtimContext extends ParserRuleContext {
 }
 
 class PrintimContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? PRINTIM() => getToken(rtfParser.TOKEN_PRINTIM, 0);
   TimeContext? time() => getRuleContext<TimeContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   PrintimContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_printim;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterPrintim(this);
+    if (listener is rtfParserListener) listener.enterPrintim(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitPrintim(this);
+    if (listener is rtfParserListener) listener.exitPrintim(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitPrintim(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4789,22 +4982,24 @@ class PrintimContext extends ParserRuleContext {
 }
 
 class BuptimContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? BUPTIM() => getToken(rtfParser.TOKEN_BUPTIM, 0);
   TimeContext? time() => getRuleContext<TimeContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   BuptimContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
   @override
   int get ruleIndex => RULE_buptim;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterBuptim(this);
+    if (listener is rtfParserListener) listener.enterBuptim(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitBuptim(this);
+    if (listener is rtfParserListener) listener.exitBuptim(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitBuptim(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4824,15 +5019,15 @@ class TimeContext extends ParserRuleContext {
   int get ruleIndex => RULE_time;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterTime(this);
+    if (listener is rtfParserListener) listener.enterTime(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitTime(this);
+    if (listener is rtfParserListener) listener.exitTime(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitTime(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4917,15 +5112,15 @@ class DocfmtContext extends ParserRuleContext {
   int get ruleIndex => RULE_docfmt;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterDocfmt(this);
+    if (listener is rtfParserListener) listener.enterDocfmt(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitDocfmt(this);
+    if (listener is rtfParserListener) listener.exitDocfmt(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitDocfmt(this);
     } else {
     	return visitor.visitChildren(this);
@@ -4936,6 +5131,8 @@ class DocfmtContext extends ParserRuleContext {
 class SectionContext extends ParserRuleContext {
   List<SecfmtContext> secfmts() => getRuleContexts<SecfmtContext>();
   SecfmtContext? secfmt(int i) => getRuleContext<SecfmtContext>(i);
+  List<DocfmtContext> docfmts() => getRuleContexts<DocfmtContext>();
+  DocfmtContext? docfmt(int i) => getRuleContext<DocfmtContext>(i);
   HdrftrContext? hdrftr() => getRuleContext<HdrftrContext>(0);
   List<ParaContext> paras() => getRuleContexts<ParaContext>();
   ParaContext? para(int i) => getRuleContext<ParaContext>(i);
@@ -4946,15 +5143,15 @@ class SectionContext extends ParserRuleContext {
   int get ruleIndex => RULE_section;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterSection(this);
+    if (listener is rtfParserListener) listener.enterSection(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitSection(this);
+    if (listener is rtfParserListener) listener.exitSection(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitSection(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5020,15 +5217,15 @@ class SecfmtContext extends ParserRuleContext {
   int get ruleIndex => RULE_secfmt;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterSecfmt(this);
+    if (listener is rtfParserListener) listener.enterSecfmt(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitSecfmt(this);
+    if (listener is rtfParserListener) listener.exitSecfmt(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitSecfmt(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5037,7 +5234,9 @@ class SecfmtContext extends ParserRuleContext {
 }
 
 class HdrftrContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   HdrctlContext? hdrctl() => getRuleContext<HdrctlContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   List<ParaContext> paras() => getRuleContexts<ParaContext>();
   ParaContext? para(int i) => getRuleContext<ParaContext>(i);
   HdrftrContext? hdrftr() => getRuleContext<HdrftrContext>(0);
@@ -5046,15 +5245,15 @@ class HdrftrContext extends ParserRuleContext {
   int get ruleIndex => RULE_hdrftr;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterHdrftr(this);
+    if (listener is rtfParserListener) listener.enterHdrftr(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitHdrftr(this);
+    if (listener is rtfParserListener) listener.exitHdrftr(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitHdrftr(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5076,15 +5275,15 @@ class HdrctlContext extends ParserRuleContext {
   int get ruleIndex => RULE_hdrctl;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterHdrctl(this);
+    if (listener is rtfParserListener) listener.enterHdrctl(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitHdrctl(this);
+    if (listener is rtfParserListener) listener.exitHdrctl(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitHdrctl(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5093,7 +5292,9 @@ class HdrctlContext extends ParserRuleContext {
 }
 
 class ParaContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   ParaContext? para() => getRuleContext<ParaContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   TextparContext? textpar() => getRuleContext<TextparContext>(0);
   RowContext? row() => getRuleContext<RowContext>(0);
   ParaContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
@@ -5101,15 +5302,15 @@ class ParaContext extends ParserRuleContext {
   int get ruleIndex => RULE_para;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterPara(this);
+    if (listener is rtfParserListener) listener.enterPara(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitPara(this);
+    if (listener is rtfParserListener) listener.exitPara(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitPara(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5132,15 +5333,15 @@ class TextparContext extends ParserRuleContext {
   int get ruleIndex => RULE_textpar;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterTextpar(this);
+    if (listener is rtfParserListener) listener.enterTextpar(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitTextpar(this);
+    if (listener is rtfParserListener) listener.exitTextpar(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitTextpar(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5183,15 +5384,15 @@ class ParfmtContext extends ParserRuleContext {
   int get ruleIndex => RULE_parfmt;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterParfmt(this);
+    if (listener is rtfParserListener) listener.enterParfmt(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitParfmt(this);
+    if (listener is rtfParserListener) listener.exitParfmt(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitParfmt(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5210,15 +5411,15 @@ class RowContext extends ParserRuleContext {
   int get ruleIndex => RULE_row;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterRow(this);
+    if (listener is rtfParserListener) listener.enterRow(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitRow(this);
+    if (listener is rtfParserListener) listener.exitRow(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitRow(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5234,15 +5435,15 @@ class TbldefContext extends ParserRuleContext {
   int get ruleIndex => RULE_tbldef;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterTbldef(this);
+    if (listener is rtfParserListener) listener.enterTbldef(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitTbldef(this);
+    if (listener is rtfParserListener) listener.exitTbldef(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitTbldef(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5261,15 +5462,15 @@ class CellContext extends ParserRuleContext {
   int get ruleIndex => RULE_cell;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterCell(this);
+    if (listener is rtfParserListener) listener.enterCell(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitCell(this);
+    if (listener is rtfParserListener) listener.exitCell(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitCell(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5278,10 +5479,11 @@ class CellContext extends ParserRuleContext {
 }
 
 class NestrowContext extends ParserRuleContext {
-  TerminalNode? IGNORABLE_CONTROL_PREFIX() => getToken(rtfParser.TOKEN_IGNORABLE_CONTROL_PREFIX, 0);
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   TerminalNode? NESTTABLEPROPS() => getToken(rtfParser.TOKEN_NESTTABLEPROPS, 0);
   TbldefContext? tbldef() => getRuleContext<TbldefContext>(0);
   TerminalNode? NESTROW() => getToken(rtfParser.TOKEN_NESTROW, 0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   List<NestcellContext> nestcells() => getRuleContexts<NestcellContext>();
   NestcellContext? nestcell(int i) => getRuleContext<NestcellContext>(i);
   NestrowContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
@@ -5289,15 +5491,15 @@ class NestrowContext extends ParserRuleContext {
   int get ruleIndex => RULE_nestrow;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterNestrow(this);
+    if (listener is rtfParserListener) listener.enterNestrow(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitNestrow(this);
+    if (listener is rtfParserListener) listener.exitNestrow(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitNestrow(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5314,15 +5516,15 @@ class NestcellContext extends ParserRuleContext {
   int get ruleIndex => RULE_nestcell;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterNestcell(this);
+    if (listener is rtfParserListener) listener.enterNestcell(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitNestcell(this);
+    if (listener is rtfParserListener) listener.exitNestcell(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitNestcell(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5331,7 +5533,9 @@ class NestcellContext extends ParserRuleContext {
 }
 
 class CharTextContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   CharTextContext? charText() => getRuleContext<CharTextContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   PtextContext? ptext() => getRuleContext<PtextContext>(0);
   AtextContext? atext() => getRuleContext<AtextContext>(0);
   CharTextContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
@@ -5339,15 +5543,15 @@ class CharTextContext extends ParserRuleContext {
   int get ruleIndex => RULE_charText;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterCharText(this);
+    if (listener is rtfParserListener) listener.enterCharText(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitCharText(this);
+    if (listener is rtfParserListener) listener.exitCharText(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitCharText(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5371,15 +5575,15 @@ class PtextContext extends ParserRuleContext {
   int get ruleIndex => RULE_ptext;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterPtext(this);
+    if (listener is rtfParserListener) listener.enterPtext(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitPtext(this);
+    if (listener is rtfParserListener) listener.exitPtext(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitPtext(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5418,15 +5622,15 @@ class ChrfmtContext extends ParserRuleContext {
   int get ruleIndex => RULE_chrfmt;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterChrfmt(this);
+    if (listener is rtfParserListener) listener.enterChrfmt(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitChrfmt(this);
+    if (listener is rtfParserListener) listener.exitChrfmt(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitChrfmt(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5445,15 +5649,15 @@ class AtextContext extends ParserRuleContext {
   int get ruleIndex => RULE_atext;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterAtext(this);
+    if (listener is rtfParserListener) listener.enterAtext(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitAtext(this);
+    if (listener is rtfParserListener) listener.exitAtext(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitAtext(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5472,15 +5676,15 @@ class LtrrunContext extends ParserRuleContext {
   int get ruleIndex => RULE_ltrrun;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterLtrrun(this);
+    if (listener is rtfParserListener) listener.enterLtrrun(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitLtrrun(this);
+    if (listener is rtfParserListener) listener.exitLtrrun(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitLtrrun(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5499,15 +5703,15 @@ class RtlrunContext extends ParserRuleContext {
   int get ruleIndex => RULE_rtlrun;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterRtlrun(this);
+    if (listener is rtfParserListener) listener.enterRtlrun(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitRtlrun(this);
+    if (listener is rtfParserListener) listener.exitRtlrun(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitRtlrun(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5525,15 +5729,15 @@ class LosbrunContext extends ParserRuleContext {
   int get ruleIndex => RULE_losbrun;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterLosbrun(this);
+    if (listener is rtfParserListener) listener.enterLosbrun(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitLosbrun(this);
+    if (listener is rtfParserListener) listener.exitLosbrun(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitLosbrun(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5551,15 +5755,15 @@ class HisbrunContext extends ParserRuleContext {
   int get ruleIndex => RULE_hisbrun;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterHisbrun(this);
+    if (listener is rtfParserListener) listener.enterHisbrun(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitHisbrun(this);
+    if (listener is rtfParserListener) listener.exitHisbrun(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitHisbrun(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5577,15 +5781,15 @@ class DbrunContext extends ParserRuleContext {
   int get ruleIndex => RULE_dbrun;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterDbrun(this);
+    if (listener is rtfParserListener) listener.enterDbrun(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitDbrun(this);
+    if (listener is rtfParserListener) listener.exitDbrun(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitDbrun(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5609,15 +5813,15 @@ class ApropsContext extends ParserRuleContext {
   int get ruleIndex => RULE_aprops;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterAprops(this);
+    if (listener is rtfParserListener) listener.enterAprops(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitAprops(this);
+    if (listener is rtfParserListener) listener.exitAprops(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitAprops(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5637,15 +5841,15 @@ class SpecContext extends ParserRuleContext {
   int get ruleIndex => RULE_spec;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterSpec(this);
+    if (listener is rtfParserListener) listener.enterSpec(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitSpec(this);
+    if (listener is rtfParserListener) listener.exitSpec(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitSpec(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5654,7 +5858,9 @@ class SpecContext extends ParserRuleContext {
 }
 
 class DataContext extends ParserRuleContext {
+  TerminalNode? OPENING_BRACE() => getToken(rtfParser.TOKEN_OPENING_BRACE, 0);
   DataContext? data() => getRuleContext<DataContext>(0);
+  TerminalNode? CLOSING_BRACE() => getToken(rtfParser.TOKEN_CLOSING_BRACE, 0);
   PcdataContext? pcdata() => getRuleContext<PcdataContext>(0);
   SpecContext? spec() => getRuleContext<SpecContext>(0);
   DataContext([ParserRuleContext? parent, int? invokingState]) : super(parent, invokingState);
@@ -5662,15 +5868,15 @@ class DataContext extends ParserRuleContext {
   int get ruleIndex => RULE_data;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterData(this);
+    if (listener is rtfParserListener) listener.enterData(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitData(this);
+    if (listener is rtfParserListener) listener.exitData(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitData(this);
     } else {
     	return visitor.visitChildren(this);
@@ -5679,6 +5885,16 @@ class DataContext extends ParserRuleContext {
 }
 
 class PcdataContext extends ParserRuleContext {
+  List<TerminalNode> ESCAPED_OPENING_BRACEs() => getTokens(rtfParser.TOKEN_ESCAPED_OPENING_BRACE);
+  TerminalNode? ESCAPED_OPENING_BRACE(int i) => getToken(rtfParser.TOKEN_ESCAPED_OPENING_BRACE, i);
+  List<TerminalNode> ESCAPED_CLOSING_BRACEs() => getTokens(rtfParser.TOKEN_ESCAPED_CLOSING_BRACE);
+  TerminalNode? ESCAPED_CLOSING_BRACE(int i) => getToken(rtfParser.TOKEN_ESCAPED_CLOSING_BRACE, i);
+  List<TerminalNode> ESCAPED_BACKSLASHs() => getTokens(rtfParser.TOKEN_ESCAPED_BACKSLASH);
+  TerminalNode? ESCAPED_BACKSLASH(int i) => getToken(rtfParser.TOKEN_ESCAPED_BACKSLASH, i);
+  List<TerminalNode> OPENING_BRACEs() => getTokens(rtfParser.TOKEN_OPENING_BRACE);
+  TerminalNode? OPENING_BRACE(int i) => getToken(rtfParser.TOKEN_OPENING_BRACE, i);
+  List<TerminalNode> CLOSING_BRACEs() => getTokens(rtfParser.TOKEN_CLOSING_BRACE);
+  TerminalNode? CLOSING_BRACE(int i) => getToken(rtfParser.TOKEN_CLOSING_BRACE, i);
   List<TerminalNode> CONTROL_CODEs() => getTokens(rtfParser.TOKEN_CONTROL_CODE);
   TerminalNode? CONTROL_CODE(int i) => getToken(rtfParser.TOKEN_CONTROL_CODE, i);
   List<TerminalNode> RTFVERSIONs() => getTokens(rtfParser.TOKEN_RTFVERSION);
@@ -5735,6 +5951,14 @@ class PcdataContext extends ParserRuleContext {
   TerminalNode? CODEPAGE(int i) => getToken(rtfParser.TOKEN_CODEPAGE, i);
   List<TerminalNode> FALTs() => getTokens(rtfParser.TOKEN_FALT);
   TerminalNode? FALT(int i) => getToken(rtfParser.TOKEN_FALT, i);
+  List<TerminalNode> COLORTBLs() => getTokens(rtfParser.TOKEN_COLORTBL);
+  TerminalNode? COLORTBL(int i) => getToken(rtfParser.TOKEN_COLORTBL, i);
+  List<TerminalNode> REDNs() => getTokens(rtfParser.TOKEN_REDN);
+  TerminalNode? REDN(int i) => getToken(rtfParser.TOKEN_REDN, i);
+  List<TerminalNode> GREENNs() => getTokens(rtfParser.TOKEN_GREENN);
+  TerminalNode? GREENN(int i) => getToken(rtfParser.TOKEN_GREENN, i);
+  List<TerminalNode> BLUENs() => getTokens(rtfParser.TOKEN_BLUEN);
+  TerminalNode? BLUEN(int i) => getToken(rtfParser.TOKEN_BLUEN, i);
   List<TerminalNode> STYLESHEETs() => getTokens(rtfParser.TOKEN_STYLESHEET);
   TerminalNode? STYLESHEET(int i) => getToken(rtfParser.TOKEN_STYLESHEET, i);
   List<TerminalNode> Ss() => getTokens(rtfParser.TOKEN_S);
@@ -5915,6 +6139,8 @@ class PcdataContext extends ParserRuleContext {
   TerminalNode? FORMSHADE(int i) => getToken(rtfParser.TOKEN_FORMSHADE, i);
   List<TerminalNode> SECTs() => getTokens(rtfParser.TOKEN_SECT);
   TerminalNode? SECT(int i) => getToken(rtfParser.TOKEN_SECT, i);
+  List<TerminalNode> SECTDs() => getTokens(rtfParser.TOKEN_SECTD);
+  TerminalNode? SECTD(int i) => getToken(rtfParser.TOKEN_SECTD, i);
   List<TerminalNode> ENDNHEREs() => getTokens(rtfParser.TOKEN_ENDNHERE);
   TerminalNode? ENDNHERE(int i) => getToken(rtfParser.TOKEN_ENDNHERE, i);
   List<TerminalNode> BINFSXNNs() => getTokens(rtfParser.TOKEN_BINFSXNN);
@@ -5925,8 +6151,6 @@ class PcdataContext extends ParserRuleContext {
   TerminalNode? PNSECLVLN(int i) => getToken(rtfParser.TOKEN_PNSECLVLN, i);
   List<TerminalNode> SECTUNLOCKEDs() => getTokens(rtfParser.TOKEN_SECTUNLOCKED);
   TerminalNode? SECTUNLOCKED(int i) => getToken(rtfParser.TOKEN_SECTUNLOCKED, i);
-  List<TerminalNode> SECTDs() => getTokens(rtfParser.TOKEN_SECTD);
-  TerminalNode? SECTD(int i) => getToken(rtfParser.TOKEN_SECTD, i);
   List<TerminalNode> SBKNONEs() => getTokens(rtfParser.TOKEN_SBKNONE);
   TerminalNode? SBKNONE(int i) => getToken(rtfParser.TOKEN_SBKNONE, i);
   List<TerminalNode> SBKCOLs() => getTokens(rtfParser.TOKEN_SBKCOL);
@@ -6045,20 +6269,8 @@ class PcdataContext extends ParserRuleContext {
   TerminalNode? PAR(int i) => getToken(rtfParser.TOKEN_PAR, i);
   List<TerminalNode> PARDs() => getTokens(rtfParser.TOKEN_PARD);
   TerminalNode? PARD(int i) => getToken(rtfParser.TOKEN_PARD, i);
-  List<TerminalNode> KEEPs() => getTokens(rtfParser.TOKEN_KEEP);
-  TerminalNode? KEEP(int i) => getToken(rtfParser.TOKEN_KEEP, i);
-  List<TerminalNode> KEEPNs() => getTokens(rtfParser.TOKEN_KEEPN);
-  TerminalNode? KEEPN(int i) => getToken(rtfParser.TOKEN_KEEPN, i);
-  List<TerminalNode> NOLINEs() => getTokens(rtfParser.TOKEN_NOLINE);
-  TerminalNode? NOLINE(int i) => getToken(rtfParser.TOKEN_NOLINE, i);
-  List<TerminalNode> HYPHPAR_TOGGLEs() => getTokens(rtfParser.TOKEN_HYPHPAR_TOGGLE);
-  TerminalNode? HYPHPAR_TOGGLE(int i) => getToken(rtfParser.TOKEN_HYPHPAR_TOGGLE, i);
   List<TerminalNode> ITAPNs() => getTokens(rtfParser.TOKEN_ITAPN);
   TerminalNode? ITAPN(int i) => getToken(rtfParser.TOKEN_ITAPN, i);
-  List<TerminalNode> NOWIDCTLPARs() => getTokens(rtfParser.TOKEN_NOWIDCTLPAR);
-  TerminalNode? NOWIDCTLPAR(int i) => getToken(rtfParser.TOKEN_NOWIDCTLPAR, i);
-  List<TerminalNode> WIDCTLPARs() => getTokens(rtfParser.TOKEN_WIDCTLPAR);
-  TerminalNode? WIDCTLPAR(int i) => getToken(rtfParser.TOKEN_WIDCTLPAR, i);
   List<TerminalNode> SNs() => getTokens(rtfParser.TOKEN_SN);
   TerminalNode? SN(int i) => getToken(rtfParser.TOKEN_SN, i);
   List<TerminalNode> QCs() => getTokens(rtfParser.TOKEN_QC);
@@ -6144,15 +6356,15 @@ class PcdataContext extends ParserRuleContext {
   int get ruleIndex => RULE_pcdata;
   @override
   void enterRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.enterPcdata(this);
+    if (listener is rtfParserListener) listener.enterPcdata(this);
   }
   @override
   void exitRule(ParseTreeListener listener) {
-    if (listener is rtfListener) listener.exitPcdata(this);
+    if (listener is rtfParserListener) listener.exitPcdata(this);
   }
   @override
   T? accept<T>(ParseTreeVisitor<T> visitor) {
-    if (visitor is rtfVisitor<T>) {
+    if (visitor is rtfParserVisitor<T>) {
      return visitor.visitPcdata(this);
     } else {
     	return visitor.visitChildren(this);

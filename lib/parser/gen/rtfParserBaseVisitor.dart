@@ -1,17 +1,17 @@
-// Generated from rtf.g4 by ANTLR 4.11.1
+// Generated from rtfParser.g4 by ANTLR 4.11.1
 // ignore_for_file: unused_import, unused_local_variable, prefer_single_quotes
 import 'package:antlr4/antlr4.dart';
 
 import 'rtfParser.dart';
-import 'rtfVisitor.dart';
+import 'rtfParserVisitor.dart';
 
-/// This class provides an empty implementation of [rtfVisitor],
+/// This class provides an empty implementation of [rtfParserVisitor],
 /// which can be extended to create a visitor which only needs to handle
 /// a subset of the available methods.
 ///
 /// [T] is the return type of the visit operation. Use `void` for
 /// operations with no return type.
-class rtfBaseVisitor<T> extends ParseTreeVisitor<T> implements rtfVisitor<T> {
+class rtfParserBaseVisitor<T> extends ParseTreeVisitor<T> implements rtfParserVisitor<T> {
   /// The default implementation returns the result of calling
   /// [visitChildren] on [ctx].
   @override

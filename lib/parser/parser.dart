@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:antlr4/antlr4.dart';
-import 'package:rtfparser/parser/gen/rtfBaseListener.dart';
 import 'package:rtfparser/parser/gen/rtfLexer.dart';
 import 'package:rtfparser/parser/gen/rtfParser.dart';
+import 'package:rtfparser/parser/gen/rtfParserBaseListener.dart';
 
-class TextListener extends rtfBaseListener {
+class TextListener extends rtfParserBaseListener {
   final Completer<List<String>> completer;
   final output = <String>[];
   TextListener(this.completer);

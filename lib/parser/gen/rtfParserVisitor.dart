@@ -1,4 +1,4 @@
-// Generated from rtf.g4 by ANTLR 4.11.1
+// Generated from rtfParser.g4 by ANTLR 4.11.1
 // ignore_for_file: unused_import, unused_local_variable, prefer_single_quotes
 import 'package:antlr4/antlr4.dart';
 
@@ -9,7 +9,7 @@ import 'rtfParser.dart';
 ///
 /// [T] is the eturn type of the visit operation. Use `void` for
 /// operations with no return type.
-abstract class rtfVisitor<T> extends ParseTreeVisitor<T> {
+abstract class rtfParserVisitor<T> extends ParseTreeVisitor<T> {
   /// Visit a parse tree produced by [rtfParser.file].
   /// [ctx] the parse tree.
   /// Return the visitor result.

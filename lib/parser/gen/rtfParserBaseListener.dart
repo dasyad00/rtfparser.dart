@@ -1,15 +1,15 @@
-// Generated from rtf.g4 by ANTLR 4.11.1
+// Generated from rtfParser.g4 by ANTLR 4.11.1
 // ignore_for_file: unused_import, unused_local_variable, prefer_single_quotes
 import 'package:antlr4/antlr4.dart';
 
 import 'rtfParser.dart';
-import 'rtfListener.dart';
+import 'rtfParserListener.dart';
 
 
-/// This class provides an empty implementation of [rtfListener],
+/// This class provides an empty implementation of [rtfParserListener],
 /// which can be extended to create a listener which only needs to handle
 /// a subset of the available methods.
-class rtfBaseListener implements rtfListener {
+class rtfParserBaseListener implements rtfParserListener {
   /// The default implementation does nothing.
   @override
   void enterFile(FileContext ctx) {}

@@ -5,6 +5,21 @@ import 'package:rtfparser/parser/gen/rtfLexer.dart';
 import 'package:rtfparser/parser/gen/rtfParser.dart';
 import 'package:rtfparser/parser/gen/rtfParserBaseListener.dart';
 
+const specialCharacters = {
+  "\\par": "\n",
+  "\\tab": "\t",
+  "\\emdash": "\u2014",
+  "\\endash": "\u2013",
+  "\\emspace": "\u2003",
+  "\\enspace": "\u2002",
+  "\\qmspace": "\u2005",
+  "\\bullet": "\u2022",
+  "\\lquote": "\u2018",
+  "\\rquote": "\u2019",
+  "\\ldblquote": "\u201c",
+  "\\rdblquote": "\u201d",
+};
+
 class TextListener extends rtfParserBaseListener {
   final Completer<List<String>> completer;
   final output = <String>[];
@@ -12,9 +27,16 @@ class TextListener extends rtfParserBaseListener {
   var inHeader = false;
   @override
   void enterPcdata(PcdataContext ctx) {
-    if (!inHeader) {
-      output.add(ctx.text);
-    }
+    if (inHeader) return;
+    output.add(ctx.text);
+  }
+
+  @override
+  void enterSpec(SpecContext ctx) {
+    if (inHeader) return;
+    final char = specialCharacters[ctx.text.trim()];
+    if (char == null) return;
+    output.add(char);
   }
 
   @override

@@ -376,7 +376,7 @@ charText: OPENING_BRACE charText CLOSING_BRACE | ptext | atext;
 ptext: (
 		((chrfmt | parfmt | secfmt)* data)
 		// specification leads to left-recursion
-		| ((chrfmt | parfmt | secfmt)+ charText)
+		| ((chrfmt | parfmt | secfmt)+ charText+)
 	)+;
 
 // token suffixed by 0 are formatting properties which be disabled.

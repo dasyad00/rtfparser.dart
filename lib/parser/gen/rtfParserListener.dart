@@ -231,6 +231,76 @@ abstract class rtfParserListener extends ParseTreeListener {
   /// [ctx] the parse tree
   void exitStylename(StylenameContext ctx);
 
+  /// Enter a parse tree produced by [rtfParser.listtables].
+  /// [ctx] the parse tree
+  void enterListtables(ListtablesContext ctx);
+  /// Exit a parse tree produced by [rtfParser.listtables].
+  /// [ctx] the parse tree
+  void exitListtables(ListtablesContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.listtable].
+  /// [ctx] the parse tree
+  void enterListtable(ListtableContext ctx);
+  /// Exit a parse tree produced by [rtfParser.listtable].
+  /// [ctx] the parse tree
+  void exitListtable(ListtableContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.list].
+  /// [ctx] the parse tree
+  void enterList(ListContext ctx);
+  /// Exit a parse tree produced by [rtfParser.list].
+  /// [ctx] the parse tree
+  void exitList(ListContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.listlevel].
+  /// [ctx] the parse tree
+  void enterListlevel(ListlevelContext ctx);
+  /// Exit a parse tree produced by [rtfParser.listlevel].
+  /// [ctx] the parse tree
+  void exitListlevel(ListlevelContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.listnumber].
+  /// [ctx] the parse tree
+  void enterListnumber(ListnumberContext ctx);
+  /// Exit a parse tree produced by [rtfParser.listnumber].
+  /// [ctx] the parse tree
+  void exitListnumber(ListnumberContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.listjustification].
+  /// [ctx] the parse tree
+  void enterListjustification(ListjustificationContext ctx);
+  /// Exit a parse tree produced by [rtfParser.listjustification].
+  /// [ctx] the parse tree
+  void exitListjustification(ListjustificationContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.leveltext].
+  /// [ctx] the parse tree
+  void enterLeveltext(LeveltextContext ctx);
+  /// Exit a parse tree produced by [rtfParser.leveltext].
+  /// [ctx] the parse tree
+  void exitLeveltext(LeveltextContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.levelnumbers].
+  /// [ctx] the parse tree
+  void enterLevelnumbers(LevelnumbersContext ctx);
+  /// Exit a parse tree produced by [rtfParser.levelnumbers].
+  /// [ctx] the parse tree
+  void exitLevelnumbers(LevelnumbersContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.listoverridetable].
+  /// [ctx] the parse tree
+  void enterListoverridetable(ListoverridetableContext ctx);
+  /// Exit a parse tree produced by [rtfParser.listoverridetable].
+  /// [ctx] the parse tree
+  void exitListoverridetable(ListoverridetableContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.listoverride].
+  /// [ctx] the parse tree
+  void enterListoverride(ListoverrideContext ctx);
+  /// Exit a parse tree produced by [rtfParser.listoverride].
+  /// [ctx] the parse tree
+  void exitListoverride(ListoverrideContext ctx);
+
   /// Enter a parse tree produced by [rtfParser.document].
   /// [ctx] the parse tree
   void enterDocument(DocumentContext ctx);
@@ -518,6 +588,104 @@ abstract class rtfParserListener extends ParseTreeListener {
   /// [ctx] the parse tree
   void exitAprops(ApropsContext ctx);
 
+  /// Enter a parse tree produced by [rtfParser.pn].
+  /// [ctx] the parse tree
+  void enterPn(PnContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pn].
+  /// [ctx] the parse tree
+  void exitPn(PnContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.pnseclvl].
+  /// [ctx] the parse tree
+  void enterPnseclvl(PnseclvlContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pnseclvl].
+  /// [ctx] the parse tree
+  void exitPnseclvl(PnseclvlContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.pnpara].
+  /// [ctx] the parse tree
+  void enterPnpara(PnparaContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pnpara].
+  /// [ctx] the parse tree
+  void exitPnpara(PnparaContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.pntext].
+  /// [ctx] the parse tree
+  void enterPntext(PntextContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pntext].
+  /// [ctx] the parse tree
+  void exitPntext(PntextContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.pnprops].
+  /// [ctx] the parse tree
+  void enterPnprops(PnpropsContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pnprops].
+  /// [ctx] the parse tree
+  void exitPnprops(PnpropsContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.pnlevel].
+  /// [ctx] the parse tree
+  void enterPnlevel(PnlevelContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pnlevel].
+  /// [ctx] the parse tree
+  void exitPnlevel(PnlevelContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.pndesc].
+  /// [ctx] the parse tree
+  void enterPndesc(PndescContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pndesc].
+  /// [ctx] the parse tree
+  void exitPndesc(PndescContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.pnnstyle].
+  /// [ctx] the parse tree
+  void enterPnnstyle(PnnstyleContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pnnstyle].
+  /// [ctx] the parse tree
+  void exitPnnstyle(PnnstyleContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.pnchrfmt].
+  /// [ctx] the parse tree
+  void enterPnchrfmt(PnchrfmtContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pnchrfmt].
+  /// [ctx] the parse tree
+  void exitPnchrfmt(PnchrfmtContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.pnul].
+  /// [ctx] the parse tree
+  void enterPnul(PnulContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pnul].
+  /// [ctx] the parse tree
+  void exitPnul(PnulContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.pnjust].
+  /// [ctx] the parse tree
+  void enterPnjust(PnjustContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pnjust].
+  /// [ctx] the parse tree
+  void exitPnjust(PnjustContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.pnfmt].
+  /// [ctx] the parse tree
+  void enterPnfmt(PnfmtContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pnfmt].
+  /// [ctx] the parse tree
+  void exitPnfmt(PnfmtContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.pntxtb].
+  /// [ctx] the parse tree
+  void enterPntxtb(PntxtbContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pntxtb].
+  /// [ctx] the parse tree
+  void exitPntxtb(PntxtbContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.pntxta].
+  /// [ctx] the parse tree
+  void enterPntxta(PntxtaContext ctx);
+  /// Exit a parse tree produced by [rtfParser.pntxta].
+  /// [ctx] the parse tree
+  void exitPntxta(PntxtaContext ctx);
+
   /// Enter a parse tree produced by [rtfParser.spec].
   /// [ctx] the parse tree
   void enterSpec(SpecContext ctx);
@@ -531,6 +699,13 @@ abstract class rtfParserListener extends ParseTreeListener {
   /// Exit a parse tree produced by [rtfParser.data].
   /// [ctx] the parse tree
   void exitData(DataContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.sdata].
+  /// [ctx] the parse tree
+  void enterSdata(SdataContext ctx);
+  /// Exit a parse tree produced by [rtfParser.sdata].
+  /// [ctx] the parse tree
+  void exitSdata(SdataContext ctx);
 
   /// Enter a parse tree produced by [rtfParser.pcdata].
   /// [ctx] the parse tree

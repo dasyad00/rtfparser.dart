@@ -170,6 +170,56 @@ abstract class rtfParserVisitor<T> extends ParseTreeVisitor<T> {
   /// Return the visitor result.
   T? visitStylename(StylenameContext ctx);
 
+  /// Visit a parse tree produced by [rtfParser.listtables].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitListtables(ListtablesContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.listtable].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitListtable(ListtableContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.list].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitList(ListContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.listlevel].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitListlevel(ListlevelContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.listnumber].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitListnumber(ListnumberContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.listjustification].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitListjustification(ListjustificationContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.leveltext].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitLeveltext(LeveltextContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.levelnumbers].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitLevelnumbers(LevelnumbersContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.listoverridetable].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitListoverridetable(ListoverridetableContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.listoverride].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitListoverride(ListoverrideContext ctx);
+
   /// Visit a parse tree produced by [rtfParser.document].
   /// [ctx] the parse tree.
   /// Return the visitor result.
@@ -375,6 +425,76 @@ abstract class rtfParserVisitor<T> extends ParseTreeVisitor<T> {
   /// Return the visitor result.
   T? visitAprops(ApropsContext ctx);
 
+  /// Visit a parse tree produced by [rtfParser.pn].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPn(PnContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.pnseclvl].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPnseclvl(PnseclvlContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.pnpara].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPnpara(PnparaContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.pntext].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPntext(PntextContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.pnprops].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPnprops(PnpropsContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.pnlevel].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPnlevel(PnlevelContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.pndesc].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPndesc(PndescContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.pnnstyle].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPnnstyle(PnnstyleContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.pnchrfmt].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPnchrfmt(PnchrfmtContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.pnul].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPnul(PnulContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.pnjust].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPnjust(PnjustContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.pnfmt].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPnfmt(PnfmtContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.pntxtb].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPntxtb(PntxtbContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.pntxta].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPntxta(PntxtaContext ctx);
+
   /// Visit a parse tree produced by [rtfParser.spec].
   /// [ctx] the parse tree.
   /// Return the visitor result.
@@ -384,6 +504,11 @@ abstract class rtfParserVisitor<T> extends ParseTreeVisitor<T> {
   /// [ctx] the parse tree.
   /// Return the visitor result.
   T? visitData(DataContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.sdata].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitSdata(SdataContext ctx);
 
   /// Visit a parse tree produced by [rtfParser.pcdata].
   /// [ctx] the parse tree.

@@ -268,6 +268,86 @@ class rtfParserBaseListener implements rtfParserListener {
 
   /// The default implementation does nothing.
   @override
+  void enterListtables(ListtablesContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitListtables(ListtablesContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterListtable(ListtableContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitListtable(ListtableContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterList(ListContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitList(ListContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterListlevel(ListlevelContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitListlevel(ListlevelContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterListnumber(ListnumberContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitListnumber(ListnumberContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterListjustification(ListjustificationContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitListjustification(ListjustificationContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterLeveltext(LeveltextContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitLeveltext(LeveltextContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterLevelnumbers(LevelnumbersContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitLevelnumbers(LevelnumbersContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterListoverridetable(ListoverridetableContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitListoverridetable(ListoverridetableContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterListoverride(ListoverrideContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitListoverride(ListoverrideContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
   void enterDocument(DocumentContext ctx) {}
 
   /// The default implementation does nothing.
@@ -596,6 +676,118 @@ class rtfParserBaseListener implements rtfParserListener {
 
   /// The default implementation does nothing.
   @override
+  void enterPn(PnContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPn(PnContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPnseclvl(PnseclvlContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPnseclvl(PnseclvlContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPnpara(PnparaContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPnpara(PnparaContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPntext(PntextContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPntext(PntextContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPnprops(PnpropsContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPnprops(PnpropsContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPnlevel(PnlevelContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPnlevel(PnlevelContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPndesc(PndescContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPndesc(PndescContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPnnstyle(PnnstyleContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPnnstyle(PnnstyleContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPnchrfmt(PnchrfmtContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPnchrfmt(PnchrfmtContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPnul(PnulContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPnul(PnulContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPnjust(PnjustContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPnjust(PnjustContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPnfmt(PnfmtContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPnfmt(PnfmtContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPntxtb(PntxtbContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPntxtb(PntxtbContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPntxta(PntxtaContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPntxta(PntxtaContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
   void enterSpec(SpecContext ctx) {}
 
   /// The default implementation does nothing.
@@ -609,6 +801,14 @@ class rtfParserBaseListener implements rtfParserListener {
   /// The default implementation does nothing.
   @override
   void exitData(DataContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterSdata(SdataContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitSdata(SdataContext ctx) {}
 
   /// The default implementation does nothing.
   @override

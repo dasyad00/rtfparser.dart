@@ -348,6 +348,22 @@ class rtfParserBaseListener implements rtfParserListener {
 
   /// The default implementation does nothing.
   @override
+  void enterGenerator(GeneratorContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitGenerator(GeneratorContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterProgramName(ProgramNameContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitProgramName(ProgramNameContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
   void enterDocument(DocumentContext ctx) {}
 
   /// The default implementation does nothing.
@@ -489,6 +505,46 @@ class rtfParserBaseListener implements rtfParserListener {
   /// The default implementation does nothing.
   @override
   void exitTime(TimeContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterUserprops(UserpropsContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitUserprops(UserpropsContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPropinfo(PropinfoContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPropinfo(PropinfoContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterPropname(PropnameContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitPropname(PropnameContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterStaticval(StaticvalContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitStaticval(StaticvalContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterLinkval(LinkvalContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitLinkval(LinkvalContext ctx) {}
 
   /// The default implementation does nothing.
   @override
@@ -673,6 +729,46 @@ class rtfParserBaseListener implements rtfParserListener {
   /// The default implementation does nothing.
   @override
   void exitAprops(ApropsContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterTabdef(TabdefContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitTabdef(TabdefContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterTab(TabContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitTab(TabContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterBartab(BartabContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitBartab(BartabContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterTabkind(TabkindContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitTabkind(TabkindContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterTablead(TableadContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitTablead(TableadContext ctx) {}
 
   /// The default implementation does nothing.
   @override

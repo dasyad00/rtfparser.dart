@@ -34,7 +34,7 @@ file: OPENING_BRACE header document CLOSING_BRACE EOF;
 header:
 	RTFVERSION charset UNICODE_CHAR_LEN? HTMAUTSP? from? deffont? // mandatory from v1.9
 	(deflang | NOUICOMPAT)* // `deflang` mandatory from v1.9, order with `NOUICOMPAT` may vary
-	fonttbl? colortbl? stylesheet? listtables?;
+	fonttbl? colortbl? stylesheet? listtables? generator?;
 
 charset: (ANSI | MAC | PC | PCA)? (ANSICPG)?;
 
@@ -110,18 +110,18 @@ reply: SREPLY;
 formatting: (
 		// brdrdef
 		parfmt
-		// | apoctl |tabdef |shading
+		// | apoctl
+		| tabdef
+		// |shading
 		| chrfmt
 	)+;
 stylename: pcdata;
 
 // msft-rtf-1_9_1.pdf page 30
 listtables: (listtable | listoverridetable)+;
-listtable: OPENING_BRACE '\\*' LISTTABLE list+ CLOSING_BRACE;
-// listtable: '{' '\\*' LISTTABLE // listpicture? list+ '}'; listpicture: '{\\*' LISTPICTURE
-// shppictlist '}';
+listtable: OPENING_BRACE LISTTABLE list+ CLOSING_BRACE;
 list:
-	'{' list+ '}'
+	OPENING_BRACE list+ CLOSING_BRACE
 	| (
 		LIST LISTTEMPLATEIDN
 		| (LISTSIMPLE | LISTHYBRID)
@@ -151,7 +151,7 @@ listlevel:
 		| LEVELPICTUREN
 		| LIN
 		| FIN
-		| (JCLISTTAB TXN)
+		| (JCLISTTAB? TXN)
 		| LINN
 	)+ CLOSING_BRACE;
 listnumber: LEVELNFCN | LEVELNFCNN;
@@ -164,12 +164,16 @@ levelnumbers:
 listoverridetable:
 	OPENING_BRACE LISTOVERRIDETABLE listoverride+ CLOSING_BRACE;
 listoverride:
-	'{' LISTOVERRIDE LISTIDN LISTOVERRIDECOUNTN LSN '}';
+	OPENING_BRACE LISTOVERRIDE LISTIDN LISTOVERRIDECOUNTN LSN CLOSING_BRACE;
+
+//// Generator - page 38
+generator:
+	OPENING_BRACE GENERATOR programName ';'? CLOSING_BRACE;
+programName: pcdata;
 
 ///// Document
-document: documentInfo? docfmt* section+;
+document: documentInfo? userprops? docfmt* section+;
 
-// TODO add other fields
 documentInfo:
 	OPENING_BRACE INFO (
 		title
@@ -213,9 +217,18 @@ printim: OPENING_BRACE PRINTIM time CLOSING_BRACE;
 buptim: OPENING_BRACE BUPTIM time CLOSING_BRACE;
 time: YRN? MON? DYN? HRN? MINN? SECN?;
 
+//// user-defined document properties
+userprops: OPENING_BRACE USERPROPS propinfo* CLOSING_BRACE;
+propinfo:
+	OPENING_BRACE propname PROPTYPEN staticval linkval? CLOSING_BRACE;
+propname: OPENING_BRACE PROPNAME pcdata CLOSING_BRACE;
+staticval: OPENING_BRACE STATICVAL pcdata CLOSING_BRACE;
+linkval: OPENING_BRACE LINKVAL pcdata CLOSING_BRACE;
+
 //// Document formatting TODO add other formatting fields
 docfmt:
-	DEFTABN
+	IGNORABLE_CONTROL_PREFIX docfmt
+	| DEFTABN
 	| HYPHHOTZN
 	| HYPHCONSECN
 	| HYPHCAPS
@@ -348,7 +361,28 @@ secfmt: // These control words can appear anywhere in the section.
 		| PGNLCLTR
 		| PGNBIDIA
 		| PGNBIDIB
-		// TODO add remaining page number types TODO add remaining 2002 codes
+		| PGNCHOSUNG
+		| PGNCNUM
+		| PGNDBNUM
+		| PGNDBNUMD
+		| PGNDBNUMT
+		| PGNDBNUMK
+		| PGNDECD
+		| PGNGANADA
+		| PGNGBNUM
+		| PGNGBNUMD
+		| PGNGBNUML
+		| PGNGBNUMK
+		| PGNZODIAC
+		| PGNZODIACD
+		| PGNZODIACL
+		| PGNHNN
+		| PGNHNSH
+		| PGNHNSP
+		| PGNHNSC
+		| PGNHNSM
+		| PGNHNSN
+		// footnotes and endnotes
 		| SAFTNNALC
 		| SAFTNNAR
 		| SAFTNNAUC
@@ -374,7 +408,9 @@ hdrctl:
 // Paragraph text Wrap `para` in braces (See Other problem areas in RTF: Property changes)
 para: OPENING_BRACE para CLOSING_BRACE | textpar | row;
 
-textpar: (parfmt | secfmt)* (SUBDOCUMENTN | charText+) (PAR para)?;
+textpar: (pn | parfmt | secfmt | docfmt | tabdef)* (SUBDOCUMENTN | charText+) (
+		PAR para
+	)?;
 
 // Paragraph formatting properties
 parfmt: // NOTE: These control words can appear anywhere in the body of a paragraph.
@@ -425,10 +461,11 @@ nestcell: textpar+ NESTCELL;
 /// Character text
 charText: atext | ptext | OPENING_BRACE charText CLOSING_BRACE;
 ptext: (
-		((chrfmt | parfmt | secfmt) SPACE?)
-		| ((chrfmt | parfmt | secfmt)* data)
+		((chrfmt | pn | parfmt | secfmt | tabdef)* data)
 		// specification leads to left-recursion
-		| ((chrfmt | parfmt | secfmt)+ charText+)
+		| ((chrfmt | pn | parfmt | secfmt | tabdef)+ charText+)
+		// empty body
+		| ((chrfmt | pn | parfmt | secfmt | tabdef) SPACE?)
 	)+;
 
 // token suffixed by 0 are formatting properties which be disabled.
@@ -479,12 +516,19 @@ aprops:
 	| RTLPAR
 	| LTRPAR;
 
+// Tabs
+tabdef: (tab | bartab | JCLISTTAB TXN)+;
+tab: tabkind? tablead? TXN;
+bartab: tablead? TB;
+tabkind: TQR | TQC | TQDEC;
+tablead: TLDOT | TLMDOT | TLHYPH | TLUL | TLTH | TLEQ;
+
 // Bullets and Numbering
 pn: pnseclvl | pnpara;
-pnseclvl: '{' PNSECLVL pndesc '}';
+pnseclvl: OPENING_BRACE PNSECLVL pndesc CLOSING_BRACE;
 pnpara: pntext pnprops;
-pntext: '{' PNTEXT charText '}';
-pnprops: '{' '\\*' PN pnlevel pndesc '}';
+pntext: OPENING_BRACE PNTEXT charText CLOSING_BRACE;
+pnprops: OPENING_BRACE PN pnlevel pndesc CLOSING_BRACE;
 pnlevel: PNLVLN | PNLVLBLT | PNLVLBODY | PNLVLCONT;
 pndesc: ( pnnstyle | pnchrfmt | pntxtb | pntxta | pnfmt)+;
 pnnstyle:
@@ -550,8 +594,8 @@ pnfmt: (
 		| PNHANG
 		| PNRESTART
 	)+;
-pntxtb: OPENING_BRACE PNTXTB pcdata CLOSING_BRACE;
-pntxta: OPENING_BRACE PNTXTA pcdata CLOSING_BRACE;
+pntxtb: OPENING_BRACE PNTXTB data CLOSING_BRACE;
+pntxta: OPENING_BRACE PNTXTA data CLOSING_BRACE;
 
 /// Special characters!
 spec:
@@ -598,12 +642,13 @@ spec:
 	| ZWBO
 	| ZWNBO
 	| ZWJ
-	| ZWNJ;
-// | HEX_NUMBER;
+	| ZWNJ
+	| HEX_NUMBER;
 
 // Wrap `data` in braces (See Other problem areas in RTF: Property changes)
 data:
 	OPENING_BRACE data CLOSING_BRACE
+    | UNICODE_CHAR_LEN
 	| spec
 	| pcdata; // TODO add rest of data
 
@@ -613,9 +658,10 @@ pcdata: (
 		~(
 			OPENING_BRACE
 			| CLOSING_BRACE
+            | IGNORABLE_CONTROL_PREFIX
 			// undefined control codes
 			| CONTROL_CODE
-			// rtf
+			| GENERATOR
 			| RTFVERSION
 			// `charset`
 			| ANSI
@@ -827,7 +873,13 @@ pcdata: (
 			// defined control codes `parfmt`
 			| PAR
 			| PARD
+			| KEEP
+			| KEEPN
+			| NOLINE
+			| HYPHPAR_TOGGLE
 			| ITAPN
+			| NOWIDCTLPAR
+			| WIDCTLPAR
 			| SN
 			| QC
 			| QJ
@@ -842,6 +894,10 @@ pcdata: (
 			| RINN
 			| SAN
 			| SBN
+			| SAAUTON
+			| SBAUTON
+			| SLN
+			| SLMULTN
 			| RTLPAR
 			| LTRPAR
 			// `chrfmt`

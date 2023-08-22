@@ -89,7 +89,7 @@ BLUEN: '\\blue' INTEGER255;
 /// Stylesheet
 STYLESHEET: '\\stylesheet' SPACE?;
 S: '\\s' SPACE?;
-CS: '\\*\\cs' SPACE?;
+CS: IGNORABLE_CONTROL_PREFIX '\\cs' SPACE?;
 DS: '\\ds' SPACE?;
 KEYCODE: '\\keycode' SPACE?;
 SHIFT: '\\shift' SPACE?;
@@ -107,7 +107,7 @@ SREPLY: '\\sreply' SPACE?;
 
 /// List table
 LIST: '\\list' SPACE?;
-LISTTABLE: '\\listtable' SPACE?;
+LISTTABLE: IGNORABLE_CONTROL_PREFIX '\\listtable' SPACE?;
 LISTPICTURE: '\\listpicture' SPACE?;
 LISTTEMPLATEIDN: '\\listtemplateid' INTEGER SPACE?;
 LISTSIMPLE: '\\listsimple' SPACE?;
@@ -140,12 +140,14 @@ LEVELJCN: '\\leveljc' INTEGER SPACE?;
 LEVELJCNN: '\\leveljcn' INTEGER SPACE?;
 
 // List Override table
-LISTOVERRIDETABLE: '\\*\\listoverridetable' SPACE?;
+LISTOVERRIDETABLE: IGNORABLE_CONTROL_PREFIX '\\listoverridetable' SPACE?;
 LISTOVERRIDE: '\\listoverride' SPACE?;
 LISTOVERRIDECOUNTN: '\\listoverridecount' INTEGER SPACE?;
 LISTOVERRIDESTARTAT: '\\listoverridestartat' SPACE?;
 LISTOVERRIDEFORMATN: '\\listoverrideformat' INTEGER SPACE?;
 LSN: '\\ls' INTEGER SPACE?;
+
+GENERATOR: IGNORABLE_CONTROL_PREFIX '\\generator' SPACE?;
 
 ///// Document
 INFO: '\\info' SPACE?;
@@ -181,6 +183,13 @@ DYN: '\\dy' INTEGER SPACE?;
 HRN: '\\hr' INTEGER SPACE?;
 MINN: '\\min' INTEGER SPACE?;
 SECN: '\\sec' INTEGER SPACE?;
+
+/// user-defined document properties
+USERPROPS: IGNORABLE_CONTROL_PREFIX '\\userprops' SPACE?;
+PROPTYPEN: '\\proptype' INTEGER SPACE?;
+PROPNAME: '\\propname' SPACE?;
+STATICVAL: '\\staticval' SPACE?;
+LINKVAL: '\\linkval' SPACE?;
 
 //// Document formatting
 DEFTABN: '\\deftab' INTEGER SPACE?;
@@ -310,6 +319,28 @@ PGNUCLTR: '\\pgnucltr' SPACE?;
 PGNLCLTR: '\\pgnlcltr' SPACE?;
 PGNBIDIA: '\\pgnbidia' SPACE?;
 PGNBIDIB: '\\pgnbidib' SPACE?;
+PGNCHOSUNG: '\\pgnchosung' SPACE?;
+PGNCNUM: '\\pgncnum' SPACE?;
+PGNDBNUM: '\\pgndbnum' SPACE?;
+PGNDBNUMD: '\\pgndbnumd' SPACE?;
+PGNDBNUMT: '\\pgndbnumt' SPACE?;
+PGNDBNUMK: '\\pgndbnumk' SPACE?;
+PGNDECD: '\\pgndecd' SPACE?;
+PGNGANADA: '\\pgnganada' SPACE?;
+PGNGBNUM: '\\pgngbnum' SPACE?;
+PGNGBNUMD: '\\pgngbnumd' SPACE?;
+PGNGBNUML: '\\pgngbnuml' SPACE?;
+PGNGBNUMK: '\\pgngbnumk' SPACE?;
+PGNZODIAC: '\\pgnzodiac' SPACE?;
+PGNZODIACD: '\\pgnzodiacd' SPACE?;
+PGNZODIACL: '\\pgnzodiacl' SPACE?;
+PGNHNN: '\\pgnhn' INTEGER SPACE?;
+PGNHNSH: '\\pgnhnsh' SPACE?;
+PGNHNSP: '\\pgnhnsp' SPACE?;
+PGNHNSC: '\\pgnhnsc' SPACE?;
+PGNHNSM: '\\pgnhnsm' SPACE?;
+PGNHNSN: '\\pgnhnsn' SPACE?;
+// footnotes and endnotes
 SAFTNNALC: '\\saftnnalc' SPACE?;
 SAFTNNAR: '\\saftnnar' SPACE?;
 SAFTNNAUC: '\\saftnnauc' SPACE?;
@@ -364,9 +395,21 @@ SLMULTN: '\\slmult' INTEGER SPACE?;
 // subdocuments
 SUBDOCUMENTN: '\\subdocument' INTEGER SPACE?;
 
+// Tabs
+TB: '\\tb' SPACE?;
+TQR: '\\tqr' SPACE?;
+TQC: '\\tqc' SPACE?;
+TQDEC: '\\tqdec' SPACE?;
+TLDOT: '\\tldot' SPACE?;
+TLMDOT: '\\tlmdot' SPACE?;
+TLHYPH: '\\tlhyph' SPACE?;
+TLUL: '\\tlul' SPACE?;
+TLTH: '\\tlth' SPACE?;
+TLEQ: '\\tleq' SPACE?;
+
 /// Bullets and Numbering
 PNTEXT: '\\pntext' SPACE?;
-PN: '\\pn' SPACE?;
+PN: IGNORABLE_CONTROL_PREFIX '\\pn' SPACE?;
 PNLVLN: '\\pnlvl' INTEGER SPACE?;
 PNLVLBLT: '\\pnlvlblt' SPACE?;
 PNLVLBODY: '\\pnlvlbody' SPACE?;
@@ -563,6 +606,7 @@ ESCAPED_BACKSLASH: '\\\\';
 OPENING_BRACE: '{';
 CLOSING_BRACE: '}';
 
+PGDSCTBL: IGNORABLE_CONTROL_PREFIX '\\pgdsctbl' SPACE?;
 CONTROL_CODE: '\\' [a-zA-Z]+ ((HYPHEN? INTEGER)? SPACE?)?;
 
 UNKNOWN_CONTROL_GROUP:
@@ -570,8 +614,7 @@ UNKNOWN_CONTROL_GROUP:
 		OPENING_BRACE UNKNOWN_CONTROL_WORD { this.openingBrace(); this.pushMode(UnknownControl); }
 	) -> skip;
 
-// minimum length string to catch
-UNKNOWN_CONTROL_WORD: (IGNORABLE_CONTROL_PREFIX '\\');
+UNKNOWN_CONTROL_WORD: PGDSCTBL;
 
 ANY: .;
 

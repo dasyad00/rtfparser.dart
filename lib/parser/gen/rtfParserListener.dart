@@ -301,6 +301,20 @@ abstract class rtfParserListener extends ParseTreeListener {
   /// [ctx] the parse tree
   void exitListoverride(ListoverrideContext ctx);
 
+  /// Enter a parse tree produced by [rtfParser.generator].
+  /// [ctx] the parse tree
+  void enterGenerator(GeneratorContext ctx);
+  /// Exit a parse tree produced by [rtfParser.generator].
+  /// [ctx] the parse tree
+  void exitGenerator(GeneratorContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.programName].
+  /// [ctx] the parse tree
+  void enterProgramName(ProgramNameContext ctx);
+  /// Exit a parse tree produced by [rtfParser.programName].
+  /// [ctx] the parse tree
+  void exitProgramName(ProgramNameContext ctx);
+
   /// Enter a parse tree produced by [rtfParser.document].
   /// [ctx] the parse tree
   void enterDocument(DocumentContext ctx);
@@ -426,6 +440,41 @@ abstract class rtfParserListener extends ParseTreeListener {
   /// Exit a parse tree produced by [rtfParser.time].
   /// [ctx] the parse tree
   void exitTime(TimeContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.userprops].
+  /// [ctx] the parse tree
+  void enterUserprops(UserpropsContext ctx);
+  /// Exit a parse tree produced by [rtfParser.userprops].
+  /// [ctx] the parse tree
+  void exitUserprops(UserpropsContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.propinfo].
+  /// [ctx] the parse tree
+  void enterPropinfo(PropinfoContext ctx);
+  /// Exit a parse tree produced by [rtfParser.propinfo].
+  /// [ctx] the parse tree
+  void exitPropinfo(PropinfoContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.propname].
+  /// [ctx] the parse tree
+  void enterPropname(PropnameContext ctx);
+  /// Exit a parse tree produced by [rtfParser.propname].
+  /// [ctx] the parse tree
+  void exitPropname(PropnameContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.staticval].
+  /// [ctx] the parse tree
+  void enterStaticval(StaticvalContext ctx);
+  /// Exit a parse tree produced by [rtfParser.staticval].
+  /// [ctx] the parse tree
+  void exitStaticval(StaticvalContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.linkval].
+  /// [ctx] the parse tree
+  void enterLinkval(LinkvalContext ctx);
+  /// Exit a parse tree produced by [rtfParser.linkval].
+  /// [ctx] the parse tree
+  void exitLinkval(LinkvalContext ctx);
 
   /// Enter a parse tree produced by [rtfParser.docfmt].
   /// [ctx] the parse tree
@@ -587,6 +636,41 @@ abstract class rtfParserListener extends ParseTreeListener {
   /// Exit a parse tree produced by [rtfParser.aprops].
   /// [ctx] the parse tree
   void exitAprops(ApropsContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.tabdef].
+  /// [ctx] the parse tree
+  void enterTabdef(TabdefContext ctx);
+  /// Exit a parse tree produced by [rtfParser.tabdef].
+  /// [ctx] the parse tree
+  void exitTabdef(TabdefContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.tab].
+  /// [ctx] the parse tree
+  void enterTab(TabContext ctx);
+  /// Exit a parse tree produced by [rtfParser.tab].
+  /// [ctx] the parse tree
+  void exitTab(TabContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.bartab].
+  /// [ctx] the parse tree
+  void enterBartab(BartabContext ctx);
+  /// Exit a parse tree produced by [rtfParser.bartab].
+  /// [ctx] the parse tree
+  void exitBartab(BartabContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.tabkind].
+  /// [ctx] the parse tree
+  void enterTabkind(TabkindContext ctx);
+  /// Exit a parse tree produced by [rtfParser.tabkind].
+  /// [ctx] the parse tree
+  void exitTabkind(TabkindContext ctx);
+
+  /// Enter a parse tree produced by [rtfParser.tablead].
+  /// [ctx] the parse tree
+  void enterTablead(TableadContext ctx);
+  /// Exit a parse tree produced by [rtfParser.tablead].
+  /// [ctx] the parse tree
+  void exitTablead(TableadContext ctx);
 
   /// Enter a parse tree produced by [rtfParser.pn].
   /// [ctx] the parse tree

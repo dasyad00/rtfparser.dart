@@ -220,6 +220,16 @@ abstract class rtfParserVisitor<T> extends ParseTreeVisitor<T> {
   /// Return the visitor result.
   T? visitListoverride(ListoverrideContext ctx);
 
+  /// Visit a parse tree produced by [rtfParser.generator].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitGenerator(GeneratorContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.programName].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitProgramName(ProgramNameContext ctx);
+
   /// Visit a parse tree produced by [rtfParser.document].
   /// [ctx] the parse tree.
   /// Return the visitor result.
@@ -309,6 +319,31 @@ abstract class rtfParserVisitor<T> extends ParseTreeVisitor<T> {
   /// [ctx] the parse tree.
   /// Return the visitor result.
   T? visitTime(TimeContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.userprops].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitUserprops(UserpropsContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.propinfo].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPropinfo(PropinfoContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.propname].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitPropname(PropnameContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.staticval].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitStaticval(StaticvalContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.linkval].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitLinkval(LinkvalContext ctx);
 
   /// Visit a parse tree produced by [rtfParser.docfmt].
   /// [ctx] the parse tree.
@@ -424,6 +459,31 @@ abstract class rtfParserVisitor<T> extends ParseTreeVisitor<T> {
   /// [ctx] the parse tree.
   /// Return the visitor result.
   T? visitAprops(ApropsContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.tabdef].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitTabdef(TabdefContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.tab].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitTab(TabContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.bartab].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitBartab(BartabContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.tabkind].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitTabkind(TabkindContext ctx);
+
+  /// Visit a parse tree produced by [rtfParser.tablead].
+  /// [ctx] the parse tree.
+  /// Return the visitor result.
+  T? visitTablead(TableadContext ctx);
 
   /// Visit a parse tree produced by [rtfParser.pn].
   /// [ctx] the parse tree.

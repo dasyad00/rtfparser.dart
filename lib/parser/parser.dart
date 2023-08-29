@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:antlr4/antlr4.dart';
 import 'package:rtfparser/parser/gen/rtfLexer.dart';
 import 'package:rtfparser/parser/gen/rtfParser.dart';
@@ -21,9 +19,8 @@ const specialCharacters = {
 };
 
 class TextListener extends rtfParserBaseListener {
-  final Completer<List<String>> completer;
   final output = <String>[];
-  TextListener(this.completer);
+  TextListener();
   var inHeader = false;
   @override
   void enterPcdata(PcdataContext ctx) {
@@ -50,9 +47,7 @@ class TextListener extends rtfParserBaseListener {
   }
 
   @override
-  void exitFile(FileContext ctx) {
-    completer.complete(output);
-  }
+  void exitFile(FileContext ctx) {}
 }
 
 class RtfParser {
@@ -70,9 +65,9 @@ class RtfParser {
     return RtfParser._internal(parser.file());
   }
 
-  Future<List<String>> unformattedText() async {
-    final c = Completer<List<String>>();
-    ParseTreeWalker.DEFAULT.walk(TextListener(c), _fileTree);
-    return c.future;
+  List<String> unformattedText() {
+    final listener = TextListener();
+    ParseTreeWalker.DEFAULT.walk(listener, _fileTree);
+    return listener.output;
   }
 }

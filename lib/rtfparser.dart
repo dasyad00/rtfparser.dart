@@ -1,7 +1,5 @@
 library rtfparser;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export "parser/converter/string_text.dart";
+export "parser/parser/standard.dart";
+export "parser/source.dart";

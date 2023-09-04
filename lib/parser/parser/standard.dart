@@ -105,7 +105,7 @@ class StandardRtfParser implements RtfParser, RtfListener {
       bool optionalFlag = false;
       final lastEvent = handler.getLastEvent();
       if (lastEvent is CommandEvent) {
-        if (lastEvent.command == Command.optionalCommand) {
+        if (lastEvent.command == Command.optionalcommand) {
           handler.removeLastEvent();
           optionalFlag = true;
         }
@@ -154,10 +154,10 @@ class StandardRtfParser implements RtfParser, RtfListener {
         case Command.backslash:
           processCharacterBytes([CharCodes.backslash]);
           break;
-        case Command.openCurlyBrace:
+        case Command.opencurly:
           processCharacterBytes([CharCodes.openingBrace]);
           break;
-        case Command.closeCurlyBrace:
+        case Command.closecurly:
           processCharacterBytes([CharCodes.closingBrace]);
           break;
 

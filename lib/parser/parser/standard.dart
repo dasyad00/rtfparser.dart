@@ -5,6 +5,7 @@ import 'package:rtfparser/parser/event/event.dart';
 import 'package:rtfparser/parser/event/event_handler.dart';
 import 'package:rtfparser/parser/listener.dart';
 import 'package:rtfparser/parser/parser/font_charset.dart';
+import 'package:rtfparser/parser/parser/upr.dart';
 import 'package:rtfparser/parser/source.dart';
 
 import 'base.dart';
@@ -242,9 +243,10 @@ class StandardRtfParser implements RtfParser, RtfListener {
   }
 
   void processUpr(CommandEvent commandEvent) {
-    // TODO
-    throw UnimplementedError();
-    // ParserEventHandler uprHandler = UprHandler();
+    final uprHandler = UprHandler(handler);
+    uprHandler.handleEvent(commandEvent);
+    handlerStack.addLast(handler);
+    handler = uprHandler;
   }
 
   //------------//

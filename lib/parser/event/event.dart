@@ -1,19 +1,7 @@
 import 'package:rtfparser/parser/command.dart';
 import 'package:rtfparser/parser/listener.dart';
 
-// TODO use type instance checking instead?
-enum ParserEventType {
-  command,
-  documentEnd,
-  documentStart,
-  groupStart,
-  groupEnd,
-  string,
-  binaryBytes,
-}
-
 abstract class ParserEvent {
-  ParserEventType getType();
   void fire(RtfListener listener);
 }
 
@@ -30,9 +18,6 @@ class CommandEvent implements ParserEvent {
   }
 
   @override
-  ParserEventType getType() => ParserEventType.command;
-
-  @override
   String toString() {
     return "<CommandEvent \\${command.label}${hasParameter ? parameter : ''}>";
   }
@@ -47,9 +32,6 @@ class StringEvent implements ParserEvent {
   void fire(RtfListener listener) {
     listener.processString(data);
   }
-
-  @override
-  ParserEventType getType() => ParserEventType.string;
 
   String getString() => data;
 
@@ -68,9 +50,6 @@ class BinaryBytesEvent implements ParserEvent {
   }
 
   @override
-  ParserEventType getType() => ParserEventType.string;
-
-  @override
   String toString() => "<BinaryBytesEvent ${data.length} bytes>";
 }
 
@@ -80,9 +59,6 @@ class GroupStartEvent implements ParserEvent {
   void fire(RtfListener listener) {
     listener.processGroupStart();
   }
-
-  @override
-  ParserEventType getType() => ParserEventType.groupStart;
 
   @override
   String toString() => "<GroupStartEvent>";
@@ -96,9 +72,6 @@ class GroupEndEvent implements ParserEvent {
   }
 
   @override
-  ParserEventType getType() => ParserEventType.groupEnd;
-
-  @override
   String toString() => "<GroupEndEvent>";
 }
 
@@ -110,9 +83,6 @@ class DocumentStartEvent implements ParserEvent {
   }
 
   @override
-  ParserEventType getType() => ParserEventType.documentStart;
-
-  @override
   String toString() => "<DocumentStartEvent>";
 }
 
@@ -122,9 +92,6 @@ class DocumentEndEvent implements ParserEvent {
   void fire(RtfListener listener) {
     listener.processDocumentEnd();
   }
-
-  @override
-  ParserEventType getType() => ParserEventType.documentEnd;
 
   @override
   String toString() => "<DocumentEndEvent>";

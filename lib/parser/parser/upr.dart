@@ -13,15 +13,10 @@ class UprHandler extends ParserEventHandler {
   @override
   void handleEvent(ParserEvent event) {
     events.add(event);
-    switch (event.getType()) {
-      case ParserEventType.groupStart:
-        groupCount++;
-        break;
-      case ParserEventType.groupEnd:
-        groupCount--;
-        break;
-      default:
-        break;
+    if (event is GroupStartEvent) {
+      groupCount++;
+    } else if (event is GroupEndEvent) {
+      groupCount--;
     }
 
     if (groupCount == 0) {
@@ -36,9 +31,8 @@ class UprHandler extends ParserEventHandler {
         throw Exception("UPR command; structure not recognized");
       }
       final event = events[index];
-      if (event.getType() == ParserEventType.command) {
-        final command = event as CommandEvent;
-        if (command.command == Command.ud) {
+      if (event is CommandEvent) {
+        if (event.command == Command.ud) {
           break;
         }
       }
@@ -50,7 +44,7 @@ class UprHandler extends ParserEventHandler {
     }
 
     index++;
-    if (events[index].getType() != ParserEventType.groupStart) {
+    if (events[index] is! GroupStartEvent) {
       throw Exception("UPR command; structure not recognized");
     }
 
@@ -63,15 +57,10 @@ class UprHandler extends ParserEventHandler {
       }
 
       final event = events[endIndex];
-      switch (event.getType()) {
-        case ParserEventType.groupStart:
-          groupCount++;
-          break;
-        case ParserEventType.groupEnd:
-          groupCount--;
-          break;
-        default:
-          break;
+      if (event is GroupStartEvent) {
+        groupCount++;
+      } else if (event is GroupEndEvent) {
+        groupCount--;
       }
 
       if (groupCount == 0) {

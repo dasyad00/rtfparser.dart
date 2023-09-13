@@ -24,7 +24,7 @@ class DefaultEventHandler implements ParserEventHandler {
 
   @override
   void handleEvent(ParserEvent event) {
-    if (event.getType() == ParserEventType.documentEnd) {
+    if (event is DocumentEndEvent) {
       flushEvents();
       event.fire(listener);
     } else {

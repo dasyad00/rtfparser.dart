@@ -80,6 +80,8 @@ class RawRtfParser implements RtfParser {
       if (nextChar == CharCodes.backslash) {
         b = b >> 4;
         source.unread(nextChar);
+      } else {
+        b += int.parse(String.fromCharCode(nextChar), radix: 16);
       }
 
       buffer.add(b);
